@@ -57,11 +57,26 @@ def display_name(category_code: str) -> str:
     return CATEGORY_DISPLAY_NAMES.get(category_code, category_code)
 
 
+def math_category(paper: ArxivPaper) -> str | None:
+    """Return the first math.* category for a paper, or None if it has none."""
+    if paper.primary_category.startswith("math."):
+        return paper.primary_category
+    return next(
+        (c for c in paper.all_categories if c.startswith("math.")),
+        None,
+    )
+
+
 def group_papers(papers: list[ArxivPaper]) -> OrderedDict[str, list[ArxivPaper]]:
-    """Group papers by primary category, ordered by CATEGORY_ORDER."""
+    """Group papers by their first math category, ordered by CATEGORY_ORDER.
+
+    Papers with no math category at all are silently dropped.
+    """
     buckets: dict[str, list[ArxivPaper]] = {}
     for paper in papers:
-        cat = paper.primary_category
+        cat = math_category(paper)
+        if cat is None:
+            continue
         buckets.setdefault(cat, []).append(paper)
 
     result: OrderedDict[str, list[ArxivPaper]] = OrderedDict()

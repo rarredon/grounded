@@ -73,7 +73,7 @@ def _build_query(days_back: int = 7) -> str:
 
 
 def fetch_papers(max_results: int = 25, days_back: int = 7) -> list[ArxivPaper]:
-    """Fetch recent math papers from arXiv."""
+    """Fetch recent papers from arXiv that belong to at least one math category."""
     query = _build_query(days_back)
     params = {
         "search_query": query,
