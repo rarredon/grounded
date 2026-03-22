@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Grounded — Weekly Math Research Digest{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .hero { margin-bottom: 2.5rem; }
+  .hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.6rem;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 560px;
+  }
+
+  .archive-section h2 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .archive-list { list-style: none; }
+  .archive-list li {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+  }
+  .archive-list li:first-child { border-top: 1px solid var(--border); }
+  .archive-list a {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .archive-list a:hover { color: var(--accent); }
+  .archive-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+
+  .empty-state {
+    color: var(--muted);
+    font-style: italic;
+    padding: 2rem 0;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <h1>Ground<span>ed</span></h1>
+  <p>
+    A weekly digest of recent mathematics research from arXiv,
+    summarized for readers with a background in math.
+    New issues every Sunday.
+  </p>
+</div>
+
+<div class="archive-section">
+  <h2>Past Issues</h2>
+  {% if weeks %}
+  <ul class="archive-list">
+    {% for week in weeks %}
+    <li>
+      <a href="{{ week.slug }}.html">Week of {{ week.label }}</a>
+      <div class="archive-meta">Math research digest</div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-state">No issues yet — check back after the first Sunday run.</p>
+  {% endif %}
+</div>
+{% endblock %}

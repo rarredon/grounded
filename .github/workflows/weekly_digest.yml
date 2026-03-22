@@ -1,0 +1,73 @@
+name: Weekly Math Digest
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'   # Sunday at 00:00 UTC
+  workflow_dispatch:        # Allow manual trigger from GitHub UI
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # Needed to push to gh-pages branch
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0    # Full history needed for gh-pages push
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore existing gh-pages docs
+        run: |
+          git fetch origin gh-pages 2>/dev/null || true
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git worktree add _gh_pages origin/gh-pages
+            mkdir -p docs
+            cp -r _gh_pages/docs/. docs/ 2>/dev/null || true
+          else
+            mkdir -p docs
+          fi
+
+      - name: Generate digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m grounded.digest --output-dir docs
+
+      - name: Deploy to gh-pages
+        run: |
+          # Configure git identity for the bot commit
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Set up gh-pages branch in a worktree (or create it if it's new)
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git worktree add _deploy origin/gh-pages 2>/dev/null || \
+              git worktree add _deploy gh-pages
+          else
+            git worktree add --orphan _deploy gh-pages
+          fi
+
+          # Sync generated docs into the worktree
+          mkdir -p _deploy/docs
+          cp -r docs/. _deploy/docs/
+
+          # Create a minimal index redirect at root if it doesn't exist
+          if [ ! -f _deploy/index.html ]; then
+            echo '<meta http-equiv="refresh" content="0; url=docs/index.html">' > _deploy/index.html
+          fi
+
+          cd _deploy
+          git add -A
+          git diff --staged --quiet && echo "Nothing to commit, skipping push." && exit 0
+          git commit -m "digest: week of $(date -u +%Y-%m-%d)"
+          git push origin HEAD:gh-pages

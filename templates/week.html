@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block title %}{{ week_label }} — Grounded Math Digest{% endblock %}
+
+{% block extra_styles %}
+<style>
+  /* Page header */
+  .digest-header { margin-bottom: 2rem; }
+  .digest-header h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+  }
+  .digest-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #374151;
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1rem;
+  }
+  .digest-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .toc-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .toc-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .toc-links a {
+    font-size: 0.82rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.2rem 0.55rem;
+    color: var(--text);
+    transition: border-color 0.15s;
+  }
+  .toc-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Subfield sections */
+  .subfield { margin-bottom: 2.5rem; }
+  .subfield-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+  .subfield-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .count-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+  }
+
+  /* Paper cards */
+  article.paper {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+  }
+  article.paper h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  article.paper h3 a { color: var(--text); }
+  article.paper h3 a:hover { color: var(--accent); }
+  .paper-authors {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .paper-summary {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #374151;
+    margin-bottom: 0.75rem;
+  }
+  .paper-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.6rem;
+  }
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .tag.primary {
+    background: var(--accent-light);
+    border-color: #bfdbfe;
+    color: var(--accent);
+  }
+
+  /* Collapsible abstract */
+  details.abstract {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  details.abstract summary {
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--accent);
+    user-select: none;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  details.abstract summary::before {
+    content: "▶";
+    font-size: 0.65rem;
+    transition: transform 0.15s;
+  }
+  details.abstract[open] summary::before { transform: rotate(90deg); }
+  details.abstract p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    padding: 0.75rem;
+    background: var(--bg);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  /* Back link */
+  .back-link { margin-bottom: 1.5rem; font-size: 0.88rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="back-link"><a href="index.html">← All issues</a></div>
+
+<div class="digest-header">
+  <h1>Math Research Digest</h1>
+  <div class="digest-intro">{{ intro }}</div>
+  <p class="digest-meta">
+    {{ total_papers }} paper{{ 's' if total_papers != 1 else '' }}
+    across {{ grouped_papers|length }} subfield{{ 's' if grouped_papers|length != 1 else '' }}
+    &nbsp;·&nbsp; Week of {{ week_label }}
+    &nbsp;·&nbsp; arXiv data
+  </p>
+</div>
+
+{% if grouped_papers|length >= 3 %}
+<nav class="toc">
+  <div class="toc-title">Jump to subfield</div>
+  <div class="toc-links">
+    {% for cat_code in grouped_papers %}
+    <a href="#{{ cat_code | replace('.', '-') }}">{{ display_name(cat_code) }}</a>
+    {% endfor %}
+  </div>
+</nav>
+{% endif %}
+
+{% for cat_code, papers in grouped_papers.items() %}
+<section class="subfield" id="{{ cat_code | replace('.', '-') }}">
+  <div class="subfield-header">
+    <h2>{{ display_name(cat_code) }}</h2>
+    <span class="count-badge">{{ papers|length }}</span>
+  </div>
+
+  {% for paper in papers %}
+  <article class="paper">
+    <h3><a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a></h3>
+
+    <p class="paper-authors">
+      {% set author_list = paper.authors[:3] %}
+      {{ author_list | join(', ') }}{% if paper.authors|length > 3 %} <em>et al.</em>{% endif %}
+    </p>
+
+    <p class="paper-summary">{{ summaries.get(paper.arxiv_id, '') }}</p>
+
+    <div class="paper-tags">
+      {% for cat in paper.all_categories %}
+      <span class="tag{% if cat == paper.primary_category %} primary{% endif %}">{{ cat }}</span>
+      {% endfor %}
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>{{ paper.abstract }}</p>
+    </details>
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+{% endblock %}
