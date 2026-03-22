@@ -72,6 +72,7 @@
       color: var(--muted);
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
   
 <style>
   /* Page header */
@@ -255,7 +256,7 @@
 
 <div class="digest-header">
   <h1>Math Research Digest</h1>
-  <div class="digest-intro">Welcome to this week&#39;s edition of Grounded, a particularly rich issue spanning arithmetic geometry, combinatorics, and analysis. Two threads stand out immediately: first, a satisfying resolution to a problem Manin posed over fifty years ago, with new results on R-equivalence confirming that rational points on cubic surfaces over 2-adic fields are far more connected than previously provable — a reminder that classical questions in algebraic geometry can still yield to fresh techniques. Second, the combinatorics papers this week share a striking preoccupation with *positivity phenomena*, from gamma vectors of flag simplicial spheres to the magic positivity of Ehrhart polynomials for parking-function polytopes; in both cases, the surprise is how strong structural consequences — real-rootedness, log-concavity, sharp growth bounds — follow from what look like elementary non-negativity conditions. Rounding things out, the number theory contribution on multiplication tables for integers with restricted prime factors identifies a sharp phase transition at a critical density parameter of 1/2, the kind of clean threshold behavior that feels inevitable in retrospect but requires serious analytic machinery to pin down precisely.</div>
+  <div class="digest-intro">Welcome to this week&#39;s issue of Grounded. The papers arriving in our inbox this week paint a picture of mathematics quietly dismantling its own folklore — results long believed to be essentially settled are turning out to harbor genuine surprises. Two themes stand out. First, there&#39;s a remarkable cluster of work on **phase transitions and structural dichotomies**: a number-theoretic investigation into multiplication tables under prime restrictions uncovers a sharp threshold at 1/log 4, below and above which the combinatorial behavior changes fundamentally — the kind of crisp phase transition one expects in statistical physics, not elementary multiplicative number theory. Meanwhile, a careful study of finite hyperfields confirms that algebraic exoticism is not the exception but the overwhelming rule: almost all finite hyperfields are irreducibly weird, in a precise asymptotic sense, vindicating a conjecture and reframing our intuitions about what &#34;generic&#34; algebraic structure looks like. Second, several papers this week share a quietly radical methodological stance: deploying **variational and geometric energy arguments to unify or simplify theorems that previously required separate, bespoke proofs** — from new variational characterizations of Lie algebra representations that recover classical rigidity theorems as corollaries, to derived-geometric frameworks that finally make electromagnetic duality a theorem rather than a heuristic. It&#39;s a week that rewards readers who enjoy watching the scaffolding come</div>
   <p class="digest-meta">
     25 papers
     across 14 subfields
@@ -317,9 +318,7 @@
       Jeremy Schlitt
     </p>
 
-    <p class="paper-summary">**How many numbers have a divisor of just the right size?**
-
-Given a restricted set of primes, how many integers built from those primes also happen to have a divisor falling in a specific range? This paper determines the exact order of magnitude for all values of a density parameter δ, generalizing Ford&#39;s 2008 solution of the classical multiplication table problem. The highlight is a **phase transition** — a sharp change in behavior — at a critical density δ = 1/2, whose precise form the authors explicitly characterize.</p>
+    <p class="paper-summary">How many numbers built from a restricted set of primes have a divisor in a specific range? This paper pins down the exact order of magnitude for this count, generalizing a landmark 2008 result by Ford. Strikingly, the answer behaves fundamentally differently depending on whether the &#34;relative density&#34; δ (the proportion of primes allowed) exceeds 1/log 4 ≈ 0.72 — a sharp phase transition revealing unexpected structure in how multiplication tables thin out under prime restrictions.</p>
 
     <div class="paper-tags">
       
@@ -331,7 +330,7 @@ Given a restricted set of primes, how many integers built from those primes also
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Let be a set of primes with relative density . We count integers in with prime factors all in that also have a divisor in . We establish the order of magnitude for all . This generalizes the case from the 2008 work of Ford. We also show that there is a phase transition at the critical point , for which we explicitly determine the behaviour.</p>
+      <p>Let $Q$ be a set of primes with relative density $δ$. We count integers in $[1,x]$ with prime factors all in $Q$ that also have a divisor in $(y,2y]$. We establish the order of magnitude for all $δ\in (0,1]$. This generalizes the case $δ= 1$ from the 2008 work of Ford. We also show that there is a phase transition at the critical point $δ= 1/\log 4$, for which we explicitly determine the behaviour.</p>
     </details>
   </article>
   
@@ -352,11 +351,7 @@ Given a restricted set of primes, how many integers built from those primes also
       Dimitri Kanevsky, Julian Salazar, Matt Harvey
     </p>
 
-    <p class="paper-summary">## R-Equivalence on Cubic Surfaces
-
-Two points on an algebraic variety are **R-equivalent** if you can connect them by a chain of rational curves (copies of the projective line). The set of R-equivalence classes measures how &#34;connected&#34; a variety&#39;s rational points are — triviality means all rational points are linked this way.
-
-This paper proves R-equivalence is trivial (or nearly so) on cubic surfaces over 2-adic fields that were previously resistant to analysis, resolving a question Manin posed in 1972 and supporting a major conjecture about rational points on algebraic surfaces.</p>
+    <p class="paper-summary">Cubic surfaces over *p*-adic fields (number systems built around a prime *p*) can be studied by asking when two rational points can be &#34;connected&#34; by rational curves — this is called **R-equivalence**. Swinnerton-Dyer nearly settled when R-equivalence is trivial (only one class) in 1981 but left three stubborn cases open. This paper tackles those hard cases, proving R-equivalence is trivial or has exponent 2, and resolves a specific question Manin posed in 1972.</p>
 
     <div class="paper-tags">
       
@@ -372,7 +367,9 @@ This paper proves R-equivalence is trivial (or nearly so) on cubic surfaces over
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Let be a smooth cubic surface over a -adic field with good reduction. Swinnerton-Dyer (1981) proved that -equivalence is trivial on except perhaps if is one of three special types--those whose -equivalence he could not bound by proving the universal (admissible) equivalence is trivial. We consider all surfaces currently known to have non-trivial universal equivalence. Beyond being intractable to Swinnerton-Dyer&#39;s approach, we observe that if these surfaces also had non-trivial -equivalence, they would contradict Colliot-Thélène and Sansuc&#39;s conjecture regarding the -rationality of universal torsors for geometrically rational surfaces. By devising new methods to study -equivalence, we prove that for 2-adic surfaces with all-Eckardt reductions (the third special type, which contains every existing case of non-trivial universal equivalence), -equivalence is trivial or of exponent 2. For the explicit cases, we confirm triviality: the diagonal cubic over --answering a long-standing question of Manin&#39;s (Cubic Forms, 1972)--and the cubic with universal equivalence of exponent 2 (Kanevsky, 1982). This is the first in a series of works derived from a year of interactions with generative AI models such as AlphaEvolve and Gemini 3 Deep Think, with the latter proving many of our lemmas. We disclose the timeline and nature of their use towards this paper, and describe our broader AI-assisted research program in a companion report (in preparation).</p>
+      <p>Let $V$ be a smooth cubic surface over a $p$-adic field $k$ with good reduction. Swinnerton-Dyer (1981) proved that $R$-equivalence is trivial on $V(k)$ except perhaps if $V$ is one of three special types--those whose $R$-equivalence he could not bound by proving the universal (admissible) equivalence is trivial. We consider all surfaces $V$ currently known to have non-trivial universal equivalence. Beyond being intractable to Swinnerton-Dyer&#39;s approach, we observe that if these surfaces also had non-trivial $R$-equivalence, they would contradict Colliot-Thélène and Sansuc&#39;s conjecture regarding the $k$-rationality of universal torsors for geometrically rational surfaces.
+  By devising new methods to study $R$-equivalence, we prove that for 2-adic surfaces with all-Eckardt reductions (the third special type, which contains every existing case of non-trivial universal equivalence), $R$-equivalence is trivial or of exponent 2. For the explicit cases, we confirm triviality: the diagonal cubic $X^3+Y^3+Z^3+ζ_3 T^3=0$ over $\mathbb{Q}_2(ζ_3)$--answering a long-standing question of Manin&#39;s (Cubic Forms, 1972)--and the cubic with universal equivalence of exponent 2 (Kanevsky, 1982).
+  This is the first in a series of works derived from a year of interactions with generative AI models such as AlphaEvolve and Gemini 3 Deep Think, with the latter proving many of our lemmas. We disclose the timeline and nature of their use towards this paper, and describe our broader AI-assisted research program in a companion report (in preparation).</p>
     </details>
   </article>
   
@@ -384,9 +381,7 @@ This paper proves R-equivalence is trivial (or nearly so) on cubic surfaces over
       Serkan Hoşten, Vadym Kurylenko, Elke Neuhaus <em>et al.</em>
     </p>
 
-    <p class="paper-summary">## Euler Stratification for Products of Projective Spaces
-
-When you define a geometric shape (hypersurface) using a polynomial with varying coefficients, its Euler characteristic—a topological count of &#34;holes&#34; and &#34;voids&#34;—can jump around depending on those coefficients. This paper asks: exactly how does that Euler characteristic change, and what combinatorial data controls it? For a specific family of spaces tied to statistical independence models, the authors fully classify which coefficient patterns produce which Euler characteristics, connecting pure topology to maximum likelihood estimation in statistics—a measure of how hard certain optimization problems are.</p>
+    <p class="paper-summary">How does a key measure of statistical model complexity change as you vary the parameters of a model? This paper studies the **maximum likelihood (ML) degree**—a count of how many critical points a likelihood function generically has, indicating optimization difficulty—for **three-way independence models** in statistics. The authors fully classify which coefficient choices give which ML degrees for the simplest case, show a clean structural principle breaks down in higher dimensions, yet prove every integer up to the maximum ML degree is achievable.</p>
 
     <div class="paper-tags">
       
@@ -400,7 +395,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>We study the Euler characteristic of a hypersurface in defined by a polynomial whose monomial support corresponds to lattice points in as the coefficients of the defining polynomial vary. Each member of this hypersurface family corresponds to a three-way independence model from algebraic statistics, and the (signed) Euler characteristic is equal to the maximum likelihood degree (ML degree) of the model. We show in the case of this Euler characteristic depends only on the vanishing patterns of the factors of the principal -determinant, but this fails for with . We prove that, for all , all positive integers up to the maximum possible ML degree can be realized as the Euler characteristic. Furthermore, we completely determine the Euler stratification for and provide partial information for .</p>
+      <p>We study the Euler characteristic of a hypersurface in $(\mathbb{C}^*)^2 \times (\mathbb{C}^*)^n$ defined by a polynomial whose monomial support corresponds to lattice points in $Δ_1 \times Δ_1 \times Δ_n$ as the coefficients of the defining polynomial vary. Each member of this hypersurface family corresponds to a three-way independence model from algebraic statistics, and the (signed) Euler characteristic is equal to the maximum likelihood degree (ML degree) of the model. We show in the case of $Δ_1 \times Δ_1 \times Δ_1$ this Euler characteristic depends only on the vanishing patterns of the factors of the principal $A$-determinant, but this fails for $Δ_1 \times Δ_1 \times Δ_n$ with $n \geq 2$. We prove that, for all $n\geq 1$, all positive integers up to the maximum possible ML degree can be realized as the Euler characteristic. Furthermore, we completely determine the Euler stratification for $\mathbb{P}^1 \times \mathbb{P}^1 \times \mathbb{P}^1$ and provide partial information for $\mathbb{P}^1 \times \mathbb{P}^1 \times \mathbb{P}^2$.</p>
     </details>
   </article>
   
@@ -421,7 +416,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
       Amartya Mukherjee, Maxwell Fitzsimmons, David C. Del Rey Fernández <em>et al.</em>
     </p>
 
-    <p class="paper-summary">Physics-informed neural networks (PINNs) solve differential equations by training a neural network to satisfy the equation&#39;s rules rather than using traditional grid-based methods — but until now, nobody could rigorously guarantee how close their outputs are to the true solution. This paper proves that if a PINN&#39;s residual error (how badly it fails to satisfy the equation pointwise) vanishes, and the network stays within a compact region of solution space, then the approximation provably converges to the true solution. This bridges a critical gap between empirical performance and certified reliability for neural PDE solvers.</p>
+    <p class="paper-summary">Physics-informed neural networks (PINNs) solve differential equations by training a neural network to satisfy the equation&#39;s rules at sample points, but until now, nobody could rigorously guarantee how close these solutions are to the truth. This paper proves that if a PINN&#39;s residual error (how badly it violates the equation) shrinks to zero, the solution itself converges to the correct answer — provided the network stays within a compact, well-behaved function space. The result finally gives PINNs the kind of error certificates that traditional grid-based solvers have always enjoyed.</p>
 
     <div class="paper-tags">
       
@@ -435,7 +430,8 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Uncertainty quantification for partial differential equations is traditionally grounded in discretization theory, where solution error is controlled via mesh/grid refinement. Physics-informed neural networks fundamentally depart from this paradigm: they approximate solutions by minimizing residual losses at collocation points, introducing new sources of error arising from optimization, sampling, representation, and overfitting. As a result, the generalization error in the solution space remains an open problem. Our main theoretical contribution establishes generalization bounds that connect residual control to solution-space error. We prove that when neural approximations lie in a compact subset of the solution space, vanishing residual error guarantees convergence to the true solution. We derive deterministic and probabilistic convergence results and provide certified generalization bounds translating residual, boundary, and initial errors into explicit solution error guarantees.</p>
+      <p>Uncertainty quantification for partial differential equations is traditionally grounded in discretization theory, where solution error is controlled via mesh/grid refinement. Physics-informed neural networks fundamentally depart from this paradigm: they approximate solutions by minimizing residual losses at collocation points, introducing new sources of error arising from optimization, sampling, representation, and overfitting. As a result, the generalization error in the solution space remains an open problem.
+  Our main theoretical contribution establishes generalization bounds that connect residual control to solution-space error. We prove that when neural approximations lie in a compact subset of the solution space, vanishing residual error guarantees convergence to the true solution. We derive deterministic and probabilistic convergence results and provide certified generalization bounds translating residual, boundary, and initial errors into explicit solution error guarantees.</p>
     </details>
   </article>
   
@@ -447,7 +443,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
       Francisco Marín Sola, Francesco Salerno
     </p>
 
-    <p class="paper-summary">The Brunn-Minkowski theorem classically says that geometric quantities like volume behave in a &#34;concave&#34; way when you blend two convex shapes together via Minkowski addition (forming all pairwise sums of their points). This paper asks whether similar inequalities hold for two quantities tied to the Ornstein-Uhlenbeck operator—a differential operator central to probability and physics—namely torsional rigidity and first eigenvalue. The answer is largely *no*: the paper constructs explicit counterexamples showing concavity, convexity, and log-variants all fail, resolving several open questions negatively, with one positive exception for balls.</p>
+    <p class="paper-summary">The Brunn-Minkowski inequality classically says that volumes of convex bodies behave concavely under interpolation — blend two shapes, and certain measurements grow predictably. This paper asks whether analogous inequalities hold for two quantities tied to the Ornstein-Uhlenbeck operator (a differential operator central to probability and quantum mechanics): torsional rigidity and first eigenvalue. The answer is largely **no** — the paper constructs explicit counterexamples demolishing several conjectured inequalities, while proving one positive result: for balls centered at the origin, a specific power of torsional rigidity does behave convexly.</p>
 
     <div class="paper-tags">
       
@@ -459,7 +455,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>We investigate Brunn-Minkowski-type inequalities for the torsional rigidity and the first eigenvalue associated with the Ornstein-Uhlenbeck operator. Counterexamples are provided showing that neither concavity nor convexity properties hold for on general bounded convex sets. We also demonstrate that log-concavity and log-convexity properties fail in this setting. In the case of centrally symmetric sets, we answer a question raised by Cordero-Erausquin and Eskenazis by showing that is neither convex nor concave. On the positive side, we prove that is convex with respect to Minkowski addition when restricted to Euclidean balls centered at the origin. For , we answer negatively a question posed by Colesanti, Francini, Livshyts, and Salani by showing that the inequality does not hold, even for centrally symmetric sets.</p>
+      <p>We investigate Brunn-Minkowski-type inequalities for the torsional rigidity $T_γ$ and the first eigenvalue $λ_γ$ associated with the Ornstein-Uhlenbeck operator. Counterexamples are provided showing that neither concavity nor convexity properties hold for $T_γ$ on general bounded convex sets. We also demonstrate that log-concavity and log-convexity properties fail in this setting. In the case of centrally symmetric sets, we answer a question raised by Cordero-Erausquin and Eskenazis by showing that $T_γ^{1/(n+2)}$ is neither convex nor concave. On the positive side, we prove that $T_γ^{1/3}$ is convex with respect to Minkowski addition when restricted to Euclidean balls centered at the origin. For $λ_γ$, we answer negatively a question posed by Colesanti, Francini, Livshyts, and Salani by showing that the inequality $λ_γ(Ω_t)^{-1/2} \geq (1-t)λ_γ(Ω_0)^{-1/2} + tλ_γ(Ω_1)^{-1/2}$ does not hold, even for centrally symmetric sets.</p>
     </details>
   </article>
   
@@ -471,7 +467,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
       Nam Q. Le
     </p>
 
-    <p class="paper-summary">The Monge–Ampère equation generalizes the determinant of second derivatives of a convex function, and finding its &#34;eigenvalue&#34; means finding a scalar λ where the equation balances a given measure. This paper proves when such problems are solvable and unique—even for badly singular measures—and shows that when classical energy-class solutions fail to exist, the eigenvalue can still be approximated via truncated measures and iterative schemes. The results expose surprising phenomena: highly singular measures can force symmetry-breaking and non-unique solutions.</p>
+    <p class="paper-summary">The Monge–Ampère equation generalizes the familiar determinant condition on second derivatives and plays a central role in optimal transport and geometry. This paper asks: when can we solve these equations with highly singular input measures, and when are solutions unique? The authors use variational methods—optimizing an energy functional—and monotonicity arguments to handle cases where standard approaches fail, revealing that extreme singularities can break symmetry and produce multiple solutions.</p>
 
     <div class="paper-tags">
       
@@ -493,7 +489,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
       Víctor Chaves-Santos, Lucas C. F. Ferreira
     </p>
 
-    <p class="paper-summary">Can fluid flow equations be solved on curved, infinite spaces? This paper proves that the Navier-Stokes equations — which govern incompressible fluid flow — are well-posed on negatively curved, non-compact manifolds like hyperbolic space. Negative curvature actually *improves* the equations&#39; behavior by accelerating decay of solutions over time. The key advance is using **Morrey spaces** (function spaces that measure local concentration rather than global size), which admit rougher, non-decaying initial data that classical Lebesgue-space approaches cannot handle.</p>
+    <p class="paper-summary">The Navier-Stokes equations describe fluid flow, but solving them rigorously on curved, infinite spaces is hard. This paper proves that these equations are well-posed — meaning solutions exist, are unique, and depend continuously on initial conditions — on a broad class of infinite (non-compact) curved spaces, including hyperbolic space, using Morrey spaces (function spaces that measure local concentration rather than global size, making them weaker than standard Lᵖ spaces). Negative curvature actually helps: it accelerates how quickly disturbances decay, enabling global solutions on Einstein manifolds even for some large initial data.</p>
 
     <div class="paper-tags">
       
@@ -503,7 +499,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>We analyze the incompressible Navier-Stokes equations on a class of non-compact Riemannian manifolds within the framework of Morrey spaces. Assuming bounded geometry together with negative Ricci and sectional curvature (e.g., hyperbolic spaces), we establish dispersive and smoothing estimates for the heat semigroups associated with the Beltrami, Bochner and Hodge Laplacians in Morrey spaces, as well as for the Riesz transform. In particular, the presence of negative curvature yields improved large-time decay compared to the Euclidean setting. These estimates are of independent interest and enable us to construct solutions in time-weighted spaces of Kato type, leading to local-in-time well-posedness on a broad class of non-compact manifolds and global one in the case of Einstein manifolds. In the latter setting, we assume a smallness condition on the initial data in Morrey norms, which are weaker than -norms and thus allow for certain classes of large -data. We also discuss extensions to Ricci-flat manifolds. Our results introduce a new class of non-decaying and rough initial data for the Navier-Stokes equations on manifolds, extending previous works in Lebesgue and Sobolev spaces.</p>
+      <p>We analyze the incompressible Navier-Stokes equations on a class of non-compact Riemannian manifolds within the framework of Morrey spaces. Assuming bounded geometry together with negative Ricci and sectional curvature (e.g., hyperbolic spaces), we establish dispersive and smoothing estimates for the heat semigroups associated with the Beltrami, Bochner and Hodge Laplacians in Morrey spaces, as well as for the Riesz transform. In particular, the presence of negative curvature yields improved large-time decay compared to the Euclidean setting. These estimates are of independent interest and enable us to construct solutions in time-weighted spaces of Kato type, leading to local-in-time well-posedness on a broad class of non-compact manifolds and global one in the case of Einstein manifolds. In the latter setting, we assume a smallness condition on the initial data in Morrey norms, which are weaker than $L^{p}$-norms and thus allow for certain classes of large $L^{p}$-data. We also discuss extensions to Ricci-flat manifolds. Our results introduce a new class of non-decaying and rough initial data for the Navier-Stokes equations on manifolds, extending previous works in Lebesgue and Sobolev spaces.</p>
     </details>
   </article>
   
@@ -524,7 +520,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
       Soohyun Park
     </p>
 
-    <p class="paper-summary">**Gamma positivity** asks whether certain numerical invariants of geometric objects (simplicial spheres — triangulated surfaces generalizing ordinary spheres) can be written using only non-negative coefficients in a specific polynomial basis. This paper investigates how **flagness** (a combinatorial condition requiring every minimal &#34;missing face&#34; to have exactly two vertices) quantitatively affects these invariants. The key finding is a dichotomy: in high dimensions, flagness often has negligible effect on gamma vectors, but when it does matter, it forces measurable lower bounds on how fast these invariants grow.</p>
+    <p class="paper-summary">Simplicial spheres are higher-dimensional generalizations of triangulated surfaces, and their combinatorial complexity is captured by **g-vectors** and **gamma vectors** — sequences of integers encoding how many faces of each dimension the sphere has. A central open question is whether &#34;flag&#34; spheres (those with no missing faces of dimension one) always have **gamma-positive** g-vectors (all gamma vector entries non-negative). This paper quantifies exactly when and how the topological condition of flagness constrains gamma positivity, and connects these combinatorial bounds to classical orthogonal polynomials and lattice-path counting.</p>
 
     <div class="paper-tags">
       
@@ -538,7 +534,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Using preservations of PL homeomorphism types under edge contractions (the link condition) as a topological proxy for flagness, we give a quantitative description of the effect flagness on on gamma positivity of simplicial spheres. In particular, we show that the link condition has a trivial effect on the -vectors (and thus gamma vectors) of high-dimensional simplicial spheres with nonnegative gamma vectors in many cases. Note that this reflects a dichotomy between quantitative behavior arising from components that are linear in and those that are superlinear in . When the link condition is nontrivial, we show that it gives a lower bound for growth rates of -vector components. This lower bound increases with the number of edges and the distance of the -vector condition on -vectors of simplicial spheres from equality. These lower bounds translate to ones on top gamma vector components and give lower bounds on gamma vector growth rates when the gamma vector components are dominant terms in the -vector components with the same index (e.g. -vectors with components increasing quickly compared to ). Finally, we show that the same results apply to positivity properties generalizing gamma positivity arising from connections between orthogonal polynomials and lattice paths. In the course of doing this, we describe gamma vector components in terms of monomer/dimer covers and point out connections between repeated (stellar) edge subdivisions (Tchebyshev subdivisions) and dimer covers.</p>
+      <p>Using preservations of PL homeomorphism types under edge contractions (the link condition) as a topological proxy for flagness, we give a quantitative description of the effect flagness on on gamma positivity of simplicial spheres. In particular, we show that the link condition has a trivial effect on the $g$-vectors (and thus gamma vectors) of high-dimensional simplicial spheres with nonnegative gamma vectors in many cases. Note that this reflects a dichotomy between quantitative behavior arising from $g_1$ components that are linear in $d$ and those that are superlinear in $d$. When the link condition is nontrivial, we show that it gives a lower bound for growth rates of $g$-vector components. This lower bound increases with the number of edges and the distance of the $M$-vector condition on $g$-vectors of simplicial spheres from equality. These lower bounds translate to ones on top gamma vector components and give lower bounds on gamma vector growth rates when the gamma vector components are dominant terms in the $g$-vector components with the same index (e.g. $g$-vectors with components increasing quickly compared to $d$). Finally, we show that the same results apply to positivity properties generalizing gamma positivity arising from connections between orthogonal polynomials and lattice paths. In the course of doing this, we describe gamma vector components in terms of monomer/dimer covers and point out connections between repeated (stellar) edge subdivisions (Tchebyshev subdivisions) and dimer covers.</p>
     </details>
   </article>
   
@@ -550,11 +546,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
       Nicolas Avila, Luis Ferroni, Alejandro H. Morales
     </p>
 
-    <p class="paper-summary">**What&#39;s the question?** Pitman–Stanley polytopes are geometric objects (higher-dimensional shapes) whose volumes encode counting problems related to parking functions—combinatorial objects where cars sequentially attempt to park on a one-way street. The paper asks whether the Ehrhart polynomial (which counts lattice points inside scaled-up versions of these polytopes) has a special positivity property called &#34;magic positivity.&#34;
-
-**The result:** The authors prove magic positivity holds, meaning the polynomial&#39;s coefficients in a specific basis are all non-negative. This forces the related h*-polynomial (a transformed version capturing deeper geometric information) to be real-rooted, which implies its coefficients are log-concave (no coefficient is smaller than the geometric mean of its neighbors) and unimodal (coefficients first rise then fall).
-
-**Why it matters:** Real-rootedness is a strong structural property—it implies log-concavity,</p>
+    <p class="paper-summary">**Parking functions** assign cars to spots via a simple rule; **polytopes** (higher-dimensional geometric shapes) built from these combinatorial objects encode deep structure. This paper studies the geometry of Pitman-Stanley polytopes — specific polytopes connected to parking functions — by analyzing their **Ehrhart polynomials** (which count integer lattice points in scaled versions of the polytope). The authors prove these polynomials have positive coefficients in a special &#34;magic basis,&#34; which forces their **h\*-polynomials** (encoding volume information) to have only real roots, guaranteeing the coefficients are unimodal and log-concave.</p>
 
     <div class="paper-tags">
       
@@ -564,7 +556,7 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Motivated by the combinatorics of parking functions and their several generalizations, we study the Ehrhart theory of Pitman--Stanley polytopes. We prove a strong positivity phenomenon called magic positivity for the Ehrhart polynomials of these polytopes, which in turn implies that their -polynomials are real-rooted (and thus log-concave and unimodal). Our result is achieved by interpreting the coefficients of these Ehrhart polynomials in the magic basis in terms of the number of lucky cars in a modified parking protocol. Furthermore, we address the magic positivity problem for -generalized permutohedra and also discuss a magic combinatorial interpretation for them, under the assumption that the input parameters are sufficiently large.</p>
+      <p>Motivated by the combinatorics of parking functions and their several generalizations, we study the Ehrhart theory of Pitman--Stanley polytopes. We prove a strong positivity phenomenon called \emph{magic positivity} for the Ehrhart polynomials of these polytopes, which in turn implies that their $h^*$-polynomials are real-rooted (and thus log-concave and unimodal). Our result is achieved by interpreting the coefficients of these Ehrhart polynomials in the \emph{magic basis} in terms of the number of \emph{lucky cars} in a modified parking protocol. Furthermore, we address the magic positivity problem for $\mathbf{y}$-generalized permutohedra and also discuss a \emph{magic} combinatorial interpretation for them, under the assumption that the input parameters are sufficiently large.</p>
     </details>
   </article>
   
@@ -585,9 +577,9 @@ When you define a geometric shape (hypersurface) using a polynomial with varying
       Miguel Ángel Berbel, Marco Castrillón López
     </p>
 
-    <p class="paper-summary">**Reducing Symmetry in Field Theories Without Choosing a Reference Frame**
+    <p class="paper-summary">**Hamiltonian Reduction in Affine Principal Bundles**
 
-When a physical field theory has symmetry, you can &#34;quotient out&#34; that symmetry to get a simpler description — this is called Hamiltonian reduction. This paper develops that procedure for theories living on *affine principal bundles* (spaces where the symmetry group acts by affine, not just linear, transformations), crucially without requiring a *connection* (a choice of &#34;reference direction&#34;). The result gives cleaner reduced equations of motion, validated on the physical example of molecular strands.</p>
+When a physical system has symmetry, you can simplify it by &#34;quotienting out&#34; that symmetry — a process called **Hamiltonian reduction**. This paper extends that procedure to field theories (physics depending on multiple independent variables) defined on **affine principal bundles** (fiber bundles where the symmetry group acts by affine, not just linear, transformations). The authors derive reduced equations of motion and a bracket structure describing dynamics, completing the Hamiltonian counterpart to an existing Lagrangian theory, with molecular strand mechanics as a concrete illustration.</p>
 
     <div class="paper-tags">
       
@@ -622,9 +614,9 @@ When a physical field theory has symmetry, you can &#34;quotient out&#34; that s
       Giacomo Antonioli, Paola Boito, Gianna M. Del Corso <em>et al.</em>
     </p>
 
-    <p class="paper-summary">**Quantum Block Encoding for Semiseparable Matrices**
+    <p class="paper-summary">## Quantum Block Encoding for Semiseparable Matrices
 
-Quantum algorithms often need to &#34;load&#34; a matrix into a quantum computer by embedding it inside a larger unitary operation — a process called *block encoding*. Most efficient methods handle *sparse* matrices (few nonzero entries), but this paper tackles *semiseparable* matrices, where off-diagonal blocks have low rank, achieving polylogarithmic runtime with controlled error. This matters because semiseparable matrices appear throughout scientific computing, and fast quantum encoding could unlock speedups for solving structured linear systems.</p>
+Quantum algorithms often need to &#34;load&#34; a matrix into a quantum computer — a process called **block encoding**, where your matrix gets embedded as the top-left corner of a larger unitary (norm-preserving) operation. This paper asks: can we do this efficiently for **semiseparable matrices** — structured matrices where every submatrix above or below the diagonal has rank at most one? The answer is yes: using only ~2log(N)+7 extra qubits and polylogarithmic time, making it far cheaper than general-matrix approaches.</p>
 
     <div class="paper-tags">
       
@@ -638,7 +630,8 @@ Quantum algorithms often need to &#34;load&#34; a matrix into a quantum computer
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Quantum block encoding (QBE) is a crucial step in the development of most quantum algorithms, as it provides an embedding of a given matrix into a suitable larger unitary matrix. Historically, the development of efficient techniques for QBE has mostly focused on sparse matrices; less effort has been devoted to data-sparse (e.g., rank-structured) matrices. In this work we examine a particular case of rank structure, namely, one-pair semiseparable matrices. We present a new block encoding approach that relies on a suitable factorization of the given matrix as the product of triangular and diagonal factors. To encode the matrix, the algorithm needs ancillary qubits. This process takes polylogarithmic time and has an error of , where is the matrix size.</p>
+      <p>Quantum block encoding (QBE) is a crucial step in the development of most quantum algorithms, as it provides an embedding of a given matrix into a suitable larger unitary matrix. Historically, the development of efficient techniques for QBE has mostly focused on sparse matrices; less effort has been devoted to data-sparse (e.g., rank-structured) matrices.
+  In this work we examine a particular case of rank structure, namely, one-pair semiseparable matrices. We present a new block encoding approach that relies on a suitable factorization of the given matrix as the product of triangular and diagonal factors. To encode the matrix, the algorithm needs $2\log(N)+7$ ancillary qubits. This process takes polylogarithmic time and has an error of $\mathcal{O}(N^2)$, where $N$ is the matrix size.</p>
     </details>
   </article>
   
@@ -650,7 +643,7 @@ Quantum algorithms often need to &#34;load&#34; a matrix into a quantum computer
       Yunhui Cai, Joar Bagge, Per-Gunnar Martinsson
     </p>
 
-    <p class="paper-summary">When sound waves hit multiple objects, computing how they scatter is expensive — the global system of equations tends to become numerically unstable as the number of objects grows. This paper shows you can compute a &#34;scattering matrix&#34; (how each individual object redirects incoming waves) locally using the Method of Fundamental Solutions — a simple but normally unstable technique — then combine these matrices into a well-conditioned global system that scales efficiently. The result: accurate, stable, large-scale scattering simulations without the implementation headaches of more rigorous boundary integral methods.</p>
+    <p class="paper-summary">When sound (or any wave) bounces off many objects at once, computing the total scattered field is expensive and numerically tricky. This paper shows how to break that hard global problem into manageable local pieces: compute how each individual object scatters waves, then stitch those &#34;scattering matrices&#34; together into a stable global system. The clever insight is that even if the local computations use a notoriously ill-conditioned technique (the Method of Fundamental Solutions), the global solver stays numerically stable and scales efficiently to very large collections of scatterers.</p>
 
     <div class="paper-tags">
       
@@ -676,7 +669,11 @@ Quantum algorithms often need to &#34;load&#34; a matrix into a quantum computer
       Cosmin Safta, Habib N. Najm
     </p>
 
-    <p class="paper-summary">**How do you efficiently decompose a random field into its essential &#34;modes&#34; of variation?** The Karhunen-Loève expansion (KLE) breaks a random process into orthogonal components ranked by importance — think of it as PCA for functions — by solving an eigenvalue problem on the process&#39;s covariance structure. This paper shows that two seemingly different computational approaches (discretizing the integral equation vs. doing SVD on data matrices) are mathematically equivalent, then benchmarks both across tricky geometries including donut-shaped domains where &#34;distance&#34; must be measured through the interior, not through empty space.</p>
+    <p class="paper-summary">**What&#39;s the question?** The Karhunen-Loève expansion (KLE) decomposes a random process into deterministic modes weighted by uncorrelated random variables — essentially a PCA for random fields — but computing it numerically involves tricky choices. This paper asks: how do discretization, quadrature rules, and sample size interact to affect accuracy?
+
+**Key result:** The authors prove that solving the governing integral equation via eigendecomposition is algebraically equivalent to applying SVD to a weight-scaled data matrix, unifying model-based and data-driven approaches, then systematically characterize how errors behave across 1D, 2D irregular, and 3D toroidal geometries.
+
+**Why it matters:** Practitioners building KLEs face underdocumented numerical pitfalls; this work provides concrete benchmarks and practical guidance for getting reliable expansions on complex domains.</p>
 
     <div class="paper-tags">
       
@@ -688,7 +685,7 @@ Quantum algorithms often need to &#34;load&#34; a matrix into a quantum computer
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>This report examines numerical aspects of constructing Karhunen-Loève expansions (KLEs) for second-order stochastic processes. The KLE relies on the spectral decomposition of the covariance operator via the Fredholm integral equation of the second kind, which is then discretized on a computational grid, leading to an eigendecomposition task. We derive the algebraic equivalence between this Fredholm-based eigensolution and the singular value decomposition of the weight-scaled sample matrix, yielding consistent solutions for both model-based and data-driven KLE construction. Analytical eigensolutions for exponential and squared-exponential covariance kernels serve as reference benchmarks to assess numerical consistency and accuracy in 1D settings. The convergence of SVD-based eigenvalue estimates and of the empirical distributions of the KL coefficients to their theoretical target are characterized as a function of sample count. Higher-dimensional configurations include a two-dimensional irregular domain discretized by unstructured triangular meshes with two refinement levels, and a three-dimensional toroidal domain whose non-simply-connected topology motivates a comparison between Euclidean and shortest interior path distances between the grid points. The numerical results highlight the interplay between the discretization strategy, quadrature rule, and sample count, and their impact on the KLE results.</p>
+      <p>This report examines numerical aspects of constructing Karhunen-Loève expansions (KLEs) for second-order stochastic processes. The KLE relies on the spectral decomposition of the covariance operator via the Fredholm integral equation of the second kind, which is then discretized on a computational grid, leading to an eigendecomposition task. We derive the algebraic equivalence between this Fredholm-based eigensolution and the singular value decomposition of the weight-scaled sample matrix, yielding consistent solutions for both model-based and data-driven KLE construction. Analytical eigensolutions for exponential and squared-exponential covariance kernels serve as reference benchmarks to assess numerical consistency and accuracy in 1D settings. The convergence of SVD-based eigenvalue estimates and of the empirical distributions of the KL coefficients to their theoretical $\mathcal{N}(0,1)$ target are characterized as a function of sample count. Higher-dimensional configurations include a two-dimensional irregular domain discretized by unstructured triangular meshes with two refinement levels, and a three-dimensional toroidal domain whose non-simply-connected topology motivates a comparison between Euclidean and shortest interior path distances between the grid points. The numerical results highlight the interplay between the discretization strategy, quadrature rule, and sample count, and their impact on the KLE results.</p>
     </details>
   </article>
   
@@ -700,9 +697,7 @@ Quantum algorithms often need to &#34;load&#34; a matrix into a quantum computer
       Michael Crocoll, Christian Döding, Benjamin Dörich <em>et al.</em>
     </p>
 
-    <p class="paper-summary">**Neural networks as smart starting points for superconductivity math**
-
-The Ginzburg-Landau energy is a mathematical function whose minimizer describes the behavior of superconductors — materials that conduct electricity with zero resistance. Finding this minimizer numerically is hard because classical iterative methods can get stuck in poor local minima. This paper proposes using a neural network to generate excellent initial guesses across a range of physical parameters, then handing off to classical methods for guaranteed accuracy — combining the flexibility of machine learning with the reliability of traditional numerics.</p>
+    <p class="paper-summary">**Ginzburg-Landau energy** describes how superconductors transition between normal and superconducting states, governed by a parameter κ. Finding its minimizer (the physical ground state) is computationally hard, especially across many κ values. This paper trains a neural network to approximate minimizers for a wide range of κ simultaneously, then uses those approximations as warm-start initial guesses for classical optimization — combining neural network speed with traditional reliability. The hybrid approach outperforms either method alone.</p>
 
     <div class="paper-tags">
       
@@ -712,7 +707,7 @@ The Ginzburg-Landau energy is a mathematical function whose minimizer describes 
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>In this work, we propose a neural network-enhanced finite element strategy to compute the minimizer of the Ginzburg--Landau energy based on an unsupervised deep Ritz-type strategy. We treat the parameter as a variable input parameter to obtain possible minimizers for a large range of -values. This allows for two possible strategies: 1) The neural network may be extensively trained to work as a stand-alone solver. 2) Neural network results are used as starting values for a subsequent classical iterative minimization procedure. The latter strategy particularly circumvents the missing reliability of the neural network-based approach. Numerical examples are presented that show the potential of the proposed strategy.</p>
+      <p>In this work, we propose a neural network-enhanced finite element strategy to compute the minimizer of the Ginzburg--Landau energy based on an unsupervised deep Ritz-type strategy. We treat the parameter $κ$ as a variable input parameter to obtain possible minimizers for a large range of $κ$-values. This allows for two possible strategies: 1) The neural network may be extensively trained to work as a stand-alone solver. 2) Neural network results are used as starting values for a subsequent classical iterative minimization procedure. The latter strategy particularly circumvents the missing reliability of the neural network-based approach. Numerical examples are presented that show the potential of the proposed strategy.</p>
     </details>
   </article>
   
@@ -724,9 +719,11 @@ The Ginzburg-Landau energy is a mathematical function whose minimizer describes 
       Zainab Farooq, Amar Pashov, Pieter Reumers <em>et al.</em>
     </p>
 
-    <p class="paper-summary">**Simulating earthquake waves through layered ground — but faster**
+    <p class="paper-summary">**The Problem:** Computing how seismic waves propagate through layered soil requires evaluating &#34;Green&#39;s functions&#34; — mathematical descriptions of wave response between countless source-receiver pairs, across many frequencies and material configurations. Doing this directly is prohibitively expensive.
 
-Computing how seismic waves travel through layered soil (described by &#34;Green&#39;s functions&#34; — mathematical solutions describing a medium&#39;s response to a point force) requires enormous calculations across thousands of locations, frequencies, and material combinations. This paper uses a tensor decomposition technique to compress that multi-dimensional data into a compact, low-rank representation, dramatically cutting memory and computation time. The result makes parametric studies — varying soil properties across many scenarios — far more practical for engineering applications.</p>
+**The Result:** By representing the multi-dimensional data as a compressed tensor (a higher-dimensional array factored into compact building blocks), the authors achieve dramatic reductions in memory and computation time without sacrificing accuracy.
+
+**Why It Matters:** This enables practical parametric studies and large-scale boundary element simulations in geotechnical engineering that were previously computationally out of reach.</p>
 
     <div class="paper-tags">
       
@@ -757,9 +754,11 @@ Computing how seismic waves travel through layered soil (described by &#34;Green
       Chris Elliott, Owen Gwilliam, Ingmar Saberi <em>et al.</em>
     </p>
 
-    <p class="paper-summary">Generalized Maxwell theories extend classical electromagnetism to higher-dimensional analogues of electric and magnetic fields. This paper asks: can the mathematical &#34;space of all solutions&#34; (the moduli space) of such theories be described precisely enough to make their duality—swapping electric with magnetic descriptions—into a rigorous equivalence rather than a physicist&#39;s intuition?
+    <p class="paper-summary">**What&#39;s the question?** Generalized Maxwell theories (higher-dimensional analogues of electromagnetism, where instead of a 1-form potential you use a *p*-form) are related by a symmetry called *abelian duality*—but making this precise and non-perturbative is hard. This paper builds a rigorous geometric framework proving that duality is an actual equivalence, not just a coincidence of equations.
 
-Using derived differential geometry (a framework that tracks subtle symmetries and constraints via algebraic data), the authors show that charge quantization and abelian duality emerge naturally and non-perturbatively, resolving longstanding mathematical imprecision in how physicists treat these symmetries.</p>
+**Key result:** Using *derived differential geometry*—a modern toolkit combining homotopy theory with geometry to handle symmetries and redundancies systematically—the authors show the &#34;moduli spaces&#34; (spaces parametrizing all physical field configurations, respecting gauge equivalence) of dual theories are genuinely equivalent, and that Dirac charge quantization (the requirement that electric and magnetic charges take discrete values) fits naturally into this picture.
+
+**Why it matters:** Previous treatments of duality were either pert</p>
 
     <div class="paper-tags">
       
@@ -796,11 +795,7 @@ Using derived differential geometry (a framework that tracks subtle symmetries a
       Bruna Mariana Braido da Silva Percinotti
     </p>
 
-    <p class="paper-summary">**What&#39;s the question?** Given a Lie algebra (a vector space encoding infinitesimal symmetries with a bracket operation), how do all its representations—structure-preserving maps into a fixed &#34;nice&#34; (semisimple) Lie algebra—fit together geometrically?
-
-**Key result:** Every representation of a semisimple Lie algebra minimizes a natural energy function on its orbit, yielding clean new proofs of two classical theorems: rigidity of semisimple homomorphisms and Mostow&#39;s theorem on compatible Cartan involutions.
-
-**Why it matters:** This reframes classical structural theorems through variational calculus, potentially unlocking new tools for understanding representation spaces more broadly.</p>
+    <p class="paper-summary">**What&#39;s the question?** Given a Lie algebra (a vector space encoding infinitesimal symmetries), how do all possible ways to map it into a fixed &#34;nice&#34; (semisimple) Lie algebra behave geometrically? **The result:** The authors show that maps from semisimple Lie algebras always minimize a natural energy function on this space, yielding clean new proofs of two classical theorems — rigidity of semisimple maps and Mostow&#39;s theorem on compatible Cartan involutions (special symmetry decompositions). This geometric/variational approach unifies and simplifies previously separate results.</p>
 
     <div class="paper-tags">
       
@@ -810,7 +805,8 @@ Using derived differential geometry (a framework that tracks subtle symmetries a
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>We study the affine variety of Lie algebra representations, the collection of all homomorphisms from an arbitrary -dimensional Lie algebra into a fixed real semi-simple Lie algebra . Using techniques from real Geometric Invariant Theory, we equip this variety with a natural moment map and associated energy functional arising from the action of the real reductive group . We analyze the critical points of the energy functional and describe their structure. In particular, we prove that every semi-simple pair, that is representations of semi-simple Lie algebras, will globally minimize the energy in its orbit. As consequences, we obtain an elementary proof of the rigidity of semi-simple homomorphisms and derive a new proof of the Mostow theorem on the existence of compatible Cartan involutions for semi-simple subalgebras. Subsequent results concerning the structure of critical points of higher energy are also obtained.</p>
+      <p>We study the affine variety $L_{n}(\mathfrak{g})$ of Lie algebra representations, the collection of all homomorphisms from an arbitrary $n$-dimensional Lie algebra into a fixed real semi-simple Lie algebra $\mathfrak{g}$. Using techniques from real Geometric Invariant Theory, we equip this variety with a natural moment map and associated energy functional arising from the action of the real reductive group $GL(n,\mathbb{R}) \times \text{Inn}(\mathfrak{g})$.
+  We analyze the critical points of the energy functional and describe their structure. In particular, we prove that every semi-simple pair, that is representations of semi-simple Lie algebras, will globally minimize the energy in its orbit. As consequences, we obtain an elementary proof of the rigidity of semi-simple homomorphisms and derive a new proof of the Mostow theorem on the existence of compatible Cartan involutions for semi-simple subalgebras. Subsequent results concerning the structure of critical points of higher energy are also obtained.</p>
     </details>
   </article>
   
@@ -831,9 +827,9 @@ Using derived differential geometry (a framework that tracks subtle symmetries a
       Ryan Alvarado, Michał Dymek, Przemysław Górka <em>et al.</em>
     </p>
 
-    <p class="paper-summary">**Variable-exponent smoothness meets curved geometry**
+    <p class="paper-summary">**When does a function&#39;s smoothness force it to be bounded or continuous?**
 
-Classical Sobolev embedding theorems tell you when a function&#39;s smoothness forces it to belong to a better function space — but they assume uniform geometry. This paper asks: what happens when both the smoothness exponent *and* the space&#39;s &#34;dimension&#34; vary from point to point? The authors build a complete embedding theory for Sobolev, Besov, and Triebel-Lizorkin spaces on metric measure spaces, proving when smoothness implies improved integrability or Hölder continuity, and identifying geometric conditions that are *necessary* — not just sufficient — for these embeddings to hold.</p>
+Sobolev embeddings answer this classical question by linking how &#34;differentiable&#34; a function is to how &#34;nice&#34; it must be. This paper extends that theory to highly flexible settings: spaces where the dimension of the underlying geometry, the smoothness required, and the integrability exponents all vary from point to point. The key payoff is a near-complete characterization — the geometric conditions needed for these embeddings are not just sufficient but essentially necessary.</p>
 
     <div class="paper-tags">
       
@@ -843,7 +839,7 @@ Classical Sobolev embedding theorems tell you when a function&#39;s smoothness f
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Sobolev-type embeddings on metric measure spaces encode a subtle interaction between the analytic regularity of functions and the geometry of the underlying domain space. In this paper we develop an embedding theory for variable Hajłasz-type smoothness spaces on metric measure spaces whose ``dimension&#39;&#39; is allowed to vary pointwise through a bounded exponent that governs a lower Ahlfors growth condition on the measure. We introduce variable exponent Hajłasz-Sobolev spaces , Hajłasz-Triebel-Lizorkin spaces , and Hajłasz-Besov spaces , and establish Sobolev, Morrey, and Moser-Trudinger type embeddings into variable exponent Lebesgue and Hölder spaces. These embeddings are proved both locally (on balls) under a lower Ahlfors -regularity condition on the measure and regularity assumptions on the exponents (notably log-Hölder continuity), and globally under additional geometric hypotheses such as geometric doubling and mild uniform bounds on the measure of unit balls. We also identify geometric conditions that are not only sufficient but, in appropriate forms, necessary for the validity of these embeddings, showing in particular that such inequalities force a lower growth bound on the measure of order .</p>
+      <p>Sobolev-type embeddings on metric measure spaces encode a subtle interaction between the analytic regularity of functions and the geometry of the underlying domain space. In this paper we develop an embedding theory for variable Hajłasz-type smoothness spaces on metric measure spaces whose ``dimension&#39;&#39; is allowed to vary pointwise through a bounded exponent $Q(\cdot)$ that governs a lower Ahlfors growth condition on the measure. We introduce variable exponent Hajłasz-Sobolev spaces $M^{s(\cdot),p(\cdot)}$, Hajłasz-Triebel-Lizorkin spaces $M^{s(\cdot)}_{p(\cdot),q(\cdot)}$, and Hajłasz-Besov spaces $N^{s(\cdot)}_{p(\cdot),q(\cdot)}$, and establish Sobolev, Morrey, and Moser-Trudinger type embeddings into variable exponent Lebesgue and Hölder spaces. These embeddings are proved both locally (on balls) under a lower Ahlfors $Q(\cdot)$-regularity condition on the measure and regularity assumptions on the exponents (notably log-Hölder continuity), and globally under additional geometric hypotheses such as geometric doubling and mild uniform bounds on the measure of unit balls. We also identify geometric conditions that are not only sufficient but, in appropriate forms, necessary for the validity of these embeddings, showing in particular that such inequalities force a lower growth bound on the measure of order $r^{Q(x)}$.</p>
     </details>
   </article>
   
@@ -864,9 +860,9 @@ Classical Sobolev embedding theorems tell you when a function&#39;s smoothness f
       Yicheng Zeng, Ruturaj S. Sambhus, Basit Muhammad Imran <em>et al.</em>
     </p>
 
-    <p class="paper-summary">**Safe robot teamwork without a central brain**
+    <p class="paper-summary">**How do you keep multiple legged robots from colliding while each robot plans its own path independently?**
 
-When multiple legged robots must navigate together without colliding, the math ensuring safety couples all robots&#39; decisions together—making the optimization problem hard to split up. This paper reformulates the problem using ADMM (a technique for breaking coupled optimization into independently-solvable pieces) so each robot only needs to communicate with its neighbors. The result matches centralized planning quality while cutting computation time by 51% for four robots, enabling real-time safe coordination.</p>
+This paper develops a decentralized control framework where each robot solves its own trajectory optimization problem locally, yet collision avoidance is still mathematically guaranteed via *control barrier functions* (constraints that enforce safety boundaries). The key trick uses *ADMM* (an algorithm for splitting large optimization problems across parallel solvers) to decompose what would otherwise be a coupled global problem into independent local pieces. The result cuts planning time by up to 51% with no meaningful performance loss.</p>
 
     <div class="paper-tags">
       
@@ -890,7 +886,11 @@ When multiple legged robots must navigate together without colliding, the math e
       Lei Yang, Han Wan, Min Zhang <em>et al.</em>
     </p>
 
-    <p class="paper-summary">**What&#39;s the question?** Many data science tasks—image processing, machine learning—require decomposing a matrix into a product of factors that share a specific symmetric structure, a notoriously difficult nonconvex optimization problem. **What did they find?** The authors prove that adding a penalty term to enforce symmetry works exactly (not approximately), then build an efficient algorithm (A-NAUM) that provably converges to a solution. **Why it matters?** This unifies and accelerates a broad family of matrix factorization problems under one rigorous framework with convergence guarantees.</p>
+    <p class="paper-summary">**What&#39;s the question?** Many data science tasks reduce to finding two matrices whose product approximates some target — but what if that product must be *symmetric* (equal to its own transpose)? This paper asks how to solve such problems efficiently when the objective function is neither smooth nor convex.
+
+**Key result:** The authors prove that a penalty-based relaxation exactly captures the symmetric constraint, then build an algorithm (A-NAUM) that provably converges to a solution with quantified rates.
+
+**Why it matters:** Symmetric matrix factorization appears throughout machine learning and imaging, but existing solvers lack convergence guarantees for this rough, non-convex setting. This work closes that gap.</p>
 
     <div class="paper-tags">
       
@@ -914,9 +914,9 @@ When multiple legged robots must navigate together without colliding, the math e
       Luca Santosuosso, Fei Teng, Sonja Wogrin
     </p>
 
-    <p class="paper-summary">**How do you efficiently schedule a &#34;virtual power plant&#34; — a network of solar panels, batteries, and generators — when prices, demand, and renewable output are all uncertain?** Traditional stochastic model predictive control (MPC), which optimizes decisions over many future scenarios simultaneously, becomes computationally impossible as the system scales up. This paper combines MPC with *time series aggregation* (compressing the planning horizon into fewer time steps) and distributed optimization (splitting the problem across assets), cutting runtimes by over 50% while providing proven bounds on how much accuracy is lost.
+    <p class="paper-summary">**Can we make smart-grid energy optimization fast enough to be practical?**
 
-**Why it matters:** Real-world renewable energy dispatch is currently intractable at scale — this framework makes it solvable.</p>
+Managing a &#34;virtual power plant&#34;—a coordinated network of solar panels, batteries, and generators—requires solving massive optimization problems in real time under uncertainty about weather, prices, and demand. Traditional stochastic model predictive control (MPC, an optimization technique that repeatedly solves short-horizon planning problems) becomes computationally impossible as the system scales up. This paper combines MPC with time-series aggregation and distributed optimization to cut runtime by over 50% while providing provable error bounds on solution quality.</p>
 
     <div class="paper-tags">
       
@@ -947,9 +947,9 @@ When multiple legged robots must navigate together without colliding, the math e
       Tuomas Orponen, Pablo Shmerkin
     </p>
 
-    <p class="paper-summary">**When lines cluster around sets, how large must those sets be?**
+    <p class="paper-summary">**When lines cluster, how big must their union be?**
 
-The Furstenberg set problem asks: if a set in the plane contains a long piece of a line pointing in each of many directions, how large must the set be? This paper proves sharp lower bounds on such sets&#39; size (measured via Hausdorff dimension) using weaker assumptions than before — specifically, relaxing *non-concentration* conditions, which prevent points or directions from clumping together. This expands the settings where precise dimension estimates are guaranteed.</p>
+The Furstenberg set problem asks: if you have a family of line segments, each containing many points from some set, how large must the overall set of points be? This paper proves tight lower bounds on that size—but under surprisingly mild conditions about how the lines themselves are distributed (specifically, not requiring the standard assumption that lines are spread out in every direction). The results sharpen our understanding of a central problem connecting combinatorics, fractal geometry, and harmonic analysis.</p>
 
     <div class="paper-tags">
       
@@ -961,7 +961,7 @@ The Furstenberg set problem asks: if a set in the plane contains a long piece of
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>We prove sharp -discretised versions of some variants of the Furstenberg set problem under weaker or different non-concentration assumptions compared to previous works.</p>
+      <p>We prove sharp $δ$-discretised versions of some variants of the Furstenberg set problem under weaker or different non-concentration assumptions compared to previous works.</p>
     </details>
   </article>
   
@@ -982,7 +982,7 @@ The Furstenberg set problem asks: if a set in the plane contains a long piece of
       Frederic Latremoliere
     </p>
 
-    <p class="paper-summary">Almost commutative manifolds are geometric objects built by combining a classical curved space (a spin manifold, where you can define a notion of &#34;square root of the Laplacian&#34; called a Dirac operator) with a small finite-dimensional quantum component — a structure used in Connes&#39; geometric reformulation of particle physics. This paper proves that the eigenvalues of the Dirac operator vary continuously as you smoothly deform the underlying geometry. Since the physics is encoded in that spectrum, this guarantees the models are geometrically stable under perturbation.</p>
+    <p class="paper-summary">Almost commutative manifolds combine a curved space (a spin manifold) with a small finite-dimensional &#34;internal&#34; space, forming the geometric backbone of Connes&#39; model of particle physics. This paper proves that if you smoothly vary the Riemannian metric (the rule for measuring distances and curvature), the spectrum—the discrete set of eigenvalues—of the associated Dirac operator (a generalization of momentum in curved space) changes continuously. This stability result matters because the spectrum directly encodes the physical content of the model.</p>
 
     <div class="paper-tags">
       
@@ -994,7 +994,7 @@ The Furstenberg set problem asks: if a set in the plane contains a long piece of
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Almost commutative models provide a framework for Connes&#39; work on the standard model of particle physics. These models are constructed as products of a the canonical spectral triple of a compact connected spin manifold with a finite dimensional spectral triple. Motivated by the fundamental question of the dependence of the spectra of Dirac operators under change of metrics, we prove the continuity of the spectra of Dirac operators for almost commutative models as functions of the underlying Riemannian metric. We allow both the Riemannian metric (in the topology) and the Dirac operator of the finite-dimensional factor to vary simultaneously. Since the physics of the system is fundamentally encoded in this spectrum, this result is a form of stability result regarding the geometry, or physical, content of these models. This result is based upon a novel approach to prove continuity of spectra of Dirac operators using the spectral propinquity. Notably, this method provides a new, different proof of the classical results as well. To illustrate the versatility of our new method, we also apply our results to completely non-commutative family of examples, including quantum tori and quantum solenoids.</p>
+      <p>Almost commutative models provide a framework for Connes&#39; work on the standard model of particle physics. These models are constructed as products of a the canonical spectral triple of a compact connected spin manifold with a finite dimensional spectral triple. Motivated by the fundamental question of the dependence of the spectra of Dirac operators under change of metrics, we prove the continuity of the spectra of Dirac operators for almost commutative models as functions of the underlying Riemannian metric. We allow both the Riemannian metric (in the $C^1$ topology) and the Dirac operator of the finite-dimensional factor to vary simultaneously. Since the physics of the system is fundamentally encoded in this spectrum, this result is a form of stability result regarding the geometry, or physical, content of these models. This result is based upon a novel approach to prove continuity of spectra of Dirac operators using the spectral propinquity. Notably, this method provides a new, different proof of the classical results as well. To illustrate the versatility of our new method, we also apply our results to completely non-commutative family of examples, including quantum tori and quantum solenoids.</p>
     </details>
   </article>
   
@@ -1015,7 +1015,11 @@ The Furstenberg set problem asks: if a set in the plane contains a long piece of
       Tuong Le, Chayim Lowen
     </p>
 
-    <p class="paper-summary">A **hyperfield** generalizes a field by allowing addition to return a *set* of possible values rather than a single element. Some hyperfields arise naturally as quotients of ordinary fields, but are most of them built this way? This paper proves they almost never are — as hyperfields grow large, nearly all of them are &#34;non-quotient,&#34; confirming a conjecture of Baker–Jin. The key tool is a probabilistic argument counting hyperfields on finite abelian groups, with precise asymptotics provided.</p>
+    <p class="paper-summary">**What&#39;s a hyperfield?** A hyperfield is like a field (think real numbers with + and ×), except addition can return a *set* of values rather than a single value. Some hyperfields arise naturally as quotients of ordinary fields, but most don&#39;t have to.
+
+**The result:** Almost all finite hyperfields — as their size grows — cannot be constructed as quotients of ordinary fields, confirming a conjecture of Baker–Jin. The paper also pins down precisely how many hyperfields exist on any given finite abelian group.
+
+**Why it matters:** This settles a fundamental question about how &#34;exotic&#34; hyperfields really are: genuine algebraic weirdness is the norm, not the exception.</p>
 
     <div class="paper-tags">
       
@@ -1046,11 +1050,9 @@ The Furstenberg set problem asks: if a set in the plane contains a long piece of
       Ricardo Burity, Thiago Fiel, Zaqueu Ramos <em>et al.</em>
     </p>
 
-    <p class="paper-summary">**What&#39;s the question?** When does a homogeneous ideal generated by three polynomials of the same degree &#34;almost&#34; satisfy Cohen-Macaulay depth conditions — meaning its algebraic complexity falls just short of optimal?
+    <p class="paper-summary">**When can a polynomial ideal be built from a matrix&#39;s minors?**
 
-**The result:** The paper gives a complete characterization: such ideals are almost Cohen-Macaulay precisely when an associated combinatorial object called a &#34;level matrix&#34; exists, with the ideal recovered as minors of a specific submatrix.
-
-**Why it matters:** Cohen-Macaulay ideals are well-understood; this pins down the next most tractable class through concrete, checkable matrix criteria.</p>
+This paper studies ideals in polynomial rings generated by three same-degree polynomials that are &#34;almost&#34; as well-behaved as possible (homological dimension 2, meaning their algebraic complexity is one step shy of optimal). The main result gives a complete characterization: such an ideal arises precisely when you can construct an associated &#34;level matrix&#34; whose minors generate it. This resolves a structural classification problem connecting the ideal&#39;s numerical resolution data to explicit matrix representations.</p>
 
     <div class="paper-tags">
       
@@ -1062,7 +1064,8 @@ The Furstenberg set problem asks: if a set in the plane contains a long piece of
 
     <details class="abstract">
       <summary>Original abstract</summary>
-      <p>Let be a standard graded polynomial ring over a field . The paper focuses on homogeneous ideals of codimension generated by three forms of the same degree that are almost Cohen--Macaulay, i.e., of homological dimension . Based on the structure of the minimal graded free resolution of and numerical data encoded in certain latent shifts, one introduces the notion of level matrices associated with these shifts. Our main result provides a complete characterization of almost Cohen--Macaulay ideals of codimension in terms of the existence of an associated level matrix for which arises as the ideal of minors obtained by fixing the lower block. We provide algebraic and geometric examples illustrating the results.</p>
+      <p>Let $R$ be a standard graded polynomial ring over a field $k$.
+  The paper focuses on homogeneous ideals $J \subset R$ of codimension $2$ generated by three forms of the same degree $d \geq 2$ that are almost Cohen--Macaulay, i.e., of homological dimension $2$. Based on the structure of the minimal graded free resolution of $J$ and numerical data encoded in certain \emph{latent shifts}, one introduces the notion of \emph{level matrices} associated with these shifts. Our main result provides a complete characterization of almost Cohen--Macaulay ideals of codimension $2$ in terms of the existence of an associated level matrix for which $J$ arises as the ideal of minors obtained by fixing the lower block. We provide algebraic and geometric examples illustrating the results.</p>
     </details>
   </article>
   
@@ -1077,5 +1080,17 @@ The Furstenberg set problem asks: if a set in the plane contains a long piece of
   Papers sourced from arXiv under a <a href="https://arxiv.org/help/license" target="_blank" rel="noopener">CC license</a>.
 </footer>
 
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$',  right: '$',  display: false},
+      {left: '\\\\[', right: '\\\\]', display: true},
+      {left: '\\\\(', right: '\\\\)', display: false}
+    ],
+    throwOnError: false
+  });">
+</script>
 </body>
 </html>
