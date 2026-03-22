@@ -72,6 +72,7 @@
       color: var(--muted);
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
   {% block extra_styles %}{% endblock %}
 </head>
 <body>
@@ -95,5 +96,17 @@
   Papers sourced from arXiv under a <a href="https://arxiv.org/help/license" target="_blank" rel="noopener">CC license</a>.
 </footer>
 
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$',  right: '$',  display: false},
+      {left: '\\\\[', right: '\\\\]', display: true},
+      {left: '\\\\(', right: '\\\\)', display: false}
+    ],
+    throwOnError: false
+  });">
+</script>
 </body>
 </html>

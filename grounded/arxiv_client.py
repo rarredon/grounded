@@ -40,7 +40,7 @@ class ArxivPaper:
         self.url = f"https://arxiv.org/abs/{self.arxiv_id}"
 
 
-def _strip_latex(text: str) -> str:
+def strip_latex(text: str) -> str:
     """Remove common LaTeX markup to produce plain text."""
     # Remove display math $$...$$
     text = re.sub(r"\$\$.*?\$\$", "", text, flags=re.DOTALL)
@@ -98,9 +98,7 @@ def fetch_papers(max_results: int = 25, days_back: int = 7) -> list[ArxivPaper]:
             (entry.findtext(f"{{{ATOM_NS}}}title") or "").strip()
         )
 
-        abstract = _strip_latex(
-            (entry.findtext(f"{{{ATOM_NS}}}summary") or "").strip()
-        )
+        abstract = (entry.findtext(f"{{{ATOM_NS}}}summary") or "").strip()
 
         authors = [
             a.findtext(f"{{{ATOM_NS}}}name", "").strip()
