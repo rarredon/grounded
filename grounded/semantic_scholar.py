@@ -66,7 +66,7 @@ def enrich_with_hindex(
                         # S2 response is positionally aligned with the request ids list
                         for arxiv_id, record in zip(batch_ids, records):
                             hindex_map[arxiv_id] = _max_hindex(record)
-                    except HttpError:
+                    except requests.HTTPError:
                         if resp is None or resp.status_code != 429 or retries == 3:
                             raise
                     else:
