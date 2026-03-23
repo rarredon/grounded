@@ -69,6 +69,8 @@ def enrich_with_hindex(
                     except HttpError:
                         if resp is None or resp.status_code != 429 or retries == 3:
                             raise
+                    else:
+                        break
 
                     retries += 1
 
