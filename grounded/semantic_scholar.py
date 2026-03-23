@@ -1,6 +1,7 @@
 """Enrich arXiv papers with author h-index data from Semantic Scholar."""
 
 from __future__ import annotations
+from apiclient.errors import HttpError
 
 import time
 
@@ -35,6 +36,7 @@ def enrich_with_hindex(
     for batch_start in range(0, len(ids), batch_size):
         batch_ids = ids[batch_start : batch_start + batch_size]
         s2_ids = [f"arXiv:{aid}" for aid in batch_ids]
+        resp = None
         try:
             resp = requests.post(
                 S2_BATCH_URL,
@@ -47,11 +49,30 @@ def enrich_with_hindex(
             # S2 response is positionally aligned with the request ids list
             for arxiv_id, record in zip(batch_ids, records):
                 hindex_map[arxiv_id] = _max_hindex(record)
-        except Exception as exc:
-            print(
-                f"  [S2] Warning: batch {batch_start}–{batch_start + len(batch_ids)} "
-                f"failed: {exc}"
-            )
+        except HttpError as exc:
+            if resp and resp.status_code == 429:
+                retries = 1
+                while retries <= 3:
+                    time.sleep(3*2**retries)
+                    resp = None
+                    try:
+                        resp = requests.post(
+                            S2_BATCH_URL,
+                            params={"fields": "authors.hIndex"},
+                            json={"ids": s2_ids},
+                            timeout=30,
+                        )
+                        resp.raise_for_status()
+                        records = resp.json()
+                        # S2 response is positionally aligned with the request ids list
+                        for arxiv_id, record in zip(batch_ids, records):
+                            hindex_map[arxiv_id] = _max_hindex(record)
+                    except HttpError:
+                        if resp is None or resp.status_code != 429 or retries == 3:
+                            raise
+
+                    retries += 1
+
         time.sleep(request_delay)
 
     return hindex_map
