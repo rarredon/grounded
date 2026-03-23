@@ -1,7 +1,6 @@
 """Enrich arXiv papers with author h-index data from Semantic Scholar."""
 
 from __future__ import annotations
-from apiclient.errors import HttpError
 
 import time
 
@@ -49,7 +48,7 @@ def enrich_with_hindex(
             # S2 response is positionally aligned with the request ids list
             for arxiv_id, record in zip(batch_ids, records):
                 hindex_map[arxiv_id] = _max_hindex(record)
-        except HttpError as exc:
+        except requests.HTTPError:
             if resp and resp.status_code == 429:
                 retries = 1
                 while retries <= 3:
