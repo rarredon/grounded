@@ -60,7 +60,6 @@ def _parse_arxiv_id(id_url: str) -> str:
     match = re.search(r"abs/(\d{4}\.\d+)", id_url)
     if match:
         return match.group(1)
-    # Fallback: return the last path segment stripped of version suffix
     return id_url.rstrip("/").split("/")[-1].split("v")[0]
 
 
@@ -72,19 +71,10 @@ def _build_query(days_back: int = 7) -> str:
     return f"({cat_filter}) AND {date_range}"
 
 
-def fetch_papers(max_results: int = 25, days_back: int = 7) -> list[ArxivPaper]:
-    """Fetch recent papers from arXiv that belong to at least one math category."""
-    query = _build_query(days_back)
-    params = {
-        "search_query": query,
-        "start": 0,
-        "max_results": max_results,
-        "sortBy": "submittedDate",
-        "sortOrder": "descending",
-    }
-    response = requests.get(ARXIV_API_URL, params=params, timeout=30)
+def _fetch_one_page(params: dict) -> list[ArxivPaper]:
+    """Fetch and parse a single page of arXiv results."""
+    response = requests.get(ARXIV_API_URL, params=params, timeout=60)
     response.raise_for_status()
-    time.sleep(3)  # arXiv rate limit courtesy
 
     root = ET.fromstring(response.content)
     papers: list[ArxivPaper] = []
@@ -139,3 +129,46 @@ def fetch_papers(max_results: int = 25, days_back: int = 7) -> list[ArxivPaper]:
             )
 
     return papers
+
+
+def fetch_papers(
+    days_back: int = 7,
+    page_size: int = 500,
+    max_total: int = 2000,
+) -> list[ArxivPaper]:
+    """Fetch all papers from arXiv belonging to at least one math category.
+
+    Paginates automatically until the week's results are exhausted or
+    max_total is reached. Deduplicates by arxiv_id.
+    """
+    query = _build_query(days_back)
+    base_params = {
+        "search_query": query,
+        "sortBy": "submittedDate",
+        "sortOrder": "descending",
+        "max_results": page_size,
+    }
+
+    all_papers: list[ArxivPaper] = []
+    offset = 0
+
+    while len(all_papers) < max_total:
+        params = {**base_params, "start": offset}
+        batch = _fetch_one_page(params)
+        all_papers.extend(batch)
+
+        if len(batch) < page_size:
+            break  # reached the end of available results
+
+        offset += page_size
+        time.sleep(3)  # arXiv rate limit courtesy between pages
+
+    # Deduplicate while preserving order
+    seen: set[str] = set()
+    unique: list[ArxivPaper] = []
+    for p in all_papers:
+        if p.arxiv_id not in seen:
+            seen.add(p.arxiv_id)
+            unique.append(p)
+
+    return unique[:max_total]
