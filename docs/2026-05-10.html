@@ -1,0 +1,2939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>May 4–10, 2026 — Grounded Math Digest</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --card-bg: #f9fafb;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav */
+    nav.site-nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0 1rem;
+    }
+    nav.site-nav .inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    .site-wordmark {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .site-wordmark span { color: var(--accent); }
+    nav.site-nav .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-left: 1.25rem;
+    }
+    nav.site-nav .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    /* Main content */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  
+<style>
+  /* Page header */
+  .digest-header { margin-bottom: 2rem; }
+  .digest-header h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+  }
+  .digest-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #374151;
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1rem;
+  }
+  .digest-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .toc-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .toc-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .toc-links a {
+    font-size: 0.82rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.2rem 0.55rem;
+    color: var(--text);
+    transition: border-color 0.15s;
+  }
+  .toc-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Subfield sections */
+  .subfield { margin-bottom: 2.5rem; }
+  .subfield-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+  .subfield-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .count-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+  }
+
+  /* Paper cards */
+  article.paper {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+  }
+  article.paper h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  article.paper h3 a { color: var(--text); }
+  article.paper h3 a:hover { color: var(--accent); }
+  .paper-authors {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .paper-summary {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #374151;
+    margin-bottom: 0.75rem;
+  }
+  .paper-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.6rem;
+  }
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .tag.primary {
+    background: var(--accent-light);
+    border-color: #bfdbfe;
+    color: var(--accent);
+  }
+
+  /* Collapsible abstract */
+  details.abstract {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  details.abstract summary {
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--accent);
+    user-select: none;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  details.abstract summary::before {
+    content: "▶";
+    font-size: 0.65rem;
+    transition: transform 0.15s;
+  }
+  details.abstract[open] summary::before { transform: rotate(90deg); }
+  details.abstract p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    padding: 0.75rem;
+    background: var(--bg);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  /* Back link */
+  .back-link { margin-bottom: 1.5rem; font-size: 0.88rem; }
+</style>
+
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="inner">
+    <a href="index.html" class="site-wordmark">Ground<span>ed</span></a>
+    <div class="nav-links">
+      <a href="index.html">Archive</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  
+<div class="back-link"><a href="index.html">← All issues</a></div>
+
+<div class="digest-header">
+  <h1>Math Research Digest</h1>
+  <div class="digest-intro">Welcome to this week&#39;s edition of Grounded, a particularly rich issue spanning fluid mechanics, combinatorics, arithmetic geometry, and the outer frontiers of homotopy theory. Perhaps the most dramatic development is the pair of papers on the 3D Navier–Stokes equations claiming large-data global regularity for axisymmetric and fully three-dimensional flows — if the arguments hold up to scrutiny, this would resolve one of the seven Millennium Prize Problems, and the community will be watching closely. On a different front, two independent groups have made serious progress on the Erdős matching conjecture, one resolving a case via a conjecture of Frankl and Kupavskii and another extending the known extremal parameter range, suggesting the problem may finally be yielding to modern polynomial and probabilistic methods. We also highlight a striking result in combinatorial geometry that closes a decades-old gap on point sets avoiding near-integer distances, with the sharp X^{1/2} growth rate emerging from an unexpected bridge between analytic number theory and discrete geometry — a reminder that the deepest combinatorial problems rarely stay purely combinatorial for long. Elsewhere, Zaremba&#39;s 50-year-old conjecture on continued fraction partial quotients is resolved via new expansion results in SL₂(ℤ/qℤ), and a symplectic Grothendieck–</div>
+  <p class="digest-meta">
+    99 papers
+    across 23 subfields
+    &nbsp;·&nbsp; Week of May 4–10, 2026
+    &nbsp;·&nbsp; arXiv data
+  </p>
+</div>
+
+
+<nav class="toc">
+  <div class="toc-title">Jump to subfield</div>
+  <div class="toc-links">
+    
+    <a href="#math-NT">Number Theory</a>
+    
+    <a href="#math-AG">Algebraic Geometry</a>
+    
+    <a href="#math-AP">Analysis of PDEs</a>
+    
+    <a href="#math-CO">Combinatorics</a>
+    
+    <a href="#math-PR">Probability</a>
+    
+    <a href="#math-DG">Differential Geometry</a>
+    
+    <a href="#math-GT">Geometric Topology</a>
+    
+    <a href="#math-AT">Algebraic Topology</a>
+    
+    <a href="#math-RT">Representation Theory</a>
+    
+    <a href="#math-FA">Functional Analysis</a>
+    
+    <a href="#math-GR">Group Theory</a>
+    
+    <a href="#math-OC">Optimization and Control</a>
+    
+    <a href="#math-CA">Classical Analysis and ODEs</a>
+    
+    <a href="#math-CV">Complex Variables</a>
+    
+    <a href="#math-LO">Logic</a>
+    
+    <a href="#math-RA">Rings and Algebras</a>
+    
+    <a href="#math-AC">Commutative Algebra</a>
+    
+    <a href="#math-QA">Quantum Algebra</a>
+    
+    <a href="#math-SG">Symplectic Geometry</a>
+    
+    <a href="#math-SP">Spectral Theory</a>
+    
+    <a href="#math-ST">Statistics Theory</a>
+    
+    <a href="#math-KT">K-Theory and Homology</a>
+    
+    <a href="#math-MG">Metric Geometry</a>
+    
+  </div>
+</nav>
+
+
+
+<section class="subfield" id="math-NT">
+  <div class="subfield-header">
+    <h2>Number Theory</h2>
+    <span class="count-badge">12</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06363" target="_blank" rel="noopener">On algebraic twists with composite moduli, II</a></h3>
+
+    <p class="paper-authors">
+      
+      Yongxiao Lin, Philippe Michel
+    </p>
+
+    <p class="paper-summary">Automorphic coefficients on GL₃ are arithmetic sequences arising from certain generalized L-functions; this paper bounds how much these coefficients correlate with &#39;trace functions&#39;—structured exponential sums—when the modulus is composite rather than prime. Handling composite moduli requires overcoming significant technical obstacles beyond the prime case, with applications to analytic number theory problems involving GL₃ L-functions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study bounds for correlation sums of automorphic coefficients on $\mathrm{GL}_{3,\mathbb{Q}}$ with trace functions of composite moduli. This is a sequel to our previous works with E. Kowalski and W. Sawin.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06360" target="_blank" rel="noopener">A multidimensional Szemerédi theorem in integers</a></h3>
+
+    <p class="paper-authors">
+      
+      Jingwei Guo, Changxing Miao, Guoqing Zhan
+    </p>
+
+    <p class="paper-summary">Can a high-dimensional grid always hide a specific geometric pattern if you remove enough points? This paper proves that any subset of the n-dimensional integer grid with density at least (log N)^{-c} must contain a configuration where points are spaced by powers of a common integer r along coordinate axes. This extends Szemerédi-type results — guaranteeing patterns in dense sets — to multiple dimensions with explicit density bounds, a significant quantitative upgrade over previous work.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+      <span class="tag">math.CA</span>
+      
+      <span class="tag">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>For any integer $n \geq 2$, let $(m_{1},\ldots,m_{n})$ be a strictly increasing $n$-tuple of positive integers. We show that any subset $A\subset [N]^n$ of density at least $(\log N)^{-c}$ contains a nontrivial configuration of the form \begin{equation*} \boldsymbol{x},\boldsymbol{x}+r^{m_{1}}\boldsymbol{e_{1}},\ldots,\boldsymbol{x}+r^{m_{n}}\boldsymbol{e_{n}}, \end{equation*} where $c=c(n,m_{1},\ldots,m_{n} )$ is a positive constant. This quantitative multidimensional Szemerédi theorem extends a recent two-dimensional result of Peluse, Prendiville, and Shao concerning the configuration of the form $(x,y),(x+r,y),\left(x,y+r^{2}\right)$. The theorem is obtained as a consequence of an effective ``popular&#39;&#39; version.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05087" target="_blank" rel="noopener">The top cohomology of principal congruence subgroups of special linear groups over Euclidean number rings</a></h3>
+
+    <p class="paper-authors">
+      
+      Urshita Pal
+    </p>
+
+    <p class="paper-summary">Principal congruence subgroups are arithmetic groups defined by congruence conditions on integer matrices; their cohomology encodes deep number-theoretic information. This paper determines the top-dimensional cohomology of level-p congruence subgroups of SL_n over Euclidean number rings, generalizing a question of Lee–Szczarba by identifying when this cohomology is captured by the reduced homology of an associated Tits building quotient. The result settles the question for a broad class of rings beyond the integers.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+      <span class="tag">math.AT</span>
+      
+      <span class="tag">math.GR</span>
+      
+      <span class="tag">math.GT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>For $R$ a Euclidean number ring, and let $Γ_n(p)$ be the level-$p$ principal congruence subgroup of $\text{SL}_n(R)$. Borel--Serre showed that the cohomology of $Γ_n(p)$ vanishes above a degree $ν$ that is quadratic in $n$. Let $K$ be the fraction field of $R$, and $\mathcal{T}_n(K)$ the Tits building of $\text{SL}_n(K)$. For $R=\mathbb{Z}$, Lee--Szczarba asked when $\text{H}^ν(Γ_n(p))$ is isomorphic to $\widetilde{\text{H}}_{n-2}(\mathcal{T}_n(K)/Γ_n(p))$, which was answered by Miller--Patzt--Putman. We study a generalized version of Lee--Szczarba&#39;s question. We prove that for a prime $p$ in a Euclidean number ring $R$ with fraction field $K$, that a natural map $\text{H}^ν(Γ_n(p)) \to \widetilde{\text{H}}_{n-2}(\mathcal{T}_n(K)/Γ_n(p))$ is always surjective, and give a sufficent set of conditions on $p \in R$ that guarantee when this map is an isomorphism.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04195" target="_blank" rel="noopener">A new perspective on the rank of Mazur&#39;s Eisenstein Hecke algebra</a></h3>
+
+    <p class="paper-authors">
+      
+      Jaclyn Lang, Katharina Müller, Bharathwaj Palvannan
+    </p>
+
+    <p class="paper-summary">A Hecke algebra is an algebraic object encoding symmetries of modular forms, and its rank measures how many independent &#39;directions&#39; it has. This paper connects the rank of a specific Eisenstein Hecke algebra to how many times a zeta function — built from special values of Dirichlet L-functions — vanishes mod p, recovering classical results of Merel and Lecouturier and identifying where that connection breaks down.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $N, p \geq 5$ be primes such that $N \equiv 1 \bmod p$. We study the rank $r$ of the Hecke algebra that parametrizes modular forms of weight 2 and level $N$ that are Eisenstein modulo $p$. When $r$ is $2$ or $3$, we prove that $r-1$ equals the order of vanishing of the mod-$p$ reduction of a zeta element that interpolates Dirichlet $L$-values at $-1$, thereby recovering results of Merel and Lecouturier. This equality can fail in some cases when $r \geq 4$, and we provide a heuristic explanation of this failure. Our approach handles all of these cases uniformly by studying the analogous Hecke algebra in level $N^2$. When exactly one of $r-1$ or the order of vanishing equals $3$, we provide precise information about Galois orbits of cuspidal newforms in level $N^2$ that are Eisenstein modulo $p$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03665" target="_blank" rel="noopener">Joint extreme values of $L$-functions on and off the critical line</a></h3>
+
+    <p class="paper-authors">
+      
+      Athanasios Sourmelidis
+    </p>
+
+    <p class="paper-summary">L-functions are complex-analytic objects encoding deep number-theoretic information, and understanding when multiple ones are simultaneously large is subtle. This paper unconditionally proves that any collection of GL(1) and GL(2) L-functions—including Dirichlet L-functions and those attached to modular forms—can jointly attain large values on the critical line, removing a Riemann Hypothesis assumption previously needed for four or more functions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>It is shown that any number of distinct primitive $\mathrm{GL}(1)$ and $\mathrm{GL}(2)$ $L$-functions can simultaneously attain large values on the critical line. This is an unconditional improvement of a general result due to Heap and Li who have assumed the Riemann Hypothesis for more than three such $L$-functions. The joint distribution of $\mathrm{GL}(m)$ $L$-functions to the right of the critical line is also studied under certain zero-density estimates. In particular, we can partially recover results of Inoue and Li on Dirichlet $L$-functions and generally improve upon the work of Mahatab, Pańkowski and Vatwani on the class of $L$-functions introduced by Selberg. The main machinery in both cases, on and off the critical line, is the resonance method of Soundararajan and Hilberdink/Voronin, respectively. On the critical line we additionally introduce a variation of Heath-Brown&#39;s method for the fractional moments of the Riemann zeta-function which makes it possible to avoid using any information on the zero distribution of $L$-functions whose degree is less than three.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03658" target="_blank" rel="noopener">Lectures on Condensed Mathematics</a></h3>
+
+    <p class="paper-authors">
+      
+      Peter Scholze
+    </p>
+
+    <p class="paper-summary">Condensed mathematics, developed by Clausen and Scholze, replaces topological spaces with algebraic objects called condensed sets to make topology compatible with homological algebra. These lecture notes from a 2019 Bonn course provide a stable, citable introduction to the foundational theory. The framework resolves longstanding technical difficulties in working with functional analysis and p-adic geometry algebraically.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+      <span class="tag">math.AG</span>
+      
+      <span class="tag">math.CT</span>
+      
+      <span class="tag">math.FA</span>
+      
+      <span class="tag">math.GN</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>This is an updated version of the lectures notes for a course on condensed mathematics taught in the summer term 2019 at the University of Bonn. The material presented is joint work with Dustin Clausen.
+  This is intended as a stable citable version of the original lectures, with mostly cosmetic changes to the original document, together with some small corrections.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03519" target="_blank" rel="noopener">Infinitesimal characters for the completed cohomology of $\mathrm{GL}_n$ over CM fields</a></h3>
+
+    <p class="paper-authors">
+      
+      Jelena Ivančić, Vaughan McDonald
+    </p>
+
+    <p class="paper-summary">This paper confirms a conjecture of Dospinescu–Paškūnas–Schraen about p-adic completed cohomology—a tool for studying modular forms and Galois representations simultaneously—for GL_n over CM fields. Specifically, it shows that certain symmetry operators called infinitesimal characters, which encode representation-theoretic data, are determined by the Sen operators of the associated Galois representations. This connects p-adic Langlands program predictions to concrete cohomological computations in a new range of cases.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+      <span class="tag">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $p$ be a prime, and let $F$ be a CM field containing an imaginary quadratic field in which $p$ splits. We show that the locally analytic vectors of Hecke eigenspaces in the ($p$-adic) completed cohomology of $\mathrm{GL}_n/F$, localized at a non-Eisenstein decomposed generic maximal ideal, admit infinitesimal characters determined by the Sen operators of the corresponding Galois representations, thus confirming a conjecture of Dospinescu-Paškūnas-Schraen in this case.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03349" target="_blank" rel="noopener">Sign changes of the Liouville function in arithmetic progressions</a></h3>
+
+    <p class="paper-authors">
+      
+      Kevin Ford, Maksym Radziwiłł
+    </p>
+
+    <p class="paper-summary">The Liouville function λ assigns +1 or -1 to integers based on their prime factorization&#39;s parity. This paper proves that within any arithmetic progression modulo a large prime q, both sign values of λ appear among integers no larger than q^(2.5+ε), mirroring the spirit of Linnik&#39;s theorem on the smallest prime in a progression and making the first explicit progress on sign changes of λ in progressions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We show that for any $\varepsilon &gt; 0$, prime $q$ sufficiently large with respect to $1 / \varepsilon$ and residue class $(a,q) = 1$, there exist two integers $m, n \leq q^{5/2 + \varepsilon}$ with $m \equiv n \equiv a \pmod{q}$ such that $λ(m) = -1$ and $λ(n) = + 1$, where $λ$ denotes the Liouville function. Our result is motivated by Heath-Brown&#39;s explicit exponent in Linnik&#39;s theorem, establishing the existence of primes $p \equiv a \pmod{q}$ with $p \ll q^{5.5}$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02632" target="_blank" rel="noopener">The generalized Fermat equation $Ax^2 + By^r = Cz^p$ and applications</a></h3>
+
+    <p class="paper-authors">
+      
+      Pedro-José Cazorla García, Angelos Koutsianas, Lucas Villagra-Torcomian
+    </p>
+
+    <p class="paper-summary">Can the techniques that solved Fermat&#39;s Last Theorem crack more exotic Diophantine equations? This paper extends the &#39;modular method&#39;—using Galois representations attached to modular forms—to equations of the form Ax²+Byʳ=Czᵖ by constructing Frey hyperelliptic curves, then applies it to resolve a specific conjecture about 5x²+q²ⁿ=y⁵, pushing Darmon&#39;s program into new territory.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In this paper, we develop the modular method for the generalized Fermat equation appearing in the title, within the framework of Darmon&#39;s program and using Frey hyperelliptic curves. As an application, we study a conjecture of Laradji, Mignotte, and Tzanakis concerning the equation $5x^2+q^{2n}=y^5$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02599" target="_blank" rel="noopener">Cusp forms and parabolic cohomology classes for symmetric spaces of rank one</a></h3>
+
+    <p class="paper-authors">
+      
+      Roelof Bruggeman, YoungJu Choie, Roberto Miatello <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">Cusp forms are special highly symmetric functions central to number theory; parabolic cohomology is a tool measuring how group actions twist function spaces. This paper shows that for rank-one symmetric spaces — geometric spaces like hyperbolic space — cusp forms of a discrete group are precisely captured by certain parabolic cohomology classes. This gives a powerful geometric and algebraic lens for studying automorphic forms beyond the classical upper half-plane setting.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>For any rank-one Riemannian symmetric space S of non-compact type and any discrete, cofinite, non-cocompact, torsion-free group $Γ$ of orientation-preserving Riemannian isometries on S, we develop a cohomological interpretation for the cusp forms of $Γ$. To that end, we identify certain $Γ$-submodules of smooth semi-analytic vectors in the spherical principal series representation with spectral parameter $ν$ as well as certain subspaces of parabolic cohomology spaces of $Γ$ of degree dim S-1 with these $Γ$-submodules. We provide explicit isomorphisms between the spaces of cusp forms of spectral parameter $ν$ and these specific cohomology subspaces. The isomorphisms from cusp forms to cohomology are given by an integral transform, and the explicit form of the inverse isomorphism takes advantage of a certain reproducing property of the integral transform. The result is uniform for all these symmetric spaces and does not rely on their classification.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02518" target="_blank" rel="noopener">Expansion in $\text{SL}_2(\mathbb Z/q\mathbb Z)$ and Zaremba&#39;s conjecture</a></h3>
+
+    <p class="paper-authors">
+      
+      Xin Zhang
+    </p>
+
+    <p class="paper-summary">Zaremba&#39;s conjecture predicts that every integer appears as the denominator of a continued fraction whose partial quotients are all at most 5 — a 50-year-old open problem in number theory. The authors establish new expansion results for the matrix group SL₂(ℤ/qℤ) — meaning Cayley graphs on this group are well-connected — and plug these into Shkredov&#39;s recent framework to confirm the conjecture. This resolves one of the most famous open problems connecting continued fractions and combinatorics.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We establish an expansion theory for $\text{SL}_2(\mathbb Z/q\mathbb Z)$. Incorporating this into a framework recently developed by Shkredov, we confirm Zaremba&#39;s conjecture.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.01646" target="_blank" rel="noopener">Archimedean arithmetic Siegel--Weil formula for general weights over Shimura curves</a></h3>
+
+    <p class="paper-authors">
+      
+      Yifeng Liu
+    </p>
+
+    <p class="paper-summary">Shimura curves are special arithmetic surfaces encoding deep number-theoretic symmetry, and the arithmetic Siegel–Weil formula relates geometric intersection numbers on them to derivatives of L-functions. This paper proves an averaging formula connecting canonical height pairings—a measure of arithmetic complexity of special divisors—to derivatives of Whittaker functions, extending the formula to general weights in both orthogonal and unitary settings.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove an averaging formula for the canonical archimedean height pairing of special divisors with weights over orthogonal and unitary Shimura curves in terms of derivatives of Whittaker functions.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-AG">
+  <div class="subfield-header">
+    <h2>Algebraic Geometry</h2>
+    <span class="count-badge">10</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06668" target="_blank" rel="noopener">Rational homology disk degenerations of elliptic surfaces</a></h3>
+
+    <p class="paper-authors">
+      
+      Marcos Canedo, Giancarlo Urzúa
+    </p>
+
+    <p class="paper-summary">Which surface singularities can appear when a smooth elliptic surface degenerates, if the degeneration has trivial rational homology? This paper classifies all such &#39;rational homology disk&#39; degenerations, extending earlier work that only handled the mildest (log terminal) singularities. The result fills a significant gap in understanding how elliptic surfaces—key objects in algebraic geometry—can degenerate, and explicitly constructs all the predicted examples.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+      <span class="tag">math.GN</span>
+      
+      <span class="tag">math.SG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In this paper, a $\mathbb{Q}$HD singularity is a weighted homogeneous normal surface singularity admitting a rational homology disk ($\mathbb{Q}$HD) smoothing. These singularities are rational but often not log canonical. We classify all $\mathbb{Q}$HD degenerations of nonsingular projective elliptic surfaces, extending Kawamata&#39;s classification of the case with only Wahl singularities (i.e., log terminal $\mathbb{Q}$HD singularities). We also realize all $\mathbb{Q}$HD degenerations of Dolgachev surfaces $D_{a,b}$ with one $\mathbb{Q}$HD singularity, for every pair of integers $a,b$. For each such degeneration, we construct a minimal semi log canonical (slc) birational model via a Seifert partial resolution in the sense of Wahl followed by semistable flips. Finally, we prove that these minimal slc models are unobstructed and deform to the recent degenerations of Dolgachev surfaces constructed by D. Lee and Y. Lee.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06252" target="_blank" rel="noopener">An explicit formula for the Artin invariant of smooth K3 hypersurfaces</a></h3>
+
+    <p class="paper-authors">
+      
+      Teppei Takamatsu, Shou Yoshikawa
+    </p>
+
+    <p class="paper-summary">The Artin invariant measures how &#39;supersingular&#39; a K3 surface is in positive characteristic — a K3 surface is a smooth complex-like surface with trivial canonical bundle. This paper gives an explicit formula for this invariant using quasi-F-splitting, an algebraic tool measuring how far Frobenius maps fail to split. This makes a previously abstract invariant concretely computable from the surface&#39;s defining equations.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We characterize the Artin invariant of a smooth K3 hypersurface in terms of quasi-$F$-splitting. As an application, we obtain an explicit formula for this invariant.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05796" target="_blank" rel="noopener">The Ciliberto-Di Gennaro conjecture for $d=5$</a></h3>
+
+    <p class="paper-authors">
+      
+      Remke Kloosterman
+    </p>
+
+    <p class="paper-summary">A nodal hypersurface is a geometric object defined by a polynomial equation whose only singularities are simple double points (nodes). The Ciliberto-Di Gennaro conjecture precisely classifies which such degree-5 hypersurfaces can fail to be &#39;factorial&#39; (have unique factorization of divisors). This paper closes the last open case of the conjecture, completing a classification program spanning degrees 3 through 7+.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>The Ciliberto-Di Gennaro conjecture predicts that a nodal hypersurface of degree $d\geq 3$ with at most $2(d-2)(d-1)$ nodes is either factorial, or contains a plane and has at least $(d-1)^2$ nodes, or contains a quadric surface and has $2(d-2)(d-1)$ nodes. This conjecture is classically known for $d=3,4$. In 2022 the author proved this conjecture for $d\geq 7$ by the author. Kvitko announced a proof for $d=6$ in 2025. In this paper we prove the conjecture for the remaining open value of $d$, namely $d=5$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05782" target="_blank" rel="noopener">Thom-Sebastiani Theorem for Hodge Modules</a></h3>
+
+    <p class="paper-authors">
+      
+      Morihiko Saito
+    </p>
+
+    <p class="paper-summary">The Thom-Sebastiani theorem describes how the singularity data of two functions combine when you add them together on independent variables. This paper proves this theorem in the sophisticated setting of mixed Hodge modules—algebraic structures encoding deep cohomological information—using a technique called Verdier specialization. This fills a foundational gap needed for applying Hodge theory to product singularities.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We give a proof of the Thom-Sebastiani theorem for mixed Hodge modules using a compatibility with Verdier specialization.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05596" target="_blank" rel="noopener">On the cohomological purity of the affine Springer fibers</a></h3>
+
+    <p class="paper-authors">
+      
+      Zongbin Chen
+    </p>
+
+    <p class="paper-summary">Affine Springer fibers are geometric spaces arising in the Langlands program—a vast web connecting number theory, geometry, and representation theory. &#39;Cohomological purity&#39; means the fiber&#39;s cohomology behaves as cleanly as possible, with no mixing between different weights. This paper characterizes exactly when affine Springer fibers are pure and reformulates the condition sheaf-theoretically, addressing open questions of Laumon and Waldspurger.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We address questions posed by Gérard Laumon and Jean-Loup Waldspurger concerning the cohomological purity of affine Springer fibers. More precisely, we show that an affine Springer fiber is cohomologically pure if and only if its $ξ$-stable quotient is cohomologically pure, and that this is further equivalent to the cohomological purity of a certain sequence of truncated affine Springer fibers. We deduce from this a sheaf-theoretic reformulation of cohomological purity for affine Springer fibers. We then compare this new criterion with a previously known one via a microlocal analysis of the relevant intersection complexes. As a corollary, we show that both the primitive part of the cohomology of an affine Springer fiber and the cohomology of its $ξ$-stable quotient depend only on the root valuation datum of the defining element.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04950" target="_blank" rel="noopener">A low-valence ribbon graph complex computing the cohomology of $M_{g,m}$</a></h3>
+
+    <p class="paper-authors">
+      
+      Sergei A. Merkulov
+    </p>
+
+    <p class="paper-summary">The moduli space M_{g,m} — which parametrizes all distinct Riemann surfaces with g handles and m marked points — has cohomology that can be studied via combinatorial ribbon graphs. This paper proves every cohomology class can be represented by ribbon graphs whose vertices meet at most four edges, and shows four is the tightest possible bound, giving a sharp and computationally tractable combinatorial model.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>It is proven that every cohomology class of the moduli space $M_{g,m}$ for any $2g+m\geq 3$, $m\geq 1$ can be represented combinatorially by a ribbon quiver with at most four-valent vertices. The &#34;at most four&#34;-valency condition is sharp.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03655" target="_blank" rel="noopener">Lectures on Analytic Geometry</a></h3>
+
+    <p class="paper-authors">
+      
+      Peter Scholze
+    </p>
+
+    <p class="paper-summary">These lecture notes develop a new foundation for analytic geometry using &#39;liquid real vector spaces&#39;—algebraic objects designed to handle the analysis needed for complex-analytic spaces—and sketch a definition of analytic rings and analytic geometry in that framework. The work is part of a broader collaboration remaking the foundations of p-adic and complex geometry using condensed mathematics. It matters because it offers a unified, rigorous algebraic approach to geometry that mixes algebra and topology more cleanly than classical methods.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+      <span class="tag">math.CT</span>
+      
+      <span class="tag">math.FA</span>
+      
+      <span class="tag">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>This is a slightly updated version of lectures notes for a course on analytic geometry taught in the winter term 2019/20 at the University of Bonn. The material presented is part of joint work with Dustin Clausen.
+  This is intended as a stable citable version of the material. In the first half of this course, we develop the basic theory of liquid real vector spaces, which we used in another course to give a new approach to complex-analytic geometry. In the second half, we gave a tentative definition of a category of analytic spaces that contains (for example) adic spaces and complex-analytic spaces. While the precise definition of analytic spaces represents an abandoned stepping stone on our way to define analytic stacks and hence should be seen as a historical artifact, much of the surrounding discussion stays very relevant.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03168" target="_blank" rel="noopener">Real approximation for homogeneous spaces with finite stabilizers</a></h3>
+
+    <p class="paper-authors">
+      
+      David Harari, Nguyên M\d{a}nh Linh, Giancarlo Lucchini Arteche
+    </p>
+
+    <p class="paper-summary">Real approximation asks whether rational points of an algebraic variety can approximate real points arbitrarily well — a local-to-global question. This paper proves new cases for homogeneous spaces (quotients of algebraic groups) with finite stabilizers, using recent results on the Brauer-Manin obstruction, an algebraic tool that can block such approximation. The key advance covers finite algebraic groups split by 2-primary field extensions, filling gaps previously known only to experts.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+      <span class="tag">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove some new cases of real appoximation for homogeneous spaces with finite stabilizers and describe the state of the art around this question, giving proofs that are well-known to experts but that, to our knowledge, cannot be found in the literature. Our main new result needs the latest advances in the topic of the Brauer--Manin obstruction for homogeneous spaces with supersolvable stabilizers. It states that any finite $k$-group that is split by a $2$-primary extension satisfies real approximation.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02763" target="_blank" rel="noopener">Birational invariance of higher Amitsur groups</a></h3>
+
+    <p class="paper-authors">
+      
+      Federico Scavia, Yuri Tschinkel, Zhijia Zhang
+    </p>
+
+    <p class="paper-summary">Birational invariants are algebraic tools that distinguish geometric spaces even when they can be continuously deformed into each other. This paper proves that higher Amitsur groups — algebraic invariants built from division algebras associated to a variety — are preserved under stable G-equivariant birational equivalence for all n≥2, extending results previously known only for n=2,3. The result opens new tools for the long-standing problem of classifying algebraic varieties up to birational equivalence.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $k$ be a field of characteristic zero and $G$ a finite group. We prove that for all $n\geq 2$, the $n$th Amitsur group is a stable $G$-birational invariant of smooth projective $G$-varieties over $k$. This was previously known for $n=2,3$. For smooth projective $G$-varieties with free and finitely generated Picard group, we also prove that the vanishing of the $G$-equivariant universal torsor obstruction implies the vanishing of the $n$th Amitsur group, for all $n\geq 2$. This was known for $n=2$. Our approach allows for effective computations of these obstructions; we illustrate this with several examples.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.01984" target="_blank" rel="noopener">Flat Cohomological Purity for Syntomic Schemes over Valuation Rings</a></h3>
+
+    <p class="paper-authors">
+      
+      Arnab Kundu
+    </p>
+
+    <p class="paper-summary">Grothendieck&#39;s cohomological purity says that removing a high-codimension subscheme shouldn&#39;t change a space&#39;s cohomology—but proving this over non-Noetherian rings (where standard finiteness tools fail) is hard. This paper establishes purity for flat finite-type schemes over arbitrary mixed-characteristic valuation rings, extending a landmark result of Česnavičius–Scholze beyond the Noetherian setting. The advance matters for p-adic geometry and arithmetic applications where such rings arise naturally.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AG</span>
+      
+      <span class="tag">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Grothendieck&#39;s cohomological purity predicts that the cohomology of a scheme is insensitive to removing a closed subscheme of sufficiently high codimension. In this article, we establish a form of flat cohomological purity over arbitrary (possibly infinite-rank) mixed-characteristic valuation rings $V$, thereby extending the theorem of Česnavičius--Scholze to the non-noetherian setting. More precisely, for a flat finite-type scheme over $V$ with local complete intersection fibres, we prove that the cohomology with coefficients in a commutative finite locally free group scheme remains unchanged after removing a closed subscheme satisfying a suitable fibrewise codimension condition; in particular, we obtain vanishing in low degrees and injectivity in the critical degree. As applications, we deduce purity results for local cohomology, for torsion in the Picard group, and for the Brauer group. In higher rank, our results yield sharper bounds than those previously obtained by Bhatt--Lurie and Madapusi--Mondal. The argument rests on recent advances in the structure theory of valuation rings.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-AP">
+  <div class="subfield-header">
+    <h2>Analysis of PDEs</h2>
+    <span class="count-badge">16</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06569" target="_blank" rel="noopener">Equidistribution of Eigenfunctions of Quantum Cat Maps</a></h3>
+
+    <p class="paper-authors">
+      
+      Robert Koirala
+    </p>
+
+    <p class="paper-summary">Quantum cat maps are arithmetic toy models for quantum chaos; their eigenfunctions can either spread uniformly (equidistribute) or concentrate on small sets. This paper proves a specific family of eigenfunctions simultaneously equidistributes in the semiclassical sense yet has anomalously large pointwise peaks concentrated on few coordinates—confirming that both phenomena can coexist, resolving a question raised by earlier numerical experiments.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+      <span class="tag">math-ph</span>
+      
+      <span class="tag">math.DS</span>
+      
+      <span class="tag">math.NT</span>
+      
+      <span class="tag">math.SP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove that the short-period eigenfunctions of quantum cat maps constructed by Kim and the author equidistribute on $\mathbb{T}^2$ in the sense of semiclassical measures. We also show that their logarithmically large $\ell^\infty$-norm is asymptotically concentrated on a bounded number of coordinates. Thus, for this explicit family, strong coordinate localization coexists with semiclassical equidistribution. These results confirm the behavior suggested by earlier numerical evidence of Kim and the author, and contrast with the scarring phenomena for short-period eigenfunctions observed by Faure, Nonnenmacher, and De Bièvre.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06503" target="_blank" rel="noopener">Sharp local well-posedness for the Hirota-Satsuma system</a></h3>
+
+    <p class="paper-authors">
+      
+      Rafael Deiga
+    </p>
+
+    <p class="paper-summary">The Hirota-Satsuma system is a pair of coupled nonlinear wave equations; this paper determines exactly which function spaces (Sobolev spaces H^k × H^s) admit short-time solutions, even when the two components have different regularity. Previous results only handled equal regularity. The sharp thresholds reveal how the ratio of dispersion strengths governs solvability, and the authors also extend long-time existence theory to this broader setting.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We establish sharp local existence results for the Hirota-Satsuma system in $H^k(\mathbb{R}) \times H^s(\mathbb{R})$, depending on the ratio between the dispersion of the components. These theorems significantly generalize previous works, which were restricted to the diagonal case of equal regularity $s=k$. Furthermore, we extend the known global well-posedness theory to the off-diagonal regime. The argument relies on the Fourier restriction norm method coupled with the concept of integrated-by-parts strong solution - a framework that generalizes the classical notion of strong solution.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06128" target="_blank" rel="noopener">Uniform small energy regularity for fractional geometric problems</a></h3>
+
+    <p class="paper-authors">
+      
+      Marco Badran, Giacomo Cozzi
+    </p>
+
+    <p class="paper-summary">Fractional harmonic maps generalize classical harmonic maps using nonlocal energy functionals parametrized by s∈(0,1); small energy regularity asks whether solutions with small energy are automatically smooth. This paper proves such regularity for both fractional harmonic maps and a related Ginzburg-Landau parabolic problem, resolving an open question and crucially showing the estimates remain uniform as s→1, recovering classical results in the limit.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove small energy regularity for a parabolic boundary reaction Ginzburg-Landau problem in the full range $s\in (0,1)$, answering a question posed by Hyder, Segatti, Sire and Wang. We also obtain a similar small energy regularity result for fractional harmonic maps to spheres. Both results are uniform as $s\to 1$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05033" target="_blank" rel="noopener">Ill-posedness in the critical Sobolev space for the $b$-Novikov equation</a></h3>
+
+    <p class="paper-authors">
+      
+      Dan-Andrei Geba, A. Alexandrou Himonas, Curtis Holliman
+    </p>
+
+    <p class="paper-summary">The b-Novikov equation, a family of water-wave models, was known to behave well in Sobolev spaces (function spaces measuring smoothness) above a critical threshold but badly below it — leaving the boundary case open. This paper closes that gap by proving &#39;norm inflation&#39; at exactly the critical regularity, meaning small initial data can instantly produce large solutions. The well-posedness theory for this equation is now complete.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>This article proves norm inflation in the critical Sobolev space $H^{3/2}(\mathbb{R})$ for the $b$-Novikov equation, which is a $1$-parameter family of Camassa-Holm-type equations with cubic nonlinearities. This result completes the well-posedness theory for this equation, which was previously known to be locally well-posed in $H^{s}(\mathbb{R})$ for $s&gt;3/2$ and ill-posed in $H^{s}(\mathbb{R})$ for $s&lt;3/2$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04918" target="_blank" rel="noopener">Neural Discovery of Strichartz Extremizers</a></h3>
+
+    <p class="paper-authors">
+      
+      Nicolás Valenzuela, Ricardo Freire, Claudio Muñoz
+    </p>
+
+    <p class="paper-summary">Strichartz inequalities bound how spread-out solutions to dispersive PDEs like Schrödinger&#39;s equation can become, and the functions achieving equality (extremizers) reveal deep structure but are rarely known explicitly. This paper uses neural networks to numerically search for these extremizers, recovering known cases and discovering plausible new candidates, opening a systematic computational front on a hard variational problem.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+      <span class="tag">cs.LG</span>
+      
+      <span class="tag">math.NA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Strichartz inequalities are a cornerstone of the modern theory of dispersive PDEs, but their extremizers are known explicitly only in a handful of sharp cases. The non-convexity of the underlying functional makes the problem hard, and to our knowledge no systematic numerical attack has been attempted. We propose a simple neural-network-based pipeline that searches for extremizers as critical points of the Strichartz ratio, and apply it in three settings. First, on the Schrödinger group we recover the Gaussian extremizers of Foschi and Hundertmark--Zharnitsky in dimensions $d=1,2$ to within $10^{-3}$ relative error, with no analytical prior. Second, on $59$ further admissible pairs in $d=1$ where the answer is conjectural, the method consistently finds Gaussians, supporting the conjecture that Gaussians are the universal extremizers in the admissible range. Third, on the critical Airy--Strichartz inequality at $γ=1/q$, where existence is open, the optimization does not converge to any $L^2$ profile: instead, the iterates organize themselves as mKdV breathers $B(0,\cdot;α,1,0,0)$ with growing internal frequency $α$, and the discovered ratio approaches the Frank--Sabin universal lower bound $\widetilde A_{q,r}$ from below with a power-law gap $\simα^{-0.9}$. We confirm the same picture with an independent Hermite-basis ansatz. We propose a precise conjecture: the supremum equals $\widetilde A_{q,r}$ and is approached, but not attained, along the breather family. The pipeline thus serves both as a validator on known cases and as a discovery tool when no extremizer exists.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04526" target="_blank" rel="noopener">Euler Singularities II: Interior Quadrupole Blow-Up for Smooth Axisymmetric Euler with Swirl in \texorpdfstring{$\mathbb R^3$}</a></h3>
+
+    <p class="paper-authors">
+      
+      Rishad Shahmurov
+    </p>
+
+    <p class="paper-summary">Can smooth solutions to the 3D Euler equations—governing ideal fluid flow—blow up in finite time? This paper constructs an explicit singularity forming away from the symmetry axis in axisymmetric flow with swirl, using a quadrupole vorticity pattern where key quantities grow as simple polynomial profiles. This advances one of fluid mechanics&#39; hardest open problems by providing a new, self-contained blowup mechanism in the whole space.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We present a self-contained interior quadrupole mechanism for finite-time singularity formation in the axisymmetric three-dimensional incompressible Euler equations with swirl in the whole space. The construction is localized away from the axis. In local variables \[
+  x=r-r_*(t),\qquad y=z, \] centered at a tracked radial point, the active vorticity and swirl profiles are \[
+  G(x,y,t)\approx a(t)xy,
+  \qquad
+  Γ(x,y,t)\approx Γ_*(t)+\frac12 b(t)xy^2,
+  \qquad Γ_*(t)&gt;0. \] The first profile produces a positive interior Biot--Savart hyperbolic strain; the second profile makes the Euler source term in the equation for \(G=ω^θ/r\) regenerate the same quadrupole shape. The active quantity is the full four-quadrant quadrupole score, while a narrow diagonal sector is used only as a coercive subscore. We give the notation and the 5D recovery formula connecting the 3D axisymmetric variables to the lifted elliptic problem, construct explicit smooth decaying divergence-free data, verify their initial entry into the quadrupole bootstrap, prove the master propagation estimates, and derive the comparison system \[
+  Q&#39;(t)\ge cC(t),\qquad C&#39;(t)\ge cQ(t)C(t),\qquad C(t)\ge κQ(t)^2. \] Consequently the tracked quadrupole score blows up in finite comparison time, and the strain lower bound gives blow-up of \(\norm{\nabla u(t)}_{L^\infty}\). All geometric and analytic constraints used by the construction are stated as named estimates: the interior quadrupole kernel sign expansion, source compatibility, swirl-jet amplification, full-score/coercive-subscore comparison, angular-profile defect persistence, radial-center tracking, neutral-jet hierarchy, and two-sided Dini bounds.
+  This is Part II of a two-paper Euler series; Part I treats boundary blow-up in a periodic cylinder.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04181" target="_blank" rel="noopener">Euler Singularities I: Boundary Blow-Up for Smooth Exact-Odd Axisymmetric Euler with Swirl</a></h3>
+
+    <p class="paper-authors">
+      
+      Rishad Shahmurov
+    </p>
+
+    <p class="paper-summary">The 3D Euler equations describe ideal fluid flow, and whether smooth solutions can spontaneously blow up in finite time is a major open problem. This paper constructs an explicit smooth initial condition in a cylinder where a singularity does form at the boundary in finite time, providing a rigorous blow-up example within a symmetric (&#39;axisymmetric with swirl&#39;) and sign-antisymmetric class of flows.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We construct smooth axisymmetric-with-swirl initial data in a periodic cylinder for which the three-dimensional incompressible Euler evolution develops a finite-time boundary singularity. The construction is carried out in the dynamically invariant exact-odd class \[ Γ(r,-z,t)=-Γ(r,z,t), \qquad G(r,-z,t)=-G(r,z,t), \] where \(Γ=r u^θ\) and \(G=ω^θ/r\). At the side-wall point \((r,z)=(1,0)\), exact oddness gives the pointwise identities \[ \partial_t\partial_zG(1,0,t) =
+σ(t)\partial_zG(1,0,t) +2\bigl(\partial_zΓ(1,0,t)\bigr)^2, \qquad \partial_t\partial_zΓ(1,0,t) =
+σ(t)\partial_zΓ(1,0,t), \] with \(σ(t)=-\partial_z u^z(1,0,t)\).
+  The proof is based on a side-wall Dirichlet parametrix for the five-dimensional lifted recovery equation \(-Δ_5φ=G\). Near the wall, the effective compression kernel has leading term \[ K_0(x,y)=C_0\frac{xy}{(x^2+y^2)^2}, \qquad C_0&gt;0, \] with controlled remainders, parity-based shear cancellation, and strain-variation bounds on narrow diagonal cones. These estimates are combined with an over-compressed dyadic angular cluster functional. The cluster functional absorbs same-scale angular fragmentation, growing dyadic windows, dynamically separated far tails, and fixed-distance exterior fields into an integrably small affine Campanato defect.
+  The resulting invariant cluster contains a uniformly coherent component with amplitudes \(A_*(t)\) and \(B_*(t)\) satisfying the Dini comparison system \[ D^+A_*(t)\ge cB_*(t)^2, \qquad D^+B_*(t)\ge cA_*(t)B_*(t). \]</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03668" target="_blank" rel="noopener">Quantitative stability for the Trudinger-Moser inequality</a></h3>
+
+    <p class="paper-authors">
+      
+      João Henrique Andrade, José Francisco de Oliveira, João Marcos do Ò <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">The Trudinger–Moser inequality bounds exponential integrals of functions on planar domains, but how stable is it near equality? This paper proves that if a function nearly achieves the inequality&#39;s maximum (small &#39;deficit&#39;), it must be close to an optimizer—and the distance is controlled quadratically by the deficit. This quantitative stability holds either for small exponential growth rates or on disk-shaped domains, with the key tool being a new spectral gap estimate.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We establich quantitative stability estimates for the Trudinger-Moser inequality on smooth, bounded domains in the Euclidean plane. More specifically, we prove that the deficit in the Trudinger-Moser inequality quadratically controls the distance to the set of optimizers if either (i) the exponential rate of growth is sufficiently small or (ii) the domain is a round disk. The latter estimate remains valid even in the critical case. Both proofs rely on a new spectral gap that we prove, which may be of independent interest. Additionally we show that the same stability estimate holds in the nondegenerate case, and that this occurs generically.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03332" target="_blank" rel="noopener">Approximation of harmonic functions on metric measure spaces of controlled geometry via discrete graphs</a></h3>
+
+    <p class="paper-authors">
+      
+      Almaz Butaev, Liangbing Luo, Nageswari Shanmugalingam
+    </p>
+
+    <p class="paper-summary">Harmonic functions minimize energy and solve Laplace-type equations; extending this theory beyond classical Euclidean space to abstract metric measure spaces is an active challenge. This paper shows that harmonic functions on such spaces — assuming mild geometric regularity conditions — can be approximated by solutions on discrete graphs that fill in the space, with the graph solutions converging weakly to the true minimizer. This validates graph-based numerical methods in a very general geometric setting.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+      <span class="tag">math.MG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Given a complete doubling metric measure space $X$ that supports a $2$-Poincaré inequality, we approximate harmonic functions on a bounded domain $Ω$ with a prescribed Newton-Sobolev boundary data. Our approach is based on the approximation of the underlying space $X$ by a family of graphs. This approximated harmonic function is realized as the weak limit of a sequence of functions obtained from the graph minimizers. We prove that such a function is a minimizer with respect to a nonlinear energy form on $N^{1,2}_0(Ω)$, which is in turn, majorized by the upper gradient energy on $N^{1,2}(X)$. This energy form on $N^{1,2}_0(Ω)$ is obtained as a $Γ$-limit of a sequence of induced energy forms projected from the discrete energy form on the approximating graphs.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02879" target="_blank" rel="noopener">Blow-up analysis and a priori bounds for NLS equations on metric graphs</a></h3>
+
+    <p class="paper-authors">
+      
+      Pablo Carrillo, Colette De Coster, Damien Galant <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">This paper studies sequences of nonlinear Schrödinger equations on metric graphs — networks of edges and vertices where calculus lives — asking how their solutions behave as a parameter blows up to infinity. The authors establish a priori bounds (guaranteed size limits on solutions) and perform blow-up analysis to understand concentration behavior. This clarifies the landscape of solutions on non-standard geometric domains, where classical techniques from flat space don&#39;t directly apply.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We consider, on a connected metric graph $\mathcal{G}$, a family of nonlinear Schrödinger equations $$
+  -u&#39;&#39; + W_n(x) u + λ_n u = ρ_n(x)|u|^{p-2}u,
+  \quad n \in \mathbb{N}.
+  \qquad (*) $$ We assume that $p &gt; 2$, $(W_n)$, $(ρ_n) \subseteq L^{\infty}(\mathcal{G})$ with $ρ_n \geq 0$, $|W_n|_{L^\infty(\mathcal{G})}$ and $|ρ_n|_{L^\infty(\mathcal{G})}$ are bounded and $λ_n \to +\infty$. Given $n \in \mathbb{N}$, we call &#34;solution&#34; a function $u_n \in H^1(\mathcal{G})$ which satisfies (*) for that $n\in \mathbb{N}$ together with the Kirchhoff conditions at the vertices. Focusing on the limiting behavior of sequences $(u_n) \subseteq H^1(\mathcal{G})$ of solutions as $λ_n \to + \infty$ and assuming that the Morse index $m(u_n)$ of $u_n$ is uniformly bounded, we establish, the existence of a finite subset of blow-up points away from which, up to a subsequence, $|u_n|$ has a global exponential decay. These points are generally a strict subset of the blow-up points, and their number is estimated by the bound on the Morse index of $(u_n)$. It is the first time that this global exponential decay property is established on graphs even if one consider only signed solutions. In the last part of the paper we derive various results of a priori bounds on the solutions in $L^\infty$ and $L^2$. Our blow-up analysis, combined with ODE arguments allows, for frequently considered classes of graphs, to obtain a fairly complete picture of the relationships between the number of nodal regions, Morse index, $L^\infty$ and $L^2$ norms of solutions.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02855" target="_blank" rel="noopener">Sharp regularity for degenerate fully nonlinear equations with oblique boundary conditions and Hamiltonian terms</a></h3>
+
+    <p class="paper-authors">
+      
+      Junior da Silva Bessa, Gleydson C. Ricarte
+    </p>
+
+    <p class="paper-summary">This paper establishes sharp boundary regularity for solutions to a class of degenerate nonlinear PDEs with oblique boundary conditions — equations where the gradient term vanishes, making standard elliptic theory break down. The authors prove optimal C^{1,α} regularity (solutions have Hölder-continuous first derivatives) and develop a new compactness framework to handle the interaction between degeneracy and Hamiltonian gradient terms. Sharp regularity matters because it&#39;s the best possible result, leaving no room for improvement.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove optimal boundary $C^{1,α}$ regularity for viscosity solutions of degenerate fully nonlinear uniformly elliptic equations with oblique boundary conditions and Hamiltonian terms of the form \[ \begin{cases} |Du|^γF(D^2 u) + \varrho(x)|Du|^σ = f(x) &amp; \text{in } Ω,\\ β(x)\cdot Du+ζ(x)u = g(x) &amp; \text{on } \partial Ω, \end{cases} \] where $γ&gt;0$ and $0&lt;σ\le 1+γ$. We develop a compactness framework for affine translations, linking the size of the translation to the Hamiltonian structure. This is combined with a boundary improvement-of-flatness argument adapted to oblique boundary data, yielding the optimal boundary regularity.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02561" target="_blank" rel="noopener">Quantitative homogenization of elliptic equations with infinitely many scales</a></h3>
+
+    <p class="paper-authors">
+      
+      Zhongwei Shen, Yao Xu, Jinping Zhuge
+    </p>
+
+    <p class="paper-summary">Homogenization replaces a rapidly oscillating heterogeneous medium with an effective homogeneous one — but what if there are infinitely many oscillation scales, as in fractal materials? This paper proves that homogenization still works under suitable scale-separation conditions and derives sharp quantitative error rates. The result substantially extends classical two-scale homogenization theory to physically realistic multi-scale and fractal settings.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In this paper, we develop a general homogenization theory for elliptic equations with coefficients that oscillate periodically at infinitely many scales $\varepsilon = (\varepsilon_1, \varepsilon_2, \cdots) \in (0,1)^\infty$, with $\varepsilon_1&gt;\varepsilon_2&gt;\cdots$ and $\varepsilon_n \to 0$ as $n \to \infty$. Such problems arise naturally in the study of fractal materials and diffusion in fluids. Under suitable scale-separation assumptions, we prove a qualitative homogenization theorem and obtain optimal $L^2$ convergence rates. We also establish interior and boundary Lipschitz estimates that are uniform in $\varepsilon$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.01933" target="_blank" rel="noopener">A sharp hypocoercive entropy decay estimate for underdamped Langevin dynamics</a></h3>
+
+    <p class="paper-authors">
+      
+      Jianfeng Lu
+    </p>
+
+    <p class="paper-summary">Underdamped Langevin dynamics is a momentum-enhanced stochastic process used in sampling and molecular simulation—but proving sharp convergence rates requires handling the fact that noise acts only on velocity, not position (hypocoercivity). This paper introduces a modified entropy method with a Wasserstein correction term to obtain sharp exponential entropy decay rates under a logarithmic Sobolev inequality on the position marginal. The result gives optimal, explicit convergence constants previously out of reach.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+      <span class="tag">math.PR</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study the underdamped Langevin dynamics with invariant measure $μ(\,\mathrm{d}x\,\mathrm{d}v)\propto \mathrm{e}^{-U(x)-\lvert v\rvert^2/2}\,\mathrm{d}x\,\mathrm{d}v$. Assume that the position marginal $μ_x(\,\mathrm{d}x)\propto \mathrm{e}^{-U(x)}\,\mathrm{d}x$ satisfies a logarithmic Sobolev inequality with constant $ρ&gt;0$, and that $U$ is convex on $\mathbb{R}^d$ and satisfies some growth conditions. We introduce a modified entropy approach with a Wasserstein entropy-current corrector \begin{equation*}
+  \mathcal H_ε(g)=\operatorname{Ent}_μ(g)
+  +ε\int Π_v(v\,g)\cdot\bigl(x-T_q(x)\bigr)\,μ_x(\mathrm{d}x), \end{equation*} where $Π_v$ denotes averaging over the velocity variable against the standard Gaussian $κ(\mathrm{d}v)=(2π)^{-d/2}\mathrm{e}^{-\lvert v\rvert^2/2}\,\mathrm{d}v$, $q=Π_v g$ is the position marginal density of $g$, and $T_q$ is the Brenier optimal transport map from $qμ_x$ to $μ_x$. For friction $γ=Γ\sqrtρ$ with $Γ&gt;0$, and for any initial law $p_0$ with finite relative entropy, if $p_t$ denotes the law of underdamped Langevin dynamics at time $t$, we establish the explicit entropy decay \begin{equation*}
+  \operatorname{Ent}(p_t\midμ) \leq \frac{1+θ}{1-θ}\,\mathrm{e}^{-Λt}\,\operatorname{Ent}(p_0\midμ), \qquad t\ge0, \end{equation*} with rate \begin{equation*}
+  Λ=\fracθ{2(1+θ)}\sqrtρ, \qquad
+  θ=\min\Bigl\{\tfracΓ{12},\tfrac{1}{4Γ}\Bigr\}. \end{equation*} In particular, the entropy convergence rate has optimal $\sqrtρ$ order.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.01875" target="_blank" rel="noopener">Large-Data Global Regularity for Three-Dimensional Navier--Stokes I: A Direct First-Threshold Continuation Proof for the Axisymmetric Swirl Class</a></h3>
+
+    <p class="paper-authors">
+      
+      Rishad Shahmurov
+    </p>
+
+    <p class="paper-summary">Whether three-dimensional Navier–Stokes equations always remain smooth for large initial data is one of the Millennium Prize Problems. This paper proves a &#39;first-threshold continuation theorem&#39; for axisymmetric flows with swirl: if a solution eventually blows up, it must exceed a specific critical threshold, formulated using five-dimensional weighted variables. It&#39;s the first paper in a two-part series aiming to rule out such threshold-crossings entirely.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>This is the first paper in a two-part direct-threshold series on large-data global regularity for the three-dimensional Navier--Stokes equations. We prove a direct first-threshold continuation theorem for the axisymmetric class with swirl. The proof is written entirely in the lifted variables \[
+  Γ=ru_θ,\qquad G=ω_θ/r,\qquad dμ_5=r^3\,dr\,dz, \] and uses the five-dimensional full-Dirichlet visibility \(\mathcal V_χ\) as the local coercive quantity. The argument is organized by a finite first-threshold stopping time. We define a critical axis score envelope, follow it to a first possible threshold time, and prove that the corresponding normalized packet cannot exist. The proof has three quantitative ingredients. First, a small-envelope continuation theorem converts bounded score and regularized source size into smooth continuation. Second, a finite-overlap descendant-extraction theorem shows that every large collar leakage, exterior tail, low-frequency residue, source concentration, or fragmentation channel either produces a smaller descendant packet or is perturbative. Third, in the remaining coherent case, the strict full-Dirichlet bridge \[
+  |\mathcal T_{G,χ}[G]|
+  \le θ\mathcal V_χ[G]+C\mathfrak E_{\rm dir}[G],
+  \qquad 0&lt;θ&lt;1, \] and a coefficient-calibrated local balance contract the selected packet. Consequently no first threshold occurs, the critical envelope stays</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.01873" target="_blank" rel="noopener">Large-Data Global Regularity for Three-Dimensional Navier--Stokes II: A Direct First-Threshold Continuation Proof for the Full System</a></h3>
+
+    <p class="paper-authors">
+      
+      Rishad Shahmurov
+    </p>
+
+    <p class="paper-summary">One of math&#39;s biggest open problems is whether the 3D Navier–Stokes equations (governing fluid flow) always have smooth solutions or can blow up. This paper claims large-data global regularity—meaning solutions stay smooth forever—by introducing a &#39;critical packet envelope&#39; to control the full three-dimensional dynamics. It completes a two-part proof, with Part I handling axisymmetric flows and this paper tackling the genuinely 3D case.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>This is the second paper in a two-part direct-threshold series on large-data global regularity for the three-dimensional incompressible Navier--Stokes equations. It gives the full-system first-threshold continuation argument and uses the companion Part I theorem, which proves the large-data axisymmetric-with-swirl class by the direct full-Dirichlet method. The present paper treats the genuinely three-dimensional front end. A combined critical packet envelope is introduced, and the first time at which this envelope reaches a prescribed level is analyzed by finite-overlap packet selection. The proof uses angular Littlewood--Paley triads, finite-dimensional active-frame rigidity, passive-strain visibility, a quantitative zero-final-defect rigidity theorem, and the companion Part I axisymmetric direct theorem. The main finite-threshold mechanism is that any large leakage, shell, tail, source, passive, phase, or fragmentation error either produces a descendant packet with explicit score lower bound or becomes perturbative. The remaining coherent packet is contracted by the strict local estimates. Thus no large first-threshold packet can occur, and the critical envelope remains bounded on every finite time interval.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.01814" target="_blank" rel="noopener">Global well-posedness for a one-dimensional quasilinear wave equation</a></h3>
+
+    <p class="paper-authors">
+      
+      Yuusuke Sugiyama
+    </p>
+
+    <p class="paper-summary">Can smooth solutions to a quasilinear wave equation (where wave speed depends on the solution itself) survive indefinitely with large initial data? This paper answers yes for the 1D equation u_tt = c(u)²u_xx when c is positive, bounded, and increasing—partially resolving a longstanding open problem posed by Glassey, Hunter, and Zheng. The key tools are sharp upper and lower estimates on the wave speed that prevent singularities from forming.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In this paper, we prove global well-posedness for the one-dimensional quasilinear wave equation \begin{equation*}
+  u_{tt}=c(u)^2u_{xx},
+  \qquad (t,x)\in (0,T)\times\R, \end{equation*} where \(c\) is a positive, bounded, monotonically increasing function with bounded derivative. This result gives a partial resolution of an open problem posed by Glassey, Hunter and Zheng on the global existence of smooth solutions to this equation for large initial data. Our proof is based on upper and lower estimates for the Riemann variables via a new comparison principle.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-CO">
+  <div class="subfield-header">
+    <h2>Combinatorics</h2>
+    <span class="count-badge">22</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06621" target="_blank" rel="noopener">Point sets avoiding near-integer distances</a></h3>
+
+    <p class="paper-authors">
+      
+      Ritesh Goenka, Kenneth Moore
+    </p>
+
+    <p class="paper-summary">How many points can you place in a large ball in ℝ² if every pairwise distance must avoid all integers by a margin δ? This paper closes a longstanding gap between lower and upper bounds, proving the count grows like X^{1/2} (up to logarithmic factors), settling a question left open between Sárközy&#39;s lower bound and Konyagin&#39;s nearly matching upper bound. The work reveals deep connections between combinatorial geometry and analytic number theory.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+      <span class="tag">math.MG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $d \in \mathbb{N}$, $δ\in (0, 1/2)$, and $X &gt; 0$. Denote by $N_d(X, δ)$ the maximum number of points in a subset of the closed Euclidean ball of radius $X$ in $\mathbb{R}^d$ such that every pairwise distance is at least $δ$ away from any integer. In the planar case, Sárközy proved that for every $\varepsilon &gt; 0$, $N_2(X, δ) = Ω_δ(X^{1/2-\varepsilon})$ as $X \rightarrow \infty$ whenever $δ$ is sufficiently small in terms of $\varepsilon$, while Konyagin proved the almost matching upper bound $N_2(X,δ) = O_δ(X^{1/2})$.
+  We study this problem in higher dimensions, addressing a question of Erdős and Sárközy. Extending Sárközy&#39;s construction, we show that for every $\varepsilon &gt; 0$, $N_3(X, δ) = Ω_δ(X^{1-\varepsilon})$ for $δ$ sufficiently small in terms of $\varepsilon$. We also provide a lifting lemma from integer distance sets to sets avoiding near-integer distances via bilipschitz embeddings of snowflaked Euclidean spaces. This allows us to prove a linear lower bound $N_4(X,δ) = Ω_δ(X)$ for all sufficiently small $δ$. Finally, adapting Konyagin&#39;s approach, we prove the upper bound $N_d(X, δ) = O_{d, δ}(X^{d/2})$ for all $d \in \mathbb{N}$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06616" target="_blank" rel="noopener">Adjacency labelling for proper minor-closed graph classes</a></h3>
+
+    <p class="paper-authors">
+      
+      Vida Dujmović, Gwenaël Joret, Cyril Gavoille <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">An adjacency labelling scheme assigns short bit-strings to vertices so you can determine edges from labels alone; this paper proves every proper minor-closed graph class (graphs forbidding some fixed graph as a minor, like planar graphs) admits an optimal scheme using only (1+o(1))log₂n bits per vertex. Equivalently, all n-vertex graphs in such a class embed as induced subgraphs of a single n^{1+o(1)}-vertex universal graph. This resolves a central open problem in implicit graph representation.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">cs.DM</span>
+      
+      <span class="tag">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We show that every proper minor-closed class of graphs admits a $(1+o(1))\log_2 n$-bit adjacency labelling scheme. Equivalently, for every proper minor-closed class $\mathcal{G}$ and every positive integer $n$ there exists an $n^{1+o(1)}$-vertex graph $U$ such that every $n$-vertex graph in $\mathcal{G}$ is isomorphic to an induced subgraph of $U$. Both results are optimal up to the lower order term.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06389" target="_blank" rel="noopener">A solution to Frankl and Kupavskii&#39;s conjecture concerning Erdos-Kleitman matching problem</a></h3>
+
+    <p class="paper-authors">
+      
+      Cheng Chi, Yan Wang
+    </p>
+
+    <p class="paper-summary">How large can a family of subsets of {1,…,n} be if no s members are mutually disjoint? This paper proves a conjecture of Frankl and Kupavskii identifying the exact extremal families for specific values of n and s, resolving a case of the broader Erdős matching conjecture. The result shows that for fixed m≥3 and large s, the largest families have a precise, explicit structure.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>For integers $n\ge s\ge2$, let $e(n,s)$ be the maximum size of a family
+  $\F\subseteq2^{[n]}$ with no $s$ pairwise disjoint members.
+  The study of determining $e(n,s)$ is closely related to its uniform
+  counterpart, the well-known Erdős matching conjecture.
+  Frankl and Kupavskii conjectured an exact formula for $e((m+1)s-\ell,s)$ when $1\le \ell\le \lceil s/2\rceil$.
+  We prove that for every fixed $m\ge3$ and sufficiently large $s$, the extremal families for $e((m+1)s-\ell,s)$ are
+  \[
+  P(m,s,\ell;L)\coloneqq\{A\subseteq [n]\colon |A|+|A\cap L|\ge m+1\} \text{ for some $L$ with } |L|=\ell-1
+  \]
+  when $1\le \ell\le (\frac{m+1}{2m+1}-o(1))s$.
+  In particular, this confirms the Frankl--Kupavskii conjecture for every
+  fixed $m\ge3$ and all sufficiently large $s$.
+  For $m=3$, we determine the whole range of $\ell$ for which $P(3,s,\ell;L)$ is extremal, generalizing a theorem of Kupavskii and Sokolov.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05526" target="_blank" rel="noopener">The vertex Folkman number $F_v(3,3;5)$ equals~$8$</a></h3>
+
+    <p class="paper-authors">
+      
+      Tong Niu
+    </p>
+
+    <p class="paper-summary">Folkman numbers ask: how small can a graph be if it contains no large clique yet still forces monochromatic cliques in any 2-coloring? This paper pins down F_v(3,3;5)=8, meaning 8 vertices suffice (and 7 don&#39;t) for a triangle-forcing, K_5-free graph. The witness is elegantly simple: one universal vertex connected to the complement of a 7-cycle, confirmed via computer-assisted search for the lower bound.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>The vertex Folkman number $F_v(s,t;k)$ is the smallest $n$ for which there exists a $K_k$-free graph on $n$ vertices whose vertices cannot be $2$-colored without producing a monochromatic copy of $K_s$ or $K_t$. We show $F_v(3,3;5)=8$. The witness is the cone $K_1 \vee \overline{C_7}$, a single universal vertex joined to the complement of a $7$-cycle. That this graph is $K_5$-free and arrows $(3,3)^v$ follows from a short independence-number argument. The matching lower bound -- no $K_5$-free graph on $7$ or fewer vertices works -- comes from exhaustive enumeration via nauty and a SAT check using Glucose\,4. The appendix has a self-contained Python script for verification.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05498" target="_blank" rel="noopener">Sets with Few Subset Sums</a></h3>
+
+    <p class="paper-authors">
+      
+      Ruben Carpenter, Colin Defant, Noah Kravitz
+    </p>
+
+    <p class="paper-summary">Given a set of n positive reals, how few distinct subset sums can it have? The classical answer is at least C(n+1,2)+1, achieved only by arithmetic progressions. This paper proves sharp stability results: sets nearly achieving this minimum must be close to arithmetic progressions, with precise structural characterizations at two different proximity scales.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>It is a classical fact that every $n$-element set of positive reals has at least $\binom{n+1}{2}+1$ distinct subset sums, with equality exactly for homogeneous arithmetic progressions (when $n\geq 4$). We establish stability versions of this inverse theorem in two regimes. First, for any parameter $M \leq n-4$, we precisely characterize the $n$-element sets of positive reals with at most $\binom{n+1}{2}+1+M$ subset sums. Second, for any constant $C$, we provide a characterization, sharp up to constants, of the $n$-element sets of positive reals with at most $Cn^2$ distinct subset sums. Along the way, we constrain (for any fixed $d \geq 2$) the structure of $n$-element subsets of $\mathbb{R}^d$ with $o(n^{d+1})$ subset sums.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05346" target="_blank" rel="noopener">Balanced bipartite distance of $K_4$-free graphs</a></h3>
+
+    <p class="paper-authors">
+      
+      József Balogh, Ignacy Buczek, Andrzej Grzesik <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">How many edges must you remove from a K_4-free graph to make it balanced bipartite? This paper proves the answer is at most n²/9, confirming a conjecture of Balogh, Clemen, and Lidický. The result simultaneously generalizes two previous theorems and gives a clean extremal bound connecting clique-freeness to bipartite structure.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We show that every $K_4$-free graph on $n$ vertices can be made balanced bipartite by removing at most $\frac{n^2}{9}$ edges. This proves a conjecture of Balogh, Clemen, and Lidický, and generalizes both Sudakov&#39;s result on the bipartite distance of $K_4$-free graphs and Reiher&#39;s result on the sparse half of $K_4$-free graphs.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05048" target="_blank" rel="noopener">On spectral Turán theorems: confirming a conjecture of Guiduli and two problems of Nikiforov</a></h3>
+
+    <p class="paper-authors">
+      
+      Lele Liu, Bo Ning
+    </p>
+
+    <p class="paper-summary">Spectral Turán theory asks how the largest eigenvalue of a graph&#39;s adjacency matrix controls its structure, analogous to classical extremal graph theory bounding edge counts. This paper proves four sharp results, including confirming a 1996 conjecture of Guiduli: if a graph&#39;s largest eigenvalue meets that of the Turán graph T_r(n)—the densest graph with no (r+1)-clique—then its structure is tightly constrained. These results sharpen the connection between spectral data and forbidden subgraph structure.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $G$ be an $n$-vertex graph, and let $λ(G)$ and $λ_n(G)$ denote the largest and smallest eigenvalues of its adjacency matrix. Write $e(G)$ for the number of edges of $G$, $d(G)=2e(G)/n$ for its average degree, and $T_r(n)$ for the $r$-partite Turán graph on $n$ vertices.
+  We prove four sharp results in spectral Turán theory. First, we confirm Guiduli&#39;s spectral dense-neighborhood conjecture (1996) in a stronger form: if $λ(G)\ge λ(T_r(n))$, then either $G\cong T_r(n)$, or there exists a vertex $v$ such that $λ(G[N(v)]) &gt; λ(T_{r-1}(d(v)))$. Moreover, when $λ(G)&gt;λ(T_r(n))$, every vertex attaining the maximum entry in any nonnegative Perron eigenvector of $G$ has this property. Second, we answer a problem of Nikiforov (2009) by showing that the exact Turán edge threshold is detected by the exact spectral threshold: for every $r\ge 2$ and every $n$, $λ(G)&lt;λ(T_r(n))$, implying $e(G)&lt;e(T_r(n)).$ Our proof also determines the equality cases. Third, we answer another question of Nikiforov (2009) by showing that his least-eigenvalue clique bound \[ ω(G)\ge 1+\frac{2e(G)}{(n-d(G))(d(G)-λ_n(G))} \] does imply the concise form of Turán&#39;s theorem. Finally, we discuss an open problem proposed by Ai et al. (2026) in \cite{ALNS26+}.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04938" target="_blank" rel="noopener">The Erdős-Pósa property for prime-length cycles fails (and beyond)</a></h3>
+
+    <p class="paper-authors">
+      
+      Maximilian Gorsky, Kevin Hendrey, Tony Huynh
+    </p>
+
+    <p class="paper-summary">The Erdős-Pósa theorem says you can either find k vertex-disjoint cycles in a graph or delete a bounded number of vertices to kill them all — a clean packing-vs-covering duality. This paper shows that restricting to prime-length cycles breaks this property completely, even in planar graphs, and more broadly, any set of cycle lengths with lower density zero fails the same way.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+      <span class="tag">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove that for every $t \in \mathbb{N}$, prime-length cycles do not have the $\frac{1}{t}$-integral Erdős-Pósa property, even when restricted to planar graphs. We in fact prove a more general density result. For every $t \in \mathbb{N}$ and every subset $L \subseteq \mathbb{N}$ with lower density zero, the set of cycles whose length is in $L$ do not have the $\frac{1}{t}$-integral Erdős-Pósa property, even when restricted to planar graphs. We also consider a less restrictive density condition on $L$, called porous, where the complement of $L$ contains arbitrarily long sequences of consecutive integers. We prove that for every porous set $L \subseteq \mathbb{N}$, the set of cycles whose length is in $L$ do not have the Erdős-Pósa property, even when restricted to projective planar graphs. Our results partially answer a question of Gollin, Hendrey, Kwon, Oum, and Yoo [Math. Ann., 393(2):2507-2559, 2025].</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04379" target="_blank" rel="noopener">More on the Erd\H os--Kleitman problem on matchings in set families</a></h3>
+
+    <p class="paper-authors">
+      
+      Andrey Kupavskii, Georgy Sokolov
+    </p>
+
+    <p class="paper-summary">How large can a family of subsets of an n-element set be if no s members are pairwise disjoint (sharing no elements)? This extremal combinatorics problem, posed by Erdős in 1968, has seen recent progress; this paper extends the known parameter range where the extremal families are fully characterized. The work connects to the famous Erdős Matching Conjecture, a central open problem in combinatorics.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+      <span class="tag">cs.DM</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $e(n,s)$ denote the maximum size of a family $\mathcal{F}$ of subsets of an $n$-element set that contains no $s$ pairwise disjoint members. In 1968, answering a question of Erdős, Kleitman determined $e(sm-1,s)$ and $e(sm,s)$ for all integers $m,s\ge 1$. Half a century later, Frankl and Kupavskii determined $e(s(m+1)-\ell, s)$ for $\ell \leq \frac{s-3}{m+3}$. They showed that the corresponding extremal example is closely connected with the extremal example for the Erdős Matching Conjecture, and conjectured that the same remains true for all $\ell \leq s/2$. In this paper, we prove an approximate version of their conjecture for $s\ge s_0(m)$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04043" target="_blank" rel="noopener">Kazhdan-Lusztig polynomials of Dowling geometries</a></h3>
+
+    <p class="paper-authors">
+      
+      Luis Ferroni, Matt Larson
+    </p>
+
+    <p class="paper-summary">Kazhdan-Lusztig polynomials are combinatorial invariants attached to matroids — abstract structures generalizing graphs and vector arrangements — whose coefficients are notoriously hard to interpret. This paper gives explicit combinatorial formulas for these coefficients for Dowling geometries, a broad family generalizing both type-A and type-B braid matroids, including their equivariant versions that track symmetry group actions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We give a concrete combinatorial interpretation of the coefficients of the Kazhdan-Lusztig polynomials of Dowling geometries, a family of matroids which generalizes braid matroids of types A and B. Furthermore, we interpret the coefficients of the equivariant Kazhdan-Lusztig polynomials and the equivariant Z-polynomials of Dowling geometries associated to non-trivial groups with respect to their full automorphism groups.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03893" target="_blank" rel="noopener">Optimal Hardness of Online Algorithms for Large Common Induced Subgraphs</a></h3>
+
+    <p class="paper-authors">
+      
+      David Gamarnik, Miklós Z. Rácz, Gabe Schoenbach
+    </p>
+
+    <p class="paper-summary">Given two random graphs, how large a common induced subgraph (same vertices, same edge structure preserved) can an online algorithm find, processing vertices without backtracking? A simple greedy approach finds one of size ~2 log₂ n, but the true maximum is ~4 log₂ n. This paper proves no online algorithm can beat the 2 log₂ n barrier, establishing an optimal hardness result and revealing a fundamental computational gap for this problem.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">cs.DS</span>
+      
+      <span class="tag">cs.CC</span>
+      
+      <span class="tag">cs.DM</span>
+      
+      <span class="tag">math.CO</span>
+      
+      <span class="tag">math.PR</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study the problem of efficiently finding large common induced subgraphs of two independent Erdős--Rényi random graphs $G_1, G_2 \sim \mathbb{G}(n,1/2)$. Recently, Chatterjee and Diaconis showed that the largest common induced subgraph of $G_1$ and $G_2$ has size $(4-o(1))\log_2 n$ with high probability. We first show that a simple greedy online algorithm finds a common induced subgraph of $G_1$ and $G_2$ of size $(2-o(1)) \log_2 n$ with high probability. Our main result shows that no online algorithm can find a common induced subgraph of $G_1$ and $G_2$ of size at least $(2+\varepsilon) \log_2 n$ with probability bounded away from $0$ as $n \to \infty$. Together, these results provide evidence that this problem exhibits a computation-to-optimization gap. To prove the impossibility result, we show that the solution space of the problem exhibits a version of the (multi) overlap gap property (OGP), and utilize an interpolation argument recently developed by Gamarnik, Kizildağ, and Warnke that connects OGP and online algorithms.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03583" target="_blank" rel="noopener">The Distribution Of Subtrees In Dense Graphs And The Roots Of The Subtree Polynomial</a></h3>
+
+    <p class="paper-authors">
+      
+      Stephan Wagner, Ruoyu Wang
+    </p>
+
+    <p class="paper-summary">For dense graphs, this paper shows that the number of vertices missing from a randomly chosen subtree follows a Poisson distribution asymptotically, where a subtree is any connected acyclic subgraph. From this, the authors deduce that all roots of the subtree polynomial—the generating function counting subtrees by size—lie in a bounded region of the complex plane. This resolves open questions about the analytic structure of subtree polynomials and mirrors similar results for other graph polynomials.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>For a graph $G$ with $n$ vertices and a positive integer $k \leq n$, let $s_k(G)$ be the number of subtrees (subgraphs that are trees, not necessarily induced) of $G$ with $k$ vertices. The subtree polynomial of $G$ is $S(G;x) = \sum_{k=1}^n s_k(G) x^k$. In this paper, we consider dense connected graphs with a minimum degree that is linear in the number of vertices. We prove that the number of missing vertices in a random subtree is asymptotically Poisson-distributed and deduce that all the roots of the subtree polynomial have to be close to $0$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03054" target="_blank" rel="noopener">Closed form logical error rate approximations for surface codes</a></h3>
+
+    <p class="paper-authors">
+      
+      Shaked Regev, Daniel Dilley, Andrea Delgado <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">Surface codes are a leading approach to fault-tolerant quantum computing, but predicting their logical error rates currently requires costly simulations. This paper derives closed-form approximations using the code&#39;s symmetry structure, bypassing those simulations. The result lets engineers quickly compare hardware configurations and select designs with lower error rates — turning a computationally expensive optimization problem into a tractable analytical one.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">quant-ph</span>
+      
+      <span class="tag">cs.DM</span>
+      
+      <span class="tag">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We propose a novel method to calculate logical error rates in surface codes, assuming independent and identically distributed physical errors. We show how to use our method to analyze hypothetical quantum computers with various configurations and select designs with lower error rates. Currently, this requires expensive classical simulations of quantum decoders for various distances and physical error rates or inaccurate extrapolation from minimal experimental data. Instead, we use the symmetry of the problem to count the configurations that result in a logical error with our novel software. Given a physical error rate, we can deduce the probability of a logical error, to provably good accuracy. We include an analysis of measurement errors to allow a more complete comparison of different surface code implementations.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02731" target="_blank" rel="noopener">Existence of cycles of length divisible by 3 or 4</a></h3>
+
+    <p class="paper-authors">
+      
+      Ilkyoo Choi, Hojin Chu, Ringi Kim <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">Must a dense graph contain a cycle whose length is a multiple of k? Dean&#39;s conjecture says yes when minimum degree is at least k, and this paper sharpens the k=3 and k=4 cases by fully characterizing which graphs with minimum degree 2 and few low-degree vertices avoid such cycles. This combinatorial classification tightens previously known existence results and clarifies exactly where the obstruction lies.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Dean conjectured that for each integer $k \ge 3$, every graph with minimum degree at least $k$ has a cycle whose length is divisible by $k$; this conjecture is known to be true for all $k\neq 5$. For $k\in\{3,4\}$, stronger statements are true: every graph with minimum degree at least $2$ and at most $k-2$ vertices of degree $2$ has a cycle whose length is divisible by $k$.
+  We further strengthen these results by characterizing all graphs with minimum degree at least $2$ and at most three vertices of degree $2$ that have no cycle of length divisible by $k$, for each $k\in\{3,4\}$. As a corollary, we obtain that every graph with minimum degree at least $2$ and at most two vertices of degree $2$ has a cycle whose length is divisible by $3$, and that every graph on at least nine vertices with minimum degree at least $2$ and at most three vertices of degree $2$ has a cycle whose length is divisible by $4$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02678" target="_blank" rel="noopener">A universal dichotomy for concentration in randomly colored graphs</a></h3>
+
+    <p class="paper-authors">
+      
+      Nicola Apollonio
+    </p>
+
+    <p class="paper-summary">When you randomly color a graph&#39;s vertices with s colors, do the induced subgraphs have predictable sizes? This paper proves a sharp dichotomy controlled by ζ, the normalized Euclidean norm of the degree sequence: if ζ→0 the subgraph sizes concentrate tightly around their means, while if ζ stays bounded away from zero, concentration depends critically on how balanced the color classes are. This universal two-regime picture works for essentially any graph.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $ζ$ be Euclidean norm of the degree sequence of a graph normalized by the graph size. We prove that when the vertices of a graph are randomly colored with $s$ colors such that the fraction of vertices in each color class is bounded away from zero, only two asymptotic regimes emerge. If $ζ=o(1)$, then the sizes of the subgraphs induced by the color classes concentrate around their expected values. If $ζ=Θ(1)$, then concentration depends on the color balance: for colorings with persisting imbalance, the total number $M$ of monochromatic edges stays bounded away from its mean with positive probability; otherwise, for vanishing imbalance, $M$ still concentrates. The same dichotomy holds for a broad class of randomly colored random graphs.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02610" target="_blank" rel="noopener">Shadows of Uniform Hypergraphs under a Minimum Degree Condition</a></h3>
+
+    <p class="paper-authors">
+      
+      Haorui Liu, Mei Lu, Yi Zhang
+    </p>
+
+    <p class="paper-summary">The Kruskal-Katona theorem bounds how small the shadow (the collection of lower-dimensional faces) of a hypergraph can be given its size; this paper instead imposes a minimum degree condition and asks the same question. It characterizes the extremal hypergraphs—those achieving the smallest possible shadow—revealing a richer structure than the classical size-only setting and resolving a natural open problem in extremal combinatorics.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Given a set $X$ and an integer $t$, let $\mathcal{F}$ be a family of $k$-subsets of $X$. The Kruskal--Katona theorem states that if $|\mathcal{F}|\geq \binom{t}{k}$, then $|\partial_\ell\mathcal{F}|\geq\binom{t}{\ell}$. The minimum degree version of this problem asks: if $δ(\mathcal{F})\geq \binom{t}{k-1}$, how small can $|\partial_\ell\mathcal{F}|$ be? We call a hypergraph \textit{extremal} if it achieves the minimum value of $|\partial_\ell \mathcal{F}|$ subject to the degree condition $δ(\mathcal{F}) \geq \binom{t}{k-1}$. Füredi and Zhao [SIAM J. Discrete Math. 36(4), 2022] proved that for $k=3$ and $\ell=2$, every extremal graph contains an isolated copy of $K_{t+1}^3$ when $|X| &gt; \frac{1}{4}(t+1)^2(t+2)$. In this article, we study the general case $k &gt; \ell \geq 2$. By developing a hypergraph transformation that combines shifting operations with antilexicographic compression, we prove that there exists an extremal hypergraph containing an isolated copy of $K^{k}_{t+1}$ whenever $|X| &gt; \frac{1}{4}(t+1)^2\binom{t-1}{\ell-2} + 2t$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02594" target="_blank" rel="noopener">An Improved Threshold for the Minimum Degree Kruskal-Katona Theorem for 3-Uniform Hypergraphs</a></h3>
+
+    <p class="paper-authors">
+      
+      Haorui Liu, Mei Lu, Yi Zhang
+    </p>
+
+    <p class="paper-summary">The Kruskal-Katona theorem bounds how small the &#39;shadow&#39; (set of sub-faces) of a hypergraph family can be given its size; this paper studies a minimum-degree variant where instead of fixing family size, you fix a minimum degree condition. For 3-uniform hypergraphs, the authors sharpen the threshold at which extremal configurations must contain a complete graph, improving the best-known bound. This clarifies the structure of extremal hypergraphs in a combinatorially rich open problem.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Given a set $X$ and a sufficiently large integer $t$, let $\mathcal{F}$ be a family of $k$-subsets of $X$. The Kruskal-Katona theorem states that if $|\mathcal{F}|\geq \binom{t}{k}$, then $|\partial_{k-1}\mathcal{F}|\geq\binom{t}{k-1}$. The minimum degree version of this problem asks: if $δ(\mathcal{F})\geq \binom{t}{k-1}$, how small can $|\partial_{k-1}\mathcal{F}|$ be? In this article, for the case $k=3$, we prove that every extremal graph for this problem contains an isolated copy of $K_{t+1}^3$ whenever $|X| \geq ct^2 + o(t^2)$, with the constant $c = 1 + \sqrt{928/33}$. Our proof uses a graph transformation that regularizes the neighborhood structure of extremal graphs, reducing the problem to a counting argument on the neighbors of a disjoint clique family. This improves a result of Füredi and Zhao [SIAM J.\ Discrete Math.\ 36(4), 2022], reducing the threshold from $O(t^3)$ to $O(t^2)$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02543" target="_blank" rel="noopener">Proof of Thomassen&#39;s Conjecture on Highly connected subgraphs with large chromatic number</a></h3>
+
+    <p class="paper-authors">
+      
+      Achintya Raya Polavarapu
+    </p>
+
+    <p class="paper-summary">Thomassen conjectured in 1983 that any graph with large chromatic number — meaning it requires many colors — must contain a highly connected subgraph that also has large chromatic number, with an explicit quantitative bound. This paper proves that conjecture by introducing a Hall-feasibility argument that closes the final gap in recent work by Nguyen. The result confirms a fundamental link between global coloring complexity and local connectivity structure.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>For integers $k\ge 1$ and $m\ge 2$, let $g(k,m)$ be the least integer $n\ge 1$ such that every graph with chromatic number at least $n$ contains a $(k+1)$-connected subgraph with chromatic number at least $m$. We prove that \[
+  g(k,m)\le \max(m+2k-2,\,3k+1) \] for all $k\ge 1$ and $m\ge 2$, establishing the 1983 conjecture of Thomassen that $g(k,k+1)\le 3k+1$. The key new ingredient is a Hall-feasibility argument replacing the final numerical step in the proof of Nguyen.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02251" target="_blank" rel="noopener">On conjectural fermionic formulas for the Macdonald index in Argyres-Douglas theories</a></h3>
+
+    <p class="paper-authors">
+      
+      Shane Chern, Chanh Tran, Tanay Wakhare
+    </p>
+
+    <p class="paper-summary">The Macdonald index is a quantity from mathematical physics encoding symmetries of certain quantum field theories called Argyres-Douglas theories. This paper proves a fermionic-bosonic duality — showing two very different-looking infinite series expressions are actually equal — using Bailey pairs, a classical technique from the theory of q-series and hypergeometric functions. This confirms conjectures by Andrews et al. and Kim-Kim-Song, linking combinatorial identities to quantum field theory.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+      <span class="tag">hep-th</span>
+      
+      <span class="tag">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove a fermionic-bosonic duality relation for the Macdonald index in Argyres-Douglas theories of type $(A_1, D_{2k+1})$, thereby yielding a conjectural fermionic formula due to Andrews et al. Our duality is built upon a new conjugate Bailey pair to be established using techniques from orthogonal polynomials and basic hypergeometric series. In addition, this fermionic formula implies another sum-like expression for the Macdonald index conjectured by Kim, Kim, and Song.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02193" target="_blank" rel="noopener">Trees and Graphs with Non Log-concave Dominating Set Sequence via AI Tools</a></h3>
+
+    <p class="paper-authors">
+      
+      Alina Du, Steven Heilman, Greta Panova
+    </p>
+
+    <p class="paper-summary">A dominating set in a graph is a subset of vertices such that every other vertex is adjacent to one in the subset; the dominating set sequence counts how many such sets exist at each size. Log-concavity — where each term squared exceeds the product of its neighbors — often holds for natural combinatorial sequences, but this paper finds new counterexamples among trees and graphs, discovered using AI-assisted search. It also proves that non-log-concavity can persist across arbitrarily many indices.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+      <span class="tag">cs.AI</span>
+      
+      <span class="tag">cs.DM</span>
+      
+      <span class="tag">cs.LG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We give new examples of graphs and trees with dominating set sequences that are not log-concave. These examples were generated by PatternBoost, a transformer-based reinforcement learning software developed by Charton-Ellenberg-Wagner-Williamson. We also show: for any positive integer $m$, there exists a tree whose dominating set sequence is not log-concave for at least $m$ indices by modifying a similar construction of Bautista-Ramos for the independent set sequence. We show that a large class of caterpillar graphs has log-concave dominating set sequences. A continuous analogue of the sequence is also log-concave for all graphs.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02067" target="_blank" rel="noopener">Faster Mixing for Triangulations via Transport Flows</a></h3>
+
+    <p class="paper-authors">
+      
+      Vedat Levi Alev, Daniel Frishberg, Mihalis Sarantis <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">How quickly does randomly flipping diagonals in a triangulated polygon reach a uniformly random triangulation? This paper proves the mixing time is Õ(n²), improving the previous best bound of Õ(n³) by introducing optimal transport techniques to analyze the chain. The gap to the known lower bound of Ω(n^{3/2}) remains open, but this is the first near-quadratic guarantee for a classically studied Markov chain.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+      <span class="tag">cs.CG</span>
+      
+      <span class="tag">cs.DM</span>
+      
+      <span class="tag">cs.DS</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove an $\widetilde O(n^2)$ bound for the \emph{relaxation time} and the \emph{log-Sobolev time} (inverse log-Sobolev constant) of the classical triangulation flip chain on a convex $(n+2)$-gon, implying a mixing time of $\widetilde O(n^2)$. The previous state of the art for the mixing time of this chain, due to Eppstein and Frishberg, was $\widetilde O(n^3)$, while the best known lower bound on the mixing time, due to Molloy, Reed, and Steiger, is $Ω(n^{3/2})$. Our relaxation time bound makes significant progress towards Aldous&#39; conjectured bound of $Θ(n^{3/2})$ for the relaxation time.
+  We improve upon the analysis of Eppstein and Frishberg by further developing the framework of \emph{transport flows} introduced in the work of Chen et al. In this light, our results can be seen as a more efficient way of using combinatorial decompositions to obtain functional inequalities for Markov chains. We hope our ideas will find other applications in the future.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.01813" target="_blank" rel="noopener">Latin hypercubes with restricted transversals</a></h3>
+
+    <p class="paper-authors">
+      
+      Billy Child, Ian M. Wanless
+    </p>
+
+    <p class="paper-summary">A Latin hypercube is a higher-dimensional generalization of a Latin square—a multi-dimensional array where every &#39;row&#39; in each direction contains each symbol exactly once. A transversal is a set of n entries with no two sharing any coordinate. This paper studies Latin hypercubes where transversals are restricted or forbidden, advancing our understanding of when such combinatorial structures can or cannot exist.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>A $k$-plane of a $d$-dimensional array is a subarray formed by fixing $d-k$ coordinates and allowing the remaining $k$ coordinates to vary freely. A Latin hypercube of dimension $d$ and order $n$ is an $n\times n\times\cdots\times n$ array of dimension $d$ containing symbols from an $n$-set, such that each $1$-plane contains each of the possible entries exactly once. A transversal in a Latin hypercube of order $n$ is a set of $n$ entries of the hypercube, no pair of which agree in any coordinate or contain the same symbol.
+  The aim of this paper is to construct Latin hypercubes that have transversals but which have many entries that are not in any transversal, or for which the number of disjoint transversals is limited. We show the following results in the case when the dimension $d$ is even. For all even $n\ge 10$ there exists a Latin hypercube of order $n$ that contains a transversal but for which all transversals hit one $(d-2)$-plane. For $n\in\{6,8\}$ there exists a Latin hypercube of order $n$ that contains a transversal but for which all transversals hit one of two $(d-2)$-planes. For even $d&gt;2$ there is a Latin hypercube of order $n=4$ that contains a transversal but has $2^d$ entries that are not in any transversal.
+  Our constructions use a quasigroup $(Q,\ast)$ to increase the dimension of a Latin hypercube using the rule $H_d(x_1,\dots,x_d)=H_{d-1}(x_1,\dots,x_{d-1})\ast x_d$. We give several characterisations which allow us to diagnose which entries of $H_d$ are in transversals in terms of properties of $H_{d-1}$ and $Q$.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-PR">
+  <div class="subfield-header">
+    <h2>Probability</h2>
+    <span class="count-badge">5</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06429" target="_blank" rel="noopener">$\mathsf{GL}_N(\mathbb{C})$ Brownian motion and stochastic PDE on entire functions</a></h3>
+
+    <p class="paper-authors">
+      
+      Theodoros Assiotis, Zahra Sadat Mirsajjadi
+    </p>
+
+    <p class="paper-summary">Brownian motion on the complex general linear group GL_N(ℂ) produces randomly evolving matrices; this paper pins down the limiting behavior of their singular values as N→∞, near the spectral edge. The limits satisfy an infinite system of interacting stochastic differential equations with logarithmic repulsion, and the associated characteristic polynomial solves a nonlinear stochastic PDE—connecting random matrix theory to the analysis of random entire functions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.PR</span>
+      
+      <span class="tag">math-ph</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We construct the full edge scaling limit of the singular values of Brownian motion on the general linear group $\mathsf{GL}_N(\mathbb{C})$ starting from general conditions. We show that the limiting paths solve an infinite system of SDE with log-interaction and have a Gibbs resampling property with exponential Brownian bridges. Moreover, we show that the evolution of the limiting rescaled reverse characteristic polynomial solves a stochastic partial differential equation with a non-linear multiplicative noise and linear drift. From a special initial condition the resulting line ensemble coincides, in logarithmic coordinates, with a line ensemble constructed by Ahn which arises as a universal scaling limit of singular values of products of random matrices. We prove some analogous results on the evolution of limiting characteristic polynomials for two models whose stationary measures are given by the Hua-Pickrell and Bessel stochastic zeta functions respectively.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05631" target="_blank" rel="noopener">Wandering Exponents and the Free Energy of the High-Dimensional Elastic Polymer</a></h3>
+
+    <p class="paper-authors">
+      
+      Gerard Ben Arous, Pax Kivimae
+    </p>
+
+    <p class="paper-summary">A directed polymer in a random environment is a path whose energy is shaped by random noise, modeling disordered systems like tangled polymers. This paper analyzes a spatially-correlated version in high dimensions, deriving an explicit asymptotic formula for the free energy (a thermodynamic quantity capturing typical behavior) and characterizing both high- and low-temperature phases via the &#39;wandering exponent&#39; measuring path spread.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.PR</span>
+      
+      <span class="tag">math-ph</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study the behavior of the elastic polymer, a model of a directed polymer in a continuous Gaussian random environment that is independent in time and correlated in space, as the dimension of the environment is taken to infinity. We give an explicit asymptotic formula for the free energy, which is given in terms of the distribution of the inner product of two sampled configurations, which we also obtain an implicit formula for. From this, we provide an explicit characterization of both the low- and high-temperature phases of this model in terms of the spatial correlation function of the environment. We find asymptotics for the wandering exponent when the spatial correlation function is either an exponential or a power-law decay. Our results show that when the correlations are either suitably weak or short ranged, the model is asymptotically diffusive. On the other hand, for suitably strong long ranged correlations, the model is asymptotically superdiffusive. Moreover, we show that this transition coincides exactly with another transition where the model goes from being one-step replica symmetry breaking to full-step replica symmetry breaking. This rigorously confirms many of the findings of Mezard and Parisi [53] in the physics literature.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03718" target="_blank" rel="noopener">Potential Hessian Ascent III: Sampling the Sherrington--Kirkpatrick Model at Beta &lt; 1/2</a></h3>
+
+    <p class="paper-authors">
+      
+      Ewan Davies, Holden Lee, Juspreet Singh Sandhu <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">The Sherrington–Kirkpatrick model is a cornerstone of statistical physics modeling disordered magnetic systems; sampling from its Gibbs measure (the probability distribution over spin configurations at temperature 1/β) is computationally challenging. This paper gives a polynomial-time algorithm achieving near-perfect sampling up to inverse temperature β &lt; 1/2, improving the previous TVD-error guarantee from β ≈ 0.295 and matching half the full replica-symmetric regime.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.PR</span>
+      
+      <span class="tag">cs.DS</span>
+      
+      <span class="tag">math-ph</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We give a polynomial-time algorithm to sample from the Gibbs measure of the Sherrington--Kirkpatrick model with negligible total-variation distance (TVD) error up to inverse temperature $β&lt; 1/2$. Prior work obtained TVD error guarantees only up to $β\approx 0.295$, while results covering the entire replica-symmetric regime $β&lt; 1$ gave guarantees only in Wasserstein distance. Our approach demonstrates that the same potential Hessian ascent previously developed for optimization also functions as a sampling algorithm by implementing algorithmic stochastic localization at high temperature. By estimating the covariance of the tilted Gibbs distribution via Gaussian integration by parts, overlap concentration, and precise cavity estimates, we show that a Hessian-ascent process achieves an $O(1)$ Wasserstein error guarantee for finite-time localization, improving on the previous $o(n)$. A careful comparison of stochastic localization with the Hessian ascent process and a free probability argument controlling the diagonal sub-algebra of the Hessian improves this to $O(1)$ in KL divergence. We then use Jarzynski&#39;s equality with rejection sampling, along with a restricted log-Sobolev inequality on the time-$T$ localized distribution, to refine the error to $o(1)$ in TVD up to a constant time $T$ and to complete the sampling with Glauber dynamics.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03100" target="_blank" rel="noopener">Berry-Esseen bounds for multivariate martingale difference sequences in the Kolmogorov distance</a></h3>
+
+    <p class="paper-authors">
+      
+      Weichen Wu, Dung Le, Arun Kumar Kuchibhotla <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">The Berry-Esseen theorem quantifies how quickly sums of random variables converge to a Gaussian distribution; this paper extends it to martingale difference sequences in high dimensions. The authors prove bounds decaying like n^{-1/4} in sequence length and only polylogarithmically in dimension d under the Kolmogorov distance (the largest gap between two cumulative distributions), with applications to Markov chains—a practically important setting where observations are dependent.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.PR</span>
+      
+      <span class="tag">math.ST</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We derive new Gaussian approximation for finite martingale difference sequences in $\mathbb{R}^d$ with respect to the Kolmogorov distance. Under appropriate conditions, our bounds exhibit a dependence of order $n^{-1/4}$ on the length of the sequence and of order $\mathrm{polylog}(d)$ on the dimension. As an application, we derive a high-dimensional Berry-Esseen bound over hyper-rectangles for martingale sequences generated from Markov chains.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03057" target="_blank" rel="noopener">Uniform-in-time quantitative fluctuations of large scale interacting particle systems</a></h3>
+
+    <p class="paper-authors">
+      
+      Solesne Bourguin, Konstantinos Spiliopoulos
+    </p>
+
+    <p class="paper-summary">When many particles interact through their collective average (mean-field), how closely does the system track its deterministic limit over all time? This paper proves a uniform-in-time central limit theorem for such systems, showing fluctuations around the McKean-Vlasov limit shrink at the optimal rate N^{-1/2} in Wasserstein distance—a result measuring how probability distributions differ—crucially without error degrading as time grows.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.PR</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study fluctuations of mean-field interacting particle systems around their McKean--Vlasov limit. Our main result provides a uniform-in-time quantitative central limit theorem for the fluctuation process, with convergence rate of order $N^{-1/2}$ to the corresponding Gaussian limit in the Wasserstein metric. The proof relies on two main ingredients. First, we establish a uniform-in-time weak expansion for specific functionals of the empirical measure around their limiting behavior. This yields, in particular, uniform-in-time control of the convergence of the prelimit variance to its limiting counterpart. We also derive a backward PDE representation of the limiting variance, which is of independent interest. Second, we use Malliavin calculus tools and, in particular, a second-order Poincaré inequality that bounds the Wasserstein distance between the fluctuation process and its Gaussian limit in terms of the first- and second-order Malliavin derivatives of the particle flow. The quantitative convergence rates then follow from a delicate analysis of these derivatives, yielding the sharp estimates required for uniform-in-time control.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-DG">
+  <div class="subfield-header">
+    <h2>Differential Geometry</h2>
+    <span class="count-badge">8</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05414" target="_blank" rel="noopener">The $σ_k$-Yamabe problem revisited</a></h3>
+
+    <p class="paper-authors">
+      
+      Yuxin Ge, Guofang Wang, Wei Wei
+    </p>
+
+    <p class="paper-summary">The σ_k-Yamabe problem asks whether every Riemannian manifold admits a conformally equivalent metric with constant σ_k-curvature—a symmetric function of the eigenvalues of the Schouten tensor generalizing scalar curvature. This paper proves the σ_2-Yamabe constant is always achieved when the classical Yamabe constant is positive, resolving a key existence question in conformal geometry.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+      <span class="tag">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In this paper we revisit the $σ_k$-Yamabe problem on $M^n$, namely, finding a conformal metric with constant $σ_k$-scalar curvature. We prove that on a closed manifold $\left(M,\left[g_0\right]\right)$ with positive Yamabe constant $Y_1\left(M,\left[g_0\right]\right)&gt;0$, the $σ_2$-Yamabe constant
+  $$ Y_2\left(M,\left[g_0\right]\right):=\inf _{g \in\left[g_0\right], R_g&gt;0} \frac{\int_M σ_2(g) d \operatorname{vol}(g)}{\operatorname{vol}(g)^{\frac{n-4}{n}}} $$
+  is achieved by a conformal metric $g \in\left[g_0\right]$, which in particular solves the $σ_2$-Yamabe problem, assuming $Y_2\left(M,\left[g_0\right]\right)&gt;0$. As a consequence, for any $\left(M, g_0\right)$ with $Y_1\left(M,\left[g_0\right]\right)&gt;$ 0 and $Y_2\left(M,\left[g_0\right]\right)&gt;0$ one has
+  $$ \inf _{g \in\left[g_0\right], R_g&gt;0} \frac{\int_M σ_2(g) d \operatorname{vol}(g)}{\operatorname{vol}(g)^{\frac{n-4}{n}}}=\inf _{g \in\left[g_0\right], R_g&gt;0, σ_2(g)&gt;0} \frac{\int_M σ_2(g) d \operatorname{vol}(g)}{\operatorname{vol}(g)^{\frac{n-4}{n}}} . $$
+  We also show that these conclusions can fail if the condition $R_g&gt;0$ is removed.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05041" target="_blank" rel="noopener">An Optimal Regularity Theory for Immersed Stable Minimal Hypersurfaces with Small Singular Set</a></h3>
+
+    <p class="paper-authors">
+      
+      Paul Minter, Zhengyi Xiao
+    </p>
+
+    <p class="paper-summary">A minimal hypersurface is stable if it locally minimizes area; singularities are points where the surface fails to be a smooth immersion. This paper proves that a stable minimal hypersurface, even allowing an initial singular set of (n-2)-dimensional Hausdorff measure zero, has its remaining singularities confined to a set of Hausdorff dimension at most n-7—the best possible bound. This gives the optimal regularity theory for immersed stable minimal hypersurfaces under the weakest reasonable assumptions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+      <span class="tag">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We show that if $M^n$ is a properly immersed, two-sided, stable minimal hypersurface in $B^{n+1}_1(0)\setminus S$, where $S$ is closed with $\mathcal{H}^{n-2}(S)=0$, then $\text{dim}_{\mathcal{H}}\text{sing}(M)\leq n-7$, namely $\overline{M}\cap B^{n+1}_1(0)$ is represented by a smooth minimal immersion outside a closed set of generally unavoidable singularities which has Hausdorff dimension at most $n-7$. This provides the optimal a priori size assumption on the non-immersed singular set in order to guarantee optimal regularity. Consequently, such objects form a compact class under mass upper bounds.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04614" target="_blank" rel="noopener">Counting Minimal Lagrangians Via Mirzakhani Functions</a></h3>
+
+    <p class="paper-authors">
+      
+      Ben Lowe, Fernando C. Marques, André Neves
+    </p>
+
+    <p class="paper-summary">How many minimal Lagrangian submanifolds—special geometric surfaces that locally minimize area—exist in products of hyperbolic surfaces? The answer grows like A^(6(k-1)) for genus-k surfaces with area at most A, with an explicit constant tied to the Mirzakhani function (a tool from the study of hyperbolic surface volumes). This gives precise asymptotic counts for these geometric objects and establishes rigidity of their area spectrum.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+      <span class="tag">math.DS</span>
+      
+      <span class="tag">math.GT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We show that for $k&gt;1$ the number of genus $k$ minimal Lagrangians with area at most $A$ in a product of hyperbolic surfaces grows on the order of $A^{6(k-1)}$, with an explicit leading constant given in terms of the Mirzakhani function. We also prove rigidity of the Lagrangian area spectrum, and obtain analogous counting results for products of a higher genus surface with a circle.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04476" target="_blank" rel="noopener">Topology of gradient Ricci shrinkers via weighted $L^2$ cohomology</a></h3>
+
+    <p class="paper-authors">
+      
+      Fei He
+    </p>
+
+    <p class="paper-summary">Gradient Ricci shrinkers are special Riemannian manifolds that model how spaces collapse under Ricci flow. Using weighted L² cohomology—measuring differential forms with exponential decay weights—this paper bounds their topological complexity via Betti numbers, proves cohomology vanishing results, and shows their ends behave dichotomously. The methods also extend to self-shrinkers of mean curvature flow.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+      <span class="tag">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>This paper proves several topological results for smooth gradient Ricci shrinkers. We establish upper bounds for the Betti numbers, a vanishing theorem for cohomology, and a dichotomy for the number of ends. We also prove a full Hodge theorem for a large class of shrinkers. The methods are based on weighted $L^2$ cohomology and extend to self-shrinkers of the mean curvature flow.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04399" target="_blank" rel="noopener">Holomorphicity of stable minimal surfaces of low genus</a></h3>
+
+    <p class="paper-authors">
+      
+      Nathaniel Sagman, Thomas-René Thalmaier
+    </p>
+
+    <p class="paper-summary">A minimal surface is stable if nearby deformations increase area; holomorphic curves in complex space are automatically stable. This paper proves the converse: any stable minimal immersion from ℂ into ℝⁿ must be holomorphic for some complex structure, even allowing infinite total curvature. This resolves a question Micallef posed decades ago, removing the finiteness assumptions from his earlier partial result.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove that a (branched) minimal immersion from $\mathbb{C}$ to $\mathbb{R}^n$ is stable if and only if it lives in an even dimensional affine subspace and is holomorphic for some orthogonal complex structure on the subspace. More generally, we prove that the same result holds for a class of genus $0$ surfaces that can have infinite total curvature. This contributes to an inquiry initiated by Micallef, who previously proved the equivalence in genus $0$ assuming completeness and finite total curvature. As a corollary, we prove a holomorphicity result for covering stable minimal surfaces of genus $0$ and $1$, recovering a theorem of Fraser and Schoen as a particular case.
+  Our approach is new, based on a method of constructing variations developed by the first named author and Marković. For unstable surfaces, we get explicit destabilizations and destabilization radii that can be read from the Weierstrass-Enneper data.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04272" target="_blank" rel="noopener">Volume of maximal representations into $\mathrm{SO}_0(2,3)$</a></h3>
+
+    <p class="paper-authors">
+      
+      Timothé Lemistre
+    </p>
+
+    <p class="paper-summary">For a surface with holes, &#39;maximal representations&#39; are special ways of mapping its fundamental group into a Lie group that maximize a topological quantity called volume. This paper shows that volume stays bounded above regardless of how complicated the surface is, and stays bounded away from zero on certain connected components called Gothen components — clarifying the global geometry of these representation spaces.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study the volume of maximal representations from a surface group into $\mathrm{SO}_0(2,3)$. We show that it is bounded from above, uniformly in the genus of the surface. We also prove that on the Gothen components, it is bounded from below by a strictly positive constant.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03651" target="_blank" rel="noopener">Minimal Submanifolds of The Complex and Quaternionic Projective and Hyperbolic Spaces $\cn P^{2n-1}$, $\hn P^{n-1}$, $\cn H^{2n-1}$, $\hn H^{n-1}$ via Harmonic Morphisms</a></h3>
+
+    <p class="paper-authors">
+      
+      Sigmundur Gudmundsson
+    </p>
+
+    <p class="paper-summary">This paper constructs new examples of minimal submanifolds—surfaces where mean curvature vanishes, generalizing soap-film surfaces—inside complex and quaternionic projective and hyperbolic spaces, all of codimension two. The key tool is harmonic morphisms, maps that preserve solutions to Laplace&#39;s equation and can transfer geometric structure between spaces. These non-holomorphic examples are significant because minimal submanifolds in these symmetric spaces are poorly understood and hard to construct explicitly.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In this work we construct non-holomorphic, complete and minimal submanifolds of the odd-dimensional complex projective spaces $\cn P^{2n-1}$ and their dual complex hyperbolic spaces $\cn H^{2n-1}$. We then provide complete minimal submanifolds of the quaternionic projective spaces $\hn P^{n-1}$ and their dual quaternionic hyperbolic spaces $\hn H^{n-1}$. All the constructed minimal submanifolds are of codimension two. Our main tools are complex-valued harmonic morphisms from the above mentioned ambient spaces.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03136" target="_blank" rel="noopener">Scalar curvature under weak limits of manifolds</a></h3>
+
+    <p class="paper-authors">
+      
+      Liam Mazurowski, Xuan Yao
+    </p>
+
+    <p class="paper-summary">Can you tell if a space is positively curved just by looking at it through a blurry lens? This paper proves that if a sequence of 3D manifolds converges to a limit in a precise geometric sense—via nearly-distance-preserving maps with matching volumes—then a scalar curvature lower bound (a measure of how space curves) on each piece carries over to the limit. This resolves open questions from Gromov and others about whether curvature is stable under weak geometric limits.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.DG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We show that scalar curvature lower bounds are preserved under certain weak convergence of smooth three manifolds to a smooth limit. More precisely, suppose that $M_k$ and $M$ are smooth, closed, Riemannian three manifolds. Assume that there are smooth, surjective, $λ_k$-Lipschitz maps $f_k\colon M_k \to M$ and that $\text{Vol}(M_k)\to \text{Vol}(M)$ and $λ_k\to 1$. Then if each $M_k$ has scalar curvature bounded below by $κ$ so does $M$. This result answers questions of Gromov, Sormani, Allen, and others. The proof relies on a delicate comparison between $μ$-bubbles in $M_k$ and $μ$-bubbles in $M$.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-GT">
+  <div class="subfield-header">
+    <h2>Geometric Topology</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03161" target="_blank" rel="noopener">Parabolic-preserving deformations of cusped hyperbolic lattices</a></h3>
+
+    <p class="paper-authors">
+      
+      Samuel A. Ballas, Julien Paupert, Pierre Will
+    </p>
+
+    <p class="paper-summary">A lattice in a Lie group is a discrete subgroup of finite covolume; cusped hyperbolic lattices have parabolic elements corresponding to cusps. This paper studies deformations of such lattices from real hyperbolic groups into complex hyperbolic or higher-rank groups, showing the figure-eight knot group admits a genuine one-parameter family of discrete, faithful, Zariski-dense deformations into SU(3,1) — a rare, concrete example illuminating the rigid boundary between real and complex hyperbolic geometry.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.GT</span>
+      
+      <span class="tag">math.DG</span>
+      
+      <span class="tag">math.GR</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study deformations of non-cocompact lattices of ${\rm SO}(n,1)$ into ${\rm SU}(n,1)$ and ${\rm SO}(n+1,1)$. A necessary condition for these deformations to remain discrete and faithful (when $n \geqslant 3$) is for the parabolic subgroups to remain parabolic and discrete; we call such representations \emph{strongly parabolic-preserving}. We show that the figure-eight knot group admits a one-parameter family of Zariski-dense parabolic-preserving deformations into ${\rm SU}(3,1)$, with further deformations into ${\rm SU}(2,2)$. We also study the \emph{bending deformations} of the Bianchi groups (seen as subgroups of ${\rm SO}(3,1)$) along the modular surface into ${\rm SU}(3,1)$ and ${\rm SO}(4,1)$, and show that infinitely many of them are strongly parabolic-preserving in ${\rm SU}(3,1)$, while none are strongly parabolic-preserving in ${\rm SO}(4,1)$. Finally, for any $n \geqslant 3$, we show that there exist infinitely many non-commensurable cusped hyperbolic $n$-manifolds whose corresponding hyperbolic representation admits a 1-parameter family of parabolic-preserving deformations into ${\rm SU}(n,1)$.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-AT">
+  <div class="subfield-header">
+    <h2>Algebraic Topology</h2>
+    <span class="count-badge">3</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06499" target="_blank" rel="noopener">A projective resolution of the symplectic Steinberg module</a></h3>
+
+    <p class="paper-authors">
+      
+      Urshita Pal
+    </p>
+
+    <p class="paper-summary">The symplectic Steinberg module is an algebraic object encoding the &#39;boundary at infinity&#39; of the symplectic group over a number ring, and governs its cohomological duality. This paper builds an explicit projective resolution of that module—a chain of free representations that systematically approximates it—mirroring a classical construction for linear groups but requiring substantially new techniques. This enables concrete cohomology computations for symplectic arithmetic groups.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AT</span>
+      
+      <span class="tag">math.GR</span>
+      
+      <span class="tag">math.GT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Borel--Serre proved that for a number ring $R$ with fraction field $K$, the symplectic group $\text{Sp}_{2n}(R)$ is a virtual duality group of degree quadratic in $n$, and that the symplectic Steinberg module $\text{St}^ω_{2n}(K)$ is its dualizing module. We construct a projective resolution of this symplectic Steinberg module as an $\text{Sp}_{2n}(R)$-representation, that is similar in form to a resolution of Lee--Szczarba for the special linear group, but whose construction is more involved. When $R$ is a Euclidean number ring, we use this resolution to compute the top degree cohomology of principal level-$p$ congruence subgroups of $\text{Sp}_{2n}(R)$, for primes $p \in R$ such that the natural map $R^\times \to (R/(p))^\times$ is surjective.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05195" target="_blank" rel="noopener">Stable homotopy theory of higher categories</a></h3>
+
+    <p class="paper-authors">
+      
+      Hadrian Heine
+    </p>
+
+    <p class="paper-summary">Classical stable homotopy theory organizes spaces by inverting loop spaces, letting &#39;spectra&#39; represent generalized homology theories. This paper extends that entire framework one level up: inverting endomorphism categories instead of loop spaces yields a stable homotopy theory where higher categories play the role of spaces and &#39;categorical spectra&#39; represent homology theories for higher categories. This opens a new structural layer above classical homotopy theory with broad implications for higher algebra.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AT</span>
+      
+      <span class="tag">math.CT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Stable homotopy theory is governed by the principle that after inverting loop spaces, homotopy types become the representing objects for homology theories. We show that this principle extends to higher category theory: inverting endomorphism categories leads to a stable homotopy theory of higher categories, in which higher categories play the role of spaces and categorical spectra represent homology theories of higher categories. Classical stable homotopy theory is recovered by inverting morphisms. While several fundamental features of classical stable homotopy theory persist in this setting, new phenomena arise from categorical dimension. In particular, stabilization is realized by spectrum objects, and the passage from unstable to stable homotopy theory is controlled within a stable range. Our main result is a categorical Brown representability theorem classifying categorical homology theories by categorical spectra. As a consequence, categorical homology theories give rise to long exact sequences and support a higher-categorical homological algebra. As an application, we construct the derived category of a rig, extending homological algebra beyond additive contexts.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03453" target="_blank" rel="noopener">Higher categories of bordisms with geometric structures</a></h3>
+
+    <p class="paper-authors">
+      
+      Daniel Grady, Dmitri Pavlov
+    </p>
+
+    <p class="paper-summary">This paper gives a rigorous axiomatic framework that uniquely characterizes an (∞,d)-category of bordisms—a higher-categorical structure encoding manifolds and the cobordisms between them—equipped with geometric data like metrics or bundles. The axioms cover a wide range of manifold types including smooth, complex, and super manifolds. This matters because such categories are the natural home for topological and geometric field theories, and a clean universal characterization has long been needed to make constructions in mathematical physics fully rigorous.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AT</span>
+      
+      <span class="tag">math-ph</span>
+      
+      <span class="tag">math.QA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We introduce a system of axioms that uniquely defines an (infinity,d)-category of bordisms equipped with geometric data. The underlying manifolds of these bordisms may be smooth, complex, super, or formal smooth manifolds, as well as any class of manifolds satisfying conditions specified in this paper. We develop a general notion of a field on a manifold, encompassing structures such as Riemannian metrics, principal bundles with connection, conformal structures, and traditional tangential structures. Using this framework, we construct a symmetric monoidal (infinity,d)-category of bordisms with prescribed underlying manifolds and fields, and prove that it satisfies our axioms.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-RT">
+  <div class="subfield-header">
+    <h2>Representation Theory</h2>
+    <span class="count-badge">3</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06180" target="_blank" rel="noopener">A Microlocal Description of Aubert-Zelevinsky Duality on Unipotent $L$-Parameters</a></h3>
+
+    <p class="paper-authors">
+      
+      Jonas Antor, Emile Okada
+    </p>
+
+    <p class="paper-summary">Aubert-Zelevinsky duality is an involution on representations of p-adic groups that pairs representations in a subtle way; understanding it geometrically is a long-standing goal. This paper describes it for unipotent representations using microlocal geometry — treating representations as perverse sheaves (geometric objects encoding topology) — showing the duality decomposes into three clean operations: Fourier transform, complex conjugation, and inversion. This provides a precise geometric explanation for a previously opaque algebraic operation.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.RT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We give a microlocal description of the Aubert--Zelevinsky involution for all unipotent representations of all inner forms of simple adjoint unramified $p$-adic groups. Via the realization of enhanced $L$-parameters as perverse sheaves, we show that the involution corresponds to the composition of three operations: Fourier transform, the complex conjugation map coming from the compact form of the dual group, and inversion on the compact part of the infinitesimal parameter.
+ We also show that when the group is not inner to a triality form of $D_4$, this simplifies to the composition of Fourier transform, Chevalley involution, and duality on local systems. This was previously verified in certain special examples by several authors where only the contribution by Chevalley involution and Fourier transform was observed. Duality on local systems is invisible in these examples since they only involve self-dual local systems.
+ Finally, we prove the microlocal Hiraga conjecture for unipotent $A$-parameters of inner-to-split simple adjoint groups as a consequence of our results.
+ In order to give a uniform proof of our results we reformulate and clarify several aspects of the construction of the unipotent local Langlands correspondence. This additionally allows us to characterize how various affine and graded Hecke algebras are identified. We prove that there is a `canonical&#39; way to do so by showing that there is a unique isomorphism of graded Hecke algebras compatible with the Kottwitz isomorphism. As an application of this, we show that a simple module of the geometric graded Hecke algebra is uniquely determined by certain composition multiplicities coming from the corresponding representation of the $p$-adic group. This can be understood as a characterization of the unipotent local Langlands correspondence.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05201" target="_blank" rel="noopener">A Pinned Local Langlands Correspondence for Depth-Zero Supercuspidal Representations</a></h3>
+
+    <p class="paper-authors">
+      
+      Manish Mishra
+    </p>
+
+    <p class="paper-summary">The Local Langlands Correspondence is a deep conjectural bridge between representations of p-adic groups and Galois-theoretic data. This paper constructs a canonical (&#39;pinned&#39;) version of this correspondence for depth-zero supercuspidal representations, fixing all ambiguities by choosing a splitting of the group, yielding a definite bijection rather than one determined only up to symmetry.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.RT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We construct a pinned local Langlands correspondence for depth-zero supercuspidal representations of a connected reductive group over a non-archimedean local field. After fixing a pinned splitting of the quasi-split inner form, we obtain a canonical bijection between irreducible depth-zero supercuspidal representations and relevant cuspidal enhanced depth-zero Langlands parameters.
+  The construction separates the tame toral part from the unramified unipotent part. The toral part is normalized by the local Langlands correspondence for maximally unramified elliptic tori and by the corresponding canonical \(L\)-embeddings. The finite representation occurring in a depth-zero type is then passed, through a pinned Jordan decomposition for possibly disconnected finite reductive quotients, to a cuspidal unipotent label on the dual centralizer. The unramified unipotent contribution is supplied by the Feng--Opdam--Solleveld correspondence for supercuspidal unipotent representations. Combining these ingredients gives the enhanced parameter attached to a depth-zero supercuspidal representation, and the inverse map is obtained by reversing the same finite Jordan decomposition.
+  The correspondence is independent of auxiliary choices apart from the fixed pinned normalization. It is compatible with the tame inertial parameter attached to the depth-zero character, with weakly unramified twists, and with central characters via the torus correspondence. Thus the main output is a canonical, pinning-normalized bijection between the two depth-zero supercuspidal sides, together with the finite unipotent bookkeeping needed to make the construction reversible.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03421" target="_blank" rel="noopener">A connection between minimal nilpotent orbits of types A and D via Hamiltonian reduction</a></h3>
+
+    <p class="paper-authors">
+      
+      Baohua Fu, Jie Liu
+    </p>
+
+    <p class="paper-summary">The minimal nilpotent orbit is the simplest nontrivial orbit in a Lie algebra&#39;s orbit stratification. This paper reveals a surprising link between such orbits in type-A and type-D Lie algebras via Hamiltonian reduction — a symmetry-quotienting construction — showing the affine closure of one&#39;s cotangent bundle equals a reduction of the other&#39;s orbit closure. This connection lies outside the classical Brylinski-Kostant framework and opens new bridges between different Lie-type geometries.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.RT</span>
+      
+      <span class="tag">math.AG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We establish a novel connection between the minimal nilpotent orbit $\mathbb{O}_n$ in $\mathfrak{sl}_n$ and the minimal nilpotent orbit closure $\overline{\mathbf{O}}_n$ in $\mathfrak{so}_{2n+2}$, which differs from the shared-orbit paradigm of Brylinski and Kostant, where no direct type-A--type-D relation appears. More precisely, we show that the affine closure of the cotangent bundle $\overline{T^*\mathbb{O}_n}^{\mathrm{aff}}$ is isomorphic to a $\mathbb{C}^*$-Hamiltonian reduction of $\overline{\mathbf{O}}_n$. This provides a quasi-classical analogue of a quantum result of Levasseur and Stafford. A detailed study of the geometry of this Hamiltonian reduction reveals that $\overline{T^*\mathbb{O}_n}^{\mathrm{aff}}$ has no symplectic resolution.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-FA">
+  <div class="subfield-header">
+    <h2>Functional Analysis</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03692" target="_blank" rel="noopener">Cyclicity via weak$^\ast$ sequentially cyclicity in Radially weighted Besov spaces</a></h3>
+
+    <p class="paper-authors">
+      
+      Anusrika Datta, Stefan Richter
+    </p>
+
+    <p class="paper-summary">In function spaces on the unit ball, a &#39;cyclic&#39; vector is one whose polynomial multiples densely span the whole space—understanding cyclicity matters for operator theory and approximation. This paper studies radially weighted Besov spaces and shows that weak* sequential cyclicity (a weaker density condition) implies full cyclicity, extending results previously known only for spaces with the complete Pick property to a broader setting.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.FA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>A radially weighted Besov space $H$ is a space of holomorphic functions on the unit ball $\mathbb{B}_d \subseteq \mathbb{C}^d$ whose $N$-th radial derivative is square integrable with respect to a given admissible radial measure. We write $Mult(H)$ for its multiplier algebra. The cyclic vectors in $H$ are those functions $f$ whose multiplier multiples are dense in $H$. We call a multiplier has the complete Pick property. However, in more general radially weighted Besov spaces there may be multipliers that are cyclic, but not weak$^\ast$ sequentially cyclic. For bounded holomorphic functions $f$ with no zeros in $\mathbb{B}_d$, we obtain a condition on $\log f$ that implies the cyclicity of $f$ in $H$ and yields invertibility properties for $1/f$ within an associated Smirnov-type class. This condition is formulated in terms of weak$^\ast$ sequentially cyclic multipliers and can often be verified using a comparison principle: if $f, g \in Mult(H)$ satisfy $|f| \leq |g|$ and if $f$ is weak$^\ast$ sequentially cyclic, then $g$ is also weak$^\ast$ sequentially cyclic. These results provide new insights into cyclicity phenomena in radially weighted Besov spaces in settings, where $H$ fails to be a complete Pick space.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-GR">
+  <div class="subfield-header">
+    <h2>Group Theory</h2>
+    <span class="count-badge">2</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06163" target="_blank" rel="noopener">The Normal Subgroup Theorem for lattices on two-dimensional Euclidean buildings</a></h3>
+
+    <p class="paper-authors">
+      
+      Jean Lécureux, Stefan Witzel
+    </p>
+
+    <p class="paper-summary">Lattices are discrete groups acting on geometric spaces; a key structural question is whether their normal subgroups must be &#39;large&#39; (finite index) or trivially &#39;small&#39;. This paper proves this normal subgroup property for groups acting on two-dimensional Euclidean buildings — think higher-dimensional analogues of trees — and as a consequence identifies the first known simple (no nontrivial normal subgroups) lattices on irreducible Euclidean buildings.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.GR</span>
+      
+      <span class="tag">math.DS</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove the normal subgroup property for every group that acts properly and cocompactly on a two-dimensional Euclidean building: every normal subgroup has finite index or is contained in the finite kernel of the action. As a consequence, the non-residually finite lattices constructed by Titz Mite and the second author are virtually simple. They are the first known simple lattices on irreducible Euclidean buildings.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03107" target="_blank" rel="noopener">Congruence rigidity of algebraic groups</a></h3>
+
+    <p class="paper-authors">
+      
+      Adrian Baumann, Holger Kammeyer
+    </p>
+
+    <p class="paper-summary">Which algebraic groups are completely determined by their arithmetic structure? This paper characterizes, under standard conjectures, which higher-rank arithmetic groups are &#39;profinitely solitary&#39;—meaning their profinite completion (the system of all finite quotients) uniquely pins down their commensurability class among finitely generated residually finite groups—extending previous results from split groups to all simple algebraic groups over number fields.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.GR</span>
+      
+      <span class="tag">math.NT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We identify the simple algebraic groups over number fields that are, in a suitable sense, determined by their finite adele points. Assuming CSP and Grothendieck rigidity, our results essentially characterize higher rank arithmetic groups that are profinitely solitary: the profinite commensurability class determines the commensurability class among finitely generated residually finite groups. This generalizes previous work of the second author with R. Spitler from split groups to arbitrary groups.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-OC">
+  <div class="subfield-header">
+    <h2>Optimization and Control</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02456" target="_blank" rel="noopener">Improved semidefinite programming bounds for the maximum $k$-colorable subgraph problem</a></h3>
+
+    <p class="paper-authors">
+      
+      Mathijs Barkel, Renata Sotirov
+    </p>
+
+    <p class="paper-summary">The maximum k-colorable subgraph problem asks: given a graph, find the largest induced subgraph that can be properly colored with k colors — a hard combinatorial problem. This paper sharpens semidefinite programming (SDP) relaxations, which replace discrete optimization with continuous matrix inequalities to get tractable upper bounds. New families of valid inequalities tighten these bounds, and a surprising consequence is that the problem becomes polynomial-time solvable for a special class called k-perfect graphs.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.OC</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study the maximum $k$-colorable subgraph (M$k$CS) problem, which consists in finding a largest $k$-colorable induced subgraph in a given graph. We consider a Semidefinite Programming (SDP) relaxation for the M$k$CS problem and regard its resulting upper bound as a graph parameter. We present several properties of this graph parameter, from which we obtain that the M$k$CS problem is solvable in polynomial time for $k$-perfect graphs. We further derive two novel families of valid inequalities to strengthen the SDP relaxation. The first family reduces to a family of inequalities for the Boolean quadric polytope when $k = 1$, and the second family generalizes the family of rank inequalities for binary linear programming formulations of the stable set problem. We efficiently solve the strengthened SDP relaxation using a cutting-plane algorithm that is based on the Alternating Direction Method of Multipliers (ADMM). Extensive computational experiments show that the obtained upper bounds outperform the best upper bounds from the literature. To complement our SDP-based upper bounds, we propose an integer ADMM variant that uses an exact Binary Semidefinite Programming (BSDP) formulation of the M$k$CS problem to produce high-quality feasible solutions. To the best of our knowledge, this is the first application of the ADMM to compute integer solutions to a BSDP problem.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-CA">
+  <div class="subfield-header">
+    <h2>Classical Analysis and ODEs</h2>
+    <span class="count-badge">2</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05243" target="_blank" rel="noopener">Proof of the Holevo-Utkin conjecture on sharp $\ell_p$ norms for zero-sum vectors</a></h3>
+
+    <p class="paper-authors">
+      
+      Haonan Zhang
+    </p>
+
+    <p class="paper-summary">For vectors that sum to zero, how small can their ℓp norm be relative to their Euclidean norm? Holevo and Utkin conjectured sharp answers depending on p, with the minimizing vectors taking simple explicit forms. This paper proves their conjecture across all cases, settling a clean extremal problem in functional analysis with implications for quantum information theory, where zero-sum constraints arise naturally in studying quantum channels.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CA</span>
+      
+      <span class="tag">math-ph</span>
+      
+      <span class="tag">math.FA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $d\ge 3$ and $p&gt;0$. Let $\|x\|_p$ denote the $\ell_p$ (quasi-)norm of a $d$-dimensional vector $x$. Holevo and Utkin \cite{HU26} conjectured that for $0&lt;p\le 1$, \[ \min \left\{\frac{\|x\|_p}{\|x\|_2}:\vec{0}\neq x\in\mathbb R^d,\ \sum_{i=1}^d x_i=0\right\} =2^{1/p-1/2}; \] for $1&lt;p&lt;2$, \[ \min \left\{\frac{\|x\|_p}{\|x\|_2}:\vec{0}\neq x\in\mathbb R^d,\ \sum_{i=1}^d x_i=0\right\} = \min\left\{2^{1/p-1/2},\left(\frac{(d-1)^{p/2}+(d-1)^{1-p/2}}{d^{p/2}}\right)^{1/p}\right\}; \] and for $2&lt;q&lt;\infty$ \[ \max\left\{\frac{\|x\|_q}{\|x\|_2}:\vec{0}\neq x\in\mathbb R^d,\ \sum_{i=1}^d x_i=0\right\} = \max\left\{2^{1/q-1/2},\left(\frac{(d-1)^{q/2}+(d-1)^{1-q/2}}{d^{q/2}}\right)^{1/q}\right\}. \] They proved the $d=3$ case in \cite{HU26}. In this paper, we confirm the conjecture of the remaining cases $d\ge 4$.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02145" target="_blank" rel="noopener">Inhomogeneous Picard-Fuchs equations of Abelian integrals in piecewise smooth near-Hamiltonian systems</a></h3>
+
+    <p class="paper-authors">
+      
+      Hefei Zhao, Yun Tian
+    </p>
+
+    <p class="paper-summary">How many limit cycles can emerge near special singular points in piecewise-smooth dynamical systems? This paper derives explicit differential equations (Picard-Fuchs equations) governing key oscillatory integrals in such systems, then uses them to count isolated zeros of Melnikov functions—the standard tool for detecting limit cycles. The work extends classical smooth-system techniques to the piecewise setting, giving sharp upper bounds on cycle counts near nilpotent singularities.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In this paper, we explicitly obtain inhomogeneous Picard-Fuchs equations for Abelian integrals $I_{i,j}^+(h)$, where $I_{i,j}^+(h)$ is an integral along orbital arcs defined by polynomials $\frac{1}{2}y^2 + F(x)=h$. Moreover, we discuss the method of using Picard-Fuchs equations to recursively compute the asymptotic expansions of genearating functions of Abelian integrals near a homoclinic loop. As an application, we derive the maximum number of isolated zeros of Melnikov functions near a nilpotent saddle homoclinic loop for piecewise polynomials perturbations with the inclination $θ$ of the separation line as a free parameter.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-CV">
+  <div class="subfield-header">
+    <h2>Complex Variables</h2>
+    <span class="count-badge">2</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05582" target="_blank" rel="noopener">Revised Demailly&#39;s Affineness Criterion and Algebraization of Entire Grauert Tubes</a></h3>
+
+    <p class="paper-authors">
+      
+      Kyobeom Song
+    </p>
+
+    <p class="paper-summary">A Grauert tube is a complex manifold built around a real manifold by complexifying its tangent bundle; &#39;entire&#39; means it&#39;s maximally extended. An affine manifold, roughly, admits enough global holomorphic functions to embed in complex space. This paper nearly proves Burns&#39; 40-year-old conjecture that entire Grauert tubes are affine, showing their complement of a codimension-one subset is, via a new criterion for Stein manifold affineness.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CV</span>
+      
+      <span class="tag">math.AG</span>
+      
+      <span class="tag">math.DG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We provide a partial answer to Burns&#39; 1982 conjecture on the affineness of entire Grauert tubes: the complement of a codimension-one subset of an entire Grauert tube is affine. This result is obtained by establishing a generalized version of Demailly&#39;s criterion for affineness of Stein manifolds, which may be of independent interest.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03949" target="_blank" rel="noopener">Proof of the Agler--McCarthy entropy conjecture</a></h3>
+
+    <p class="paper-authors">
+      
+      Jialin Lei, Teng Zhang
+    </p>
+
+    <p class="paper-summary">The Krzyż conjecture, a famous open problem in complex analysis, asks which analytic functions mapping the unit disk into itself have the largest Taylor coefficients. A 2021 roadmap toward proving it required first establishing a sharp &#39;entropy inequality&#39; for polynomials with roots on the unit circle. This paper completes that first step, proving the inequality with a tight bound—bringing the full conjecture meaningfully closer to resolution.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.CV</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>In 2021, J.~Agler and J.~E. McCarthy proposed a two-step programme toward the celebrated Krzyż conjecture. The first step is to prove an entropy conjecture for polynomials whose zeros all lie on the unit circle; the second is to establish a full degree condition for extremal functions in the Krzyż conjecture. The purpose of this paper is to complete the first step. More precisely, we establish the sharp homogeneous entropy inequality for all non-constant polynomials with zeros on the unit circle and determine the equality cases.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-LO">
+  <div class="subfield-header">
+    <h2>Logic</h2>
+    <span class="count-badge">2</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04934" target="_blank" rel="noopener">On $\lam$-existence over a predicate</a></h3>
+
+    <p class="paper-authors">
+      
+      Alexander Usvyatsov
+    </p>
+
+    <p class="paper-summary">In model theory, &#39;stability over a predicate&#39; describes theories where a distinguished subset P behaves tamely. This paper introduces λ-completeness — a necessary condition for extending a set to a saturated model while freezing its P-part — and proves it&#39;s also sufficient when the theory is fully stable over P, giving a clean existence theorem for such extensions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.LO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove that in a countable theory $T$ fully stable over a predicate $P$, any $\lam$-complete set $A$ has the $\lam$-existence property. This means that $A$ can be extended to a $\lam$-saturated model of $T$ without changing the $P$-part. The notion of $\lam$-completeness, introduced in this paper, captures some obvious necessary conditions for such an extension to be possible (for example, the $P$-part of $A$ has to be a $\lam$-saturated model of the appropriate theory). So in a fully stable theory $T$, $\lam$-existence can only fail for trivial reasons. This generalizes results of Chatzidakis in the context of difference fields of characteristic 0.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03126" target="_blank" rel="noopener">A countable equivalence relation of second projective class not generated by projective functions</a></h3>
+
+    <p class="paper-authors">
+      
+      Vladimir Kanovei, Vassily Lyubetsky
+    </p>
+
+    <p class="paper-summary">In descriptive set theory, equivalence relations on the reals can be generated by families of functions—but must they be? This paper constructs a model of set theory containing a countable Π¹₂ equivalence relation (one definable by a certain logical complexity) on a subset of the reals that cannot be generated by any countable family of projective functions, answering a question by Rettich and Serafin.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.LO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>To answer a question by Rettich and Serafin, we define a model of set theory in which there exists a countable $Π^1_2$ equivalence relation on a subset of the real line, which is not generated by a countable family of projective (or even ROD) functions.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-RA">
+  <div class="subfield-header">
+    <h2>Rings and Algebras</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03688" target="_blank" rel="noopener">On Regular Quantum Commutative Algebras</a></h3>
+
+    <p class="paper-authors">
+      
+      Yuri Bahturin, Lucio Centrone, Kauê Pereira
+    </p>
+
+    <p class="paper-summary">Can you tell when two algebras sharing the same polynomial identities are &#39;essentially the same&#39;? This paper resolves the Bahturin–Regev conjecture, which predicts exactly that for a broad class of finite-dimensional associative algebras called quantum commutative algebras—structures where elements commute up to roots of unity. The result gives a concrete criterion for recognizing when an algebra&#39;s symmetry (grading) can be refined, advancing the classification of algebras by their identities.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.RA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $K$ be an algebraically closed field of characteristic different from $2$. We provide a positive solution to the Bahturin--Regev conjecture in the general finite-dimensional (non-graded) setting, assuming that $\operatorname{char}(K)$ does not divide the quantum length of a minimal regular quantum commutative decomposition. Furthermore, we obtain a criterion, formulated in terms of regular quantum commutative decompositions, under which a set-grading on a semisimple associative algebra is realized as a group grading.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-AC">
+  <div class="subfield-header">
+    <h2>Commutative Algebra</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02479" target="_blank" rel="noopener">Frobenius identities for the volume map on Cohen--Macaulay rings</a></h3>
+
+    <p class="paper-authors">
+      
+      Karim Alexander Adiprasito, Eric Katz, Ryoshun Oba <em>et al.</em>
+    </p>
+
+    <p class="paper-summary">In characteristic p algebra, the Frobenius endomorphism (raising elements to the p-th power) interacts with resolutions of Cohen-Macaulay rings — rings with especially nice homological properties. This paper gives a unified framework explaining mysterious &#39;Parseval-Rayleigh identities&#39; involving the volume map (which measures sizes of Artinian quotients), previously discovered ad hoc to prove the Ohsugi-Hibi conjecture. The payoff is a cleaner approach to Lefschetz theory, which governs how algebraic structure propagates across dimensions.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.AC</span>
+      
+      <span class="tag">math.CO</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study the volume map on Artinian quotients of Cohen-Macaulay algebras in characteristic $p$, and the interaction between it and the action of Frobenius on resolutions. This allows us to provide a general, conceptual way to understand Parseval-Rayleigh identities, curious inhomogeneous identities on the volume map which were developed for the proof of the Ohsugi-Hibi conjecture. This general perspective gives a new approach to generic Lefschetz theory. We use this perspective to do the following: we give sufficient conditions for anisotropy and the Hard Lefschetz property for generic Artinian reductions of graded Gorenstein rings; we study the codimension-$3$ Gorenstein quotient of a polynomial ring by the ideal generated by Pfaffians, proving a Parseval-Rayleigh identity and deriving anisotropy and Hard Lefschetz in characteristic $2$; we deduce the $g$-theorem for simplicial spheres and the Ohsugi-Hibi conjecture following previous work of Adiprasito, Papadakis, and Petrotou; and we provide further examples of Parseval-Rayleigh identities for Gorenstein rings.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-QA">
+  <div class="subfield-header">
+    <h2>Quantum Algebra</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03708" target="_blank" rel="noopener">Modular functors and CFT correlators via double categories</a></h3>
+
+    <p class="paper-authors">
+      
+      Jürgen Fuchs, Christoph Schweigert, Yang Yang
+    </p>
+
+    <p class="paper-summary">Modular functors are algebraic structures encoding the symmetries of 2D conformal field theories (CFTs), but their precise mathematical formulation has been technically awkward. This paper shows that double categories—algebraic structures tracking two independent types of morphisms simultaneously—provide a cleaner, more natural framework, allowing correlators of CFTs to be constructed systematically and clarifying the relationship between topology and field theory.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.QA</span>
+      
+      <span class="tag">hep-th</span>
+      
+      <span class="tag">math-ph</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We point out that double categories provide a natural setting for modular functors obtained by a (bicategorical) string-net construction: The source of the modular functor -- which is now a double functor -- is a symmetric monoidal double category of bordisms, with bordisms as horizontal morphisms and smooth embeddings of manifolds as vertical morphisms. The target of the modular functor is a double category with profunctors and functors as horizontal and vertical morphisms.
+  The correlators and field functors for a conformal field theory based on a pivotal monoidal category $\mathcal C$ can then be understood in the unified setting of a vertical transformation between the modular functors for two pointed pivotal bicategories, the delooping of $\mathcal C$ and the bicategory of $Δ$-separable symmetric Frobenius algebras in $\mathcal C$. Using skein theoretic methods, we show that this vertical transformation is an equivalence, which implies that field functors are equivalences of categories and that universal correlators are isomorphisms of vector spaces.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-SG">
+  <div class="subfield-header">
+    <h2>Symplectic Geometry</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.06620" target="_blank" rel="noopener">Bulk-deformations, Floer complex bordism, and Grothendieck-Riemann-Roch</a></h3>
+
+    <p class="paper-authors">
+      
+      Kenneth Blakey, Noah Porcelli
+    </p>
+
+    <p class="paper-summary">Symplectic cohomology is an algebraic invariant of spaces studied in symplectic geometry; this paper lifts it to a richer &#39;homotopical&#39; setting using complex cobordism (a powerful tool from algebraic topology). The authors show this sophisticated lift equals a classical construction—symplectic cohomology &#39;bulk-deformed&#39; by Chern characters—proving a symplectic analogue of the Grothendieck-Riemann-Roch theorem. This bridges abstract homotopy theory with concrete symplectic invariants.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.SG</span>
+      
+      <span class="tag">math.AG</span>
+      
+      <span class="tag">math.AT</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Given a Liouville manifold, we compute a Floer-homotopical invariant -- the complexification of the lift of symplectic cohomology to complex cobordism -- in terms of a classical Floer-theoretic invariant, namely, symplectic cohomology bulk-deformed by the Chern character. We do this by giving an explicit model for the complexified homotopy groups of the MU-module spectrum associated to a complex-oriented flow category and proving a &#39;&#39;homotopy coherent&#39;&#39; version of the classical Grothedieck-Riemann-Roch theorem.
+  Using the aforementioned relation, we establish a computable cohomological criterion, in terms of the pair-of-pants product and the BV operator on symplectic cohomology, for when this MU lift cannot be obtained via base change from the sphere spectrum; moreover, we give examples where this holds. Finally, we use this non-base change criterion to detect examples of non-trivial higher-dimensional complex cobordism classes of relative Gromov-Witten type moduli spaces in the context of a smooth complex projective variety relative to an ample smooth divisor.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-SP">
+  <div class="subfield-header">
+    <h2>Spectral Theory</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.04331" target="_blank" rel="noopener">Sharp Dirichlet eigenvalue inequalities on triangles</a></h3>
+
+    <p class="paper-authors">
+      
+      Ryoki Endo, Xuefeng Liu, Phanuel Mariano
+    </p>
+
+    <p class="paper-summary">What shape of triangle makes the first vibration frequency as small as possible? This paper proves that the equilateral triangle wins, settling a conjecture by Laugesen and Siudeja. The &#39;first Dirichlet eigenvalue&#39; describes the lowest frequency at which a drum of that shape resonates; the result gives sharp, explicit bounds on this frequency using only a triangle&#39;s area and perimeter.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.SP</span>
+      
+      <span class="tag">math.AP</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We prove sharp Dirichlet eigenvalue inequalities for planar triangles. We settle a conjecture of Laugesen and Siudeja by showing that the equilateral triangle uniquely minimizes a scale-invariant functional of the first Dirichlet eigenvalue, area, and perimeter. Consequences include an optimal two-term lower bound for the first Dirichlet eigenvalue in terms of area and perimeter. We also prove a Cheeger-type inequality with an explicit best constant considered by Parini. To prove these conjectures we propose a new method for proving Dirichlet eigenvalue inequalities on triangles. Our method is based on a new computable lower bound for second-order directional shape derivatives under vertex perturbations. It also uses validated finite-element error estimates and recently developed analytic estimates for eigenvalues of nearly degenerate triangles. The method is not specific to the functionals considered in this paper and it can be used to prove various other eigenvalue inequalities on triangles.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-ST">
+  <div class="subfield-header">
+    <h2>Statistics Theory</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02858" target="_blank" rel="noopener">Characterizing Schur-concave commutative copulas as the closure of associative ones</a></h3>
+
+    <p class="paper-authors">
+      
+      Manuel Úbeda-Flores
+    </p>
+
+    <p class="paper-summary">A copula is a function that encodes statistical dependence between random variables independently of their individual distributions. This paper proves that the class of Schur-concave commutative copulas — those respecting a natural symmetry and ordering condition — equals exactly the closure of convex combinations of associative copulas (those satisfying an algebraic chaining property). This gives a clean structural characterization, revealing that symmetry and associativity are essentially equivalent constraints up to approximation.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.ST</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $\mathcal{C}_a$ denote the class of associative copulas, and let $\overline{\mathcal{C}}_a$ be the closure, in the uniform metric $d_\infty$, of the convex hull of $\mathcal{C}_a$ . It is known that $\mathcal{C}_a \subseteq \mathcal{C}_{SC}$, the class of Schur-concave commutative copulas. We prove the reverse inclusion, establishing $\overline{\mathcal{C}}_a = \mathcal{C}_{SC}$.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-KT">
+  <div class="subfield-header">
+    <h2>K-Theory and Homology</h2>
+    <span class="count-badge">1</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.05128" target="_blank" rel="noopener">Algebraic $K$-theory, cohomotopy $K$-groups, and Koszul duality</a></h3>
+
+    <p class="paper-authors">
+      
+      Xiaojun Chen, Farkhod Eshmatov, Maozhou Huang
+    </p>
+
+    <p class="paper-summary">Koszul duality is an algebraic pairing between a differential graded algebra A and its &#39;dual&#39; algebra A!, linking their module categories. This paper combines a known K-theory equivalence under Koszul duality with new computations involving cohomotopy K-groups—homotopy-theoretic invariants of algebraic K-theory spectra—to extract finer structural information about algebraic K-theory. The results give new tools for understanding K-theory through this duality lens.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.KT</span>
+      
+      <span class="tag">math.RA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>Let $A$ be an augmented differential graded algebra over a field $k$ of characteristic zero, and let $A^!=\mathbf{R}\mathrm{Hom}_A(k,k)$ be its Koszul dual algebra. Blumberg and Mandell showed that, under some finiteness conditions of $A$, the derived Koszul duality provides an equivalence between the $K$-theory $K(\mathrm{thick}_A(k))$ of the triangulated thick subcategory generated by $k$ and the $K$-theory $K(A^!)$ of the derived category of perfect $A^!$-modules. Combining this equivalence with the Jones-Goodwillie Chern character and the Jones-McCleary isomorphism, we obtain that the $K$-groups $K_n(\mathrm{thick}_A(k))$ are a concrete candidate for Loday&#39;s conjectural contravariant $K$-groups.</p>
+    </details>
+  </article>
+  
+</section>
+
+<section class="subfield" id="math-MG">
+  <div class="subfield-header">
+    <h2>Metric Geometry</h2>
+    <span class="count-badge">2</span>
+  </div>
+
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.03681" target="_blank" rel="noopener">Magnitude and diversity of trees</a></h3>
+
+    <p class="paper-authors">
+      
+      Philippe Bouafia
+    </p>
+
+    <p class="paper-summary">Magnitude is a numerical invariant of metric spaces capturing something like &#39;effective size.&#39; For compact real trees—tree-shaped metric spaces built from line segments—magnitude equals exactly 1 + L/2, where L is total length, so only length matters for magnitude. However, diversity-maximizing measures (which spread probability mass to maximize ecological-style diversity) are more geometrically sensitive, preferring the leaves over branch points, revealing structure that magnitude misses.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.MG</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We compute the magnitude (an isometric invariant of metric spaces) of compact $\mathbb{R}$-trees and show that it equals $1 + L/2$, where $L \in [0, \infty]$ denotes the total length. Although length is the only geometric invariant captured by magnitude, we show that diversity-maximizing measures on compact $\mathbb{R}$-trees are more sensitive to the branching structure as they tend to be more concentrated toward the leaves: their support contains no branch points. In the finite case, we further show that maximum diversity on a weighted tree can be computed in polynomial time.</p>
+    </details>
+  </article>
+  
+  <article class="paper">
+    <h3><a href="https://arxiv.org/abs/2605.02747" target="_blank" rel="noopener">Functional perimeter and the dimensional Brunn-Minkowski inequality for log-concave measures</a></h3>
+
+    <p class="paper-authors">
+      
+      Alexandros Eskenazis, Apostolos Giannopoulos, Natalia Tziotziou
+    </p>
+
+    <p class="paper-summary">How concave is the measure of a midpoint set compared to its parts? This paper proves a &#39;dimensional Brunn-Minkowski inequality&#39; for symmetric log-concave measures—distributions whose logarithm is concave—showing that blending two symmetric convex sets yields a measure at least as large as a weighted average raised to a power ~1/n³. The analytic approach via diffusion operators is new, and the result advances a major open conjecture about how volume-like quantities behave under set averaging.</p>
+
+    <div class="paper-tags">
+      
+      <span class="tag primary">math.MG</span>
+      
+      <span class="tag">math.FA</span>
+      
+    </div>
+
+    <details class="abstract">
+      <summary>Original abstract</summary>
+      <p>We study the dimensional Brunn-Minkowski inequality for even log-concave probability measures $μ$ on $\mathbb{R}^n$ via an analytic approach based on diffusion operators and gradient estimates. Our main result asserts that for every pair of symmetric convex sets $K,L$ in $\mathbb{R}^n$ and every $λ\in(0,1)$, $$μ(λK+(1-λ)L)^{c_n} \geq λμ(K)^{c_n}+(1-λ)μ(L)^{c_n},$$ where $c_n\geq c/n^3\ln n$ for some absolute constant $c&gt;0$. A key ingredient in our proof is the bound $$\int_{\mathbb{R}^n} |\nablaψ|\,dμ\leq Cn$$ that we establish for isotropic log-concave probability measures $μ$ on $\mathbb{R}^n$ with density $e^{-ψ}$, which is optimal in terms of the dimension. This estimate yields structural information on the size of sub-level sets of the gradient of $ψ$ and puts forth a geometric obstruction to further improvements of the Brunn-Minkowski exponent. We also present applications of this estimate to the weighted perimeter of level sets, projections, moment and surface area measures of isotropic log-concave functions, highlighting the central role of the gradient of the logarithmic potential in high-dimensional convexity.</p>
+    </details>
+  </article>
+  
+</section>
+
+
+</main>
+
+<footer>
+  Generated by Grounded using <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv</a> data
+  and <a href="https://anthropic.com" target="_blank" rel="noopener">Claude AI</a>.
+  Papers sourced from arXiv under a <a href="https://arxiv.org/help/license" target="_blank" rel="noopener">CC license</a>.
+</footer>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$',  right: '$',  display: false},
+      {left: '\\\\[', right: '\\\\]', display: true},
+      {left: '\\\\(', right: '\\\\)', display: false}
+    ],
+    throwOnError: false
+  });">
+</script>
+</body>
+</html>
